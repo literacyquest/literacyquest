@@ -9,3 +9,5 @@ To edit and rebuild (Node.js 22.13 or later):
 3. Run `npm run build`. The updated file is written to `../index.html`.
 
 The CSS is a compiled snapshot plus editable overrides. New plain CSS classes can be appended directly. If you add new Tailwind utility names, also add their styles yourself or set up a Tailwind build.
+
+Family profiles and backup logic are in `storage.ts`; their UI is in `family.tsx`. Run `npm test` to verify migration, learner isolation, backup validation, additive restore, and failed-write safety.
