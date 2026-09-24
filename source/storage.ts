@@ -23,3 +23,12 @@ export function saveProgress(record:RecordData):Record<string,RecordData>{
  try{window.localStorage.setItem(storageKey(),JSON.stringify({version:1,records:all}));}catch{throw Error('Your browser could not save this work. Keep the page open, allow site storage, and try again.');}
  return all;
 }
+
+// Preferences stay separate so changing guidance never resets existing work.
+export function loadGrade():'1'|'2'{
+ try {const value=window.localStorage.getItem(storageKey()+':grade-guide');return value==='2'?'2':'1'}catch{return '1'}
+}
+export function saveGrade(grade:'1'|'2'){
+ if(grade!=='1'&&grade!=='2')throw Error('Choose an available grade guide.');
+ try{window.localStorage.setItem(storageKey()+':grade-guide',grade)}catch{throw Error('Your guide changed for this visit, but this browser could not save the preference.')}
+}
