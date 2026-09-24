@@ -1,0 +1,11 @@
+import {build} from 'vite';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+await build({root,configFile:false,define:{'process.env.NODE_ENV':JSON.stringify('production')},build:{outDir:path.join(root,'.compiled'),minify:true,lib:{entry:path.join(root,'main.tsx'),name:'LiteracyQuest',formats:['iife'],fileName:()=> 'app.js'}}});
+const js=fs.readFileSync(path.join(root,'.compiled/app.js'),'utf8').replace(/<\/script/gi,'<\\/script');
+const css=fs.readFileSync(path.join(root,'styles.css'),'utf8');
+const icon=encodeURIComponent(fs.readFileSync(path.join(root,'favicon.svg'),'utf8'));
+fs.writeFileSync(path.join(root,'../index.html'),`<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#176349"><meta name="description" content="Literacy Quest: 16 self-paced language arts lessons across four weeks for grades 1–2."><title>Literacy Quest | Read, Discover, Create</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,${icon}"><style>${css}</style></head><body><div id="root"></div><noscript>Turn on JavaScript to use the lessons.</noscript><script>${js}</script></body></html>`);
+console.log('Built ../index.html');
