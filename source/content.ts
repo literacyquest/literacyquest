@@ -2352,12 +2352,1038 @@ export const gradeThreeUnits = [
     "family": "Listen to the final paragraph. Ask for a clear idea, relevant details, connecting words, and a closing thought."
   }
 ];
-export const lessons = [...coreLessons,...kindergartenLessons,...gradeThreeLessons];
+export const gradeFourLessons = [
+  {
+    "id": "g4-map-room",
+    "title": "The Map Room",
+    "subtitle": "What can a pause and a notebook reveal?",
+    "label": "The Map Room",
+    "focus": "Inference from actions",
+    "pattern": "The prefix dis-",
+    "model": "The prefix dis- can mean not or the opposite of: agree → disagree. Check the whole word in its sentence.",
+    "words": [
+      "disagree",
+      "dislike",
+      "disconnect"
+    ],
+    "wordQuestion": "What does disagree mean?",
+    "wordOptions": [
+      "Agree again",
+      "Have a different opinion",
+      "Speak very softly"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Think about two people who do not share an opinion.",
+    "text": [
+      "Lena arrived early for her first shift at the town history display. Her job was to help visitors find places on a large map. She had practiced pointing out the station and the market, but the narrow streets near the river still confused her. She placed her notebook beside the map and opened it to a page covered with small arrows.",
+      "When a visitor asked where the old mill had stood, Lena began to point toward the market. Then she paused. She followed a blue line on the map with her finger and glanced at her notes. “Let me check one detail,” she said. She asked Mr. Ortiz, another volunteer, to look with her.",
+      "Together, they found the mill on a bend beyond the station. Lena showed the visitor the location and explained which line marked the river. After the visitor left, she added a small label to her sketch. She did not close the notebook or move it out of sight.",
+      "Later, Lena answered a question about the market without help. When a different visitor asked about a street she did not know, she checked again. By closing time, the notebook had several new labels. Lena was still learning the map, but she had found a way to give visitors information they could rely on."
+    ],
+    "question": "What can you infer about Lena?",
+    "options": [
+      "She values accurate answers more than appearing to know everything.",
+      "She wants visitors to stop asking questions.",
+      "She no longer needs to learn the map."
+    ],
+    "answer": 0,
+    "hint": "Notice what she does when an answer is uncertain.",
+    "explanation": "Lena checks uncertain information and adds what she learns to her notes.",
+    "evidenceOptions": [
+      "She arrived early and opened her notebook.",
+      "She checked the mill location with another volunteer and added a label afterward.",
+      "The map included a station, a market, and a river."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "Checking before answering and improving her notes both show care for accuracy.",
+    "evidenceExplanation": "Checking before answering and improving her notes both show care for accuracy.",
+    "reasoningQuestion": "Why is the checking-and-labeling detail stronger than the list of places?",
+    "reasoningOptions": [
+      "It is longer, so it must be more reliable.",
+      "It describes Lena’s choices; the list only describes the map.",
+      "It proves she already knew every location."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "An inference about a person needs evidence of that person’s words or actions.",
+    "reasoningExplanation": "An inference about a person needs evidence of that person’s words or actions.",
+    "prompt": "Explain what Lena’s actions reveal about her. Use two details and explain how each supports your inference. Organize your response in two short paragraphs.",
+    "frame": "Paragraph 1: I infer that Lena… One clue is… This suggests…\n\nParagraph 2: Another clue is… Together, these actions show…",
+    "vocab": "inference",
+    "definition": "An idea you form by connecting text clues with what you already understand.",
+    "color": "green",
+    "week": 1,
+    "genre": "fiction",
+    "talk": "Could arriving early alone prove that Lena cares about accuracy? Explain why her later actions give stronger support."
+  },
+  {
+    "id": "g4-rehearsal",
+    "title": "The Unexpected Stage",
+    "subtitle": "A smaller room calls for a different plan.",
+    "label": "The Unexpected Stage",
+    "focus": "Setting and character response",
+    "pattern": "The root port",
+    "model": "The Latin root port means carry. In transport, the root helps you think about carrying something from one place to another.",
+    "words": [
+      "transport",
+      "portable",
+      "import"
+    ],
+    "wordQuestion": "What does portable suggest about a stage?",
+    "wordOptions": [
+      "It has bright lights",
+      "It is built underground",
+      "It can be carried or moved"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Connect port with carry.",
+    "text": [
+      "The drama club had rehearsed a scene on the wide outdoor stage for two weeks. There was room for a pretend cart, three chairs, and a long entrance from the left. On performance day, steady rain moved the show into a small meeting room. The actors stared at the narrow space between the first row of seats and the wall.",
+      "Milo immediately tried to push the cart into the room. It blocked the doorway. “We cannot tell the story without it,” he said. His partner, Cora, asked what the cart helped the audience understand. Milo explained that their characters were delivering supplies to a village. Cora held up an empty basket. “Could this show the delivery?”",
+      "They tried the scene with the basket and moved the chairs closer together. Milo shortened his entrance so he would not bump into the audience. Before the performance, the actors explained that the setting had changed. During the scene, Cora carried the basket from one character to another while Milo named the supplies inside.",
+      "The audience followed the delivery without seeing the cart. Afterward, Milo admitted that he had confused the object with its job in the story. The rain had created a problem, but the smaller room had also pushed the actors to think about which details were necessary and which could change."
+    ],
+    "question": "How does the new setting affect the actors?",
+    "options": [
+      "It makes the story impossible to perform.",
+      "It leads them to change props and movements while keeping the story clear.",
+      "It lets them use a longer entrance."
+    ],
+    "answer": 1,
+    "hint": "Connect the size of the room with the changes they make.",
+    "explanation": "The actors adapt how they show the delivery to fit the smaller space.",
+    "evidenceOptions": [
+      "It rained on performance day.",
+      "The club had practiced for two weeks.",
+      "The cart blocked the doorway; the actors used a basket and shortened the entrance."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The obstacle and the changes together connect the setting to the actors’ response.",
+    "evidenceExplanation": "The obstacle and the changes together connect the setting to the actors’ response.",
+    "reasoningQuestion": "Why does the cart-and-basket detail explain more than the rain detail alone?",
+    "reasoningOptions": [
+      "It connects the space problem to a specific response.",
+      "It proves all outdoor stages are too large.",
+      "It tells exactly how long the rain lasted."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "A cause and a response together explain how the setting changes the action.",
+    "reasoningExplanation": "A cause and a response together explain how the setting changes the action.",
+    "prompt": "Explain how the setting affects the performance. In one paragraph describe the problem; in another explain the adaptations and their result.",
+    "frame": "Paragraph 1: The smaller room causes… For example…\n\nParagraph 2: The actors respond by… This works because…",
+    "vocab": "adaptation",
+    "definition": "A change made to fit a new condition or need.",
+    "color": "green",
+    "week": 1,
+    "genre": "fiction",
+    "talk": "Which part of the delivery scene had to stay clear? Which parts could change?"
+  },
+  {
+    "id": "g4-credit",
+    "title": "The Name on the Poster",
+    "subtitle": "Look beyond the drawing to the teamwork.",
+    "label": "The Name on the Poster",
+    "focus": "Theme supported by events",
+    "pattern": "The suffix -tion",
+    "model": "The ending -tion often forms a noun naming an action or process: collect → collection. Spelling may change when endings are added.",
+    "words": [
+      "collection",
+      "discussion",
+      "invention"
+    ],
+    "wordQuestion": "Which word names the result of collecting objects?",
+    "wordOptions": [
+      "collecting quickly",
+      "collector",
+      "collection"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Look for the noun formed from collect.",
+    "text": [
+      "Ari designed the title for the class invention fair poster. He made the letters look like tiny gears and drew a bright border around them. When the teacher praised the finished poster, Ari smiled. Then he noticed that his name was the only name written along the bottom, although several classmates had worked on it.",
+      "Nia had checked the date and location. Pavel had written a short invitation that families could understand. Elise had changed the arrangement so the title did not cover the map. Ari remembered how often he had asked them to look at a new version. Without their changes, the poster would have looked different and included mistakes.",
+      "At first, Ari considered leaving the name alone because the drawing had been his idea. Instead, he brought the poster back to the table. He replaced his name with “Created by the invention fair team” and added a note on the back describing each person’s work. Nia read the note and pointed out a correction: Pavel had also checked the spelling.",
+      "Ari made the correction before hanging the poster. When visitors asked who had created it, he described the team’s different jobs. He still felt proud of his lettering. Sharing the credit did not erase his contribution; it helped him describe the whole project more honestly."
+    ],
+    "question": "Which theme is best supported by the story?",
+    "options": [
+      "A project looks better when one person controls everything.",
+      "Recognizing others’ contributions can make shared success more honest.",
+      "Artists should never write their names on their work."
+    ],
+    "answer": 1,
+    "hint": "Consider what Ari learns about the work behind the poster.",
+    "explanation": "Ari keeps pride in his own work while acknowledging the contributions that made the project possible.",
+    "evidenceOptions": [
+      "Ari replaces the single name with the team’s name and describes everyone’s work to visitors.",
+      "The poster title looks like gears.",
+      "The fair has a date and a location."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "Ari’s changed credit and later explanation both develop the theme of recognizing contributions.",
+    "evidenceExplanation": "Ari’s changed credit and later explanation both develop the theme of recognizing contributions.",
+    "reasoningQuestion": "Why do Ari’s decisions support a theme better than the poster’s appearance?",
+    "reasoningOptions": [
+      "The border is not colorful enough.",
+      "A theme must include every event in order.",
+      "His decisions show a lesson about shared work, while appearance only describes the poster."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "A theme expresses an idea developed by what happens and what a character learns.",
+    "reasoningExplanation": "A theme expresses an idea developed by what happens and what a character learns.",
+    "prompt": "Explain the story’s theme. Support it with one detail from before Ari changes the poster and one from afterward. Use two related paragraphs.",
+    "frame": "Paragraph 1: The story suggests… At first…\n\nParagraph 2: Later… This change develops the theme because…",
+    "vocab": "contribution",
+    "definition": "Something a person gives or does to help a shared effort.",
+    "color": "green",
+    "week": 1,
+    "genre": "fiction",
+    "talk": "Can Ari remain proud of his own work while naming the team? Support your explanation."
+  },
+  {
+    "id": "g4-lantern",
+    "title": "The Last Lantern",
+    "subtitle": "Keep the events that explain the outcome.",
+    "label": "The Last Lantern",
+    "focus": "Summary without extra detail",
+    "pattern": "The root spect",
+    "model": "The Latin root spect means look. Inspect means to look closely at something.",
+    "words": [
+      "inspect",
+      "spectator",
+      "inspection"
+    ],
+    "wordQuestion": "What would someone do when inspecting a lantern?",
+    "wordOptions": [
+      "Look at it carefully",
+      "Give it a new name",
+      "Carry it without looking"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Use the root meaning look.",
+    "text": [
+      "The community hall was preparing for an indoor lantern display. Every group had made one paper lantern to hang above a table. Minutes before visitors arrived, June noticed that her group’s lantern had a torn loop. The paper shade was fine, but the lantern could not hang safely from its hook. Her group began looking for spare ribbon.",
+      "They found only a short piece, too small to make another loop. June suggested placing the lantern on the table, but the table was crowded with programs. Tarek wanted to borrow ribbon from another group. When they asked, they learned that no spare ribbon remained. The clock above the entrance moved closer to opening time.",
+      "June inspected the table again and noticed an empty display stand behind a stack of programs. With the organizer’s help, the group cleared space and set the lantern on the stand instead of hanging it. They moved the programs into a basket beside the entrance. The organizer checked that the display was stable and the walkway clear.",
+      "When the doors opened, the lantern stood at eye level for younger visitors. June’s group explained how the torn loop had changed their plan. No one needed to know the color of the spare ribbon to understand the solution. The important change was finding another way to display the lantern using the space and materials available."
+    ],
+    "question": "Which is the best summary?",
+    "options": [
+      "A hall has a clock, a basket, ribbon, and visitors.",
+      "June likes lanterns more than programs and wants to make another one.",
+      "A torn loop prevents a lantern from hanging, so June’s group reorganizes a table and displays it on a stand."
+    ],
+    "answer": 2,
+    "hint": "Keep the central problem, key response, and result.",
+    "explanation": "The summary includes the problem and the solution without listing unrelated objects.",
+    "evidenceOptions": [
+      "The clock was above the entrance.",
+      "The loop was torn, and the group later set the lantern on a stand after clearing space.",
+      "The group found a short piece of ribbon."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "These details capture the main problem and the successful response.",
+    "evidenceExplanation": "These details capture the main problem and the successful response.",
+    "reasoningQuestion": "Why is the problem-and-solution evidence stronger for a summary than the clock detail?",
+    "reasoningOptions": [
+      "It includes the central events that connect the beginning to the outcome.",
+      "It uses more names for objects.",
+      "It proves the display lasted all night."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "A useful summary keeps the events needed to understand what happened.",
+    "reasoningExplanation": "A useful summary keeps the events needed to understand what happened.",
+    "prompt": "Write a two-paragraph reading response. First summarize the main events without your opinion. Then explain why the stand solves the problem, using two details.",
+    "frame": "Paragraph 1: The group faces… They… As a result…\n\nParagraph 2: The stand is useful because… Another relevant detail is…",
+    "vocab": "summary",
+    "definition": "A brief account of the most important ideas or events.",
+    "color": "green",
+    "week": 1,
+    "genre": "fiction",
+    "talk": "Which detail could you leave out without changing the main events? Explain your choice."
+  },
+  {
+    "id": "g4-display",
+    "title": "A Display That People Can Read",
+    "subtitle": "Follow a problem through a thoughtful redesign.",
+    "label": "A Display That People Can Read",
+    "focus": "Problem–solution structure",
+    "pattern": "The root graph",
+    "model": "The Greek root graph relates to writing or drawing. A graphic presents information visually.",
+    "words": [
+      "graphic",
+      "autograph",
+      "paragraph"
+    ],
+    "wordQuestion": "Which word names a visual presentation of information?",
+    "wordOptions": [
+      "autograph",
+      "graphic",
+      "graphite pencil box"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Look for the word used in the model sentence.",
+    "text": [
+      "The science club made an information display for a school evening. It contained twelve long paragraphs printed in small type. At the practice viewing, visitors stood close to the board and leaned around each other to read it. Several left before reaching the last section. The club wanted to explain its project, but the information was difficult to approach.",
+      "The students first identified what each part of the display was supposed to do. One section introduced the question, another described the procedure, and a third explained the observations. They gave those sections clear headings. They shortened repeated explanations and moved extra details to a separate handout that visitors could take away.",
+      "Next, the students increased the letter size and placed the board where two people could stand beside it without blocking the door. During a second practice viewing, they asked visitors to find the project question and one observation. Most found both quickly. A few asked for a clearer explanation of one unfamiliar word.",
+      "The club added a definition near that word. The display still needed the handout for readers who wanted every detail, but it now offered a clearer starting point. Describing the original difficulty, the changes, and the follow-up check helps explain why the students reorganized the information instead of simply adding more decoration."
+    ],
+    "question": "How is the text mainly organized?",
+    "options": [
+      "As a list of unrelated science facts",
+      "As a comparison of two kinds of plants",
+      "As a problem, changes to address it, and a check of the result"
+    ],
+    "answer": 2,
+    "hint": "Track the job of each paragraph.",
+    "explanation": "The text begins with reading difficulties and follows the club’s response and review.",
+    "evidenceOptions": [
+      "The text describes hard-to-read paragraphs, then headings and larger letters, then a second practice viewing.",
+      "The display was used during a school evening.",
+      "An unfamiliar word needed a definition."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "The sequence of problem, changes, and checking shows the overall structure.",
+    "evidenceExplanation": "The sequence of problem, changes, and checking shows the overall structure.",
+    "reasoningQuestion": "Why does evidence from several paragraphs work better here than one vocabulary detail?",
+    "reasoningOptions": [
+      "A single word is never important in any text.",
+      "The question asks about the organization of the whole text.",
+      "Long evidence is always the best evidence."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "To explain overall structure, show how major sections relate, not just what one sentence contains.",
+    "reasoningExplanation": "To explain overall structure, show how major sections relate, not just what one sentence contains.",
+    "prompt": "Explain how the display changes and why the changes help. Group the problems in one paragraph and the related solutions in another.",
+    "frame": "Paragraph 1: Visitors first had difficulty… Another problem was…\n\nParagraph 2: The club addressed these problems by… The follow-up check showed…",
+    "vocab": "structure",
+    "definition": "The way the parts of a text or object are arranged.",
+    "color": "blue",
+    "week": 2,
+    "genre": "informational scenario",
+    "talk": "Which heading would help a visitor who wants to know what the students noticed?"
+  },
+  {
+    "id": "g4-directions",
+    "title": "The Instructions Nobody Tested",
+    "subtitle": "Notice what an experienced maker forgot to say.",
+    "label": "The Instructions Nobody Tested",
+    "focus": "Sequence and missing information",
+    "pattern": "The prefix inter-",
+    "model": "The prefix inter- can mean between or among. Interaction happens when people or things act on one another.",
+    "words": [
+      "interaction",
+      "interconnect",
+      "international"
+    ],
+    "wordQuestion": "What does interconnect suggest?",
+    "wordOptions": [
+      "Connect things with one another",
+      "Disconnect every part",
+      "Connect only before lunch"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Use between or among as a clue.",
+    "text": [
+      "A maker club wrote instructions for folding a paper name holder. The first step said, “Fold the rectangle in half.” The next step said, “Open it and fold the sides toward the line.” The writers understood what they meant because they had already made several holders. They assumed that a new reader would picture the paper the same way.",
+      "When a visiting student tried the instructions, she folded the short edges together. The writers had intended the long edges to meet. Her first fold created a different center line, so following the next step did not produce the expected shape. She reread the words, but they did not identify which edges should touch.",
+      "The club revised the first step: “Place the rectangle with its long edge nearest you. Fold the long edge nearest you to meet the long edge farthest away.” They added a labeled sketch and kept the later steps in the same order. A second visitor then tried the revised version without watching a demonstration.",
+      "The second visitor made a holder that matched the model. The club kept her questions as notes for another revision. Testing with a new reader had revealed an instruction the experienced makers no longer noticed. The problem was not that the first visitor ignored the directions; the directions had left out information needed to follow them."
+    ],
+    "question": "Why did the first visitor make a different center line?",
+    "options": [
+      "She did not receive a rectangle.",
+      "The directions did not specify which edges should meet.",
+      "She skipped every instruction."
+    ],
+    "answer": 1,
+    "hint": "Find what the writers assumed but did not state.",
+    "explanation": "The original directions allowed more than one way to fold the rectangle.",
+    "evidenceOptions": [
+      "The writers had made several holders.",
+      "A second visitor tried the revised version.",
+      "The visitor joined the short edges, while the writers meant the long edges; the words did not specify the edges."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The different interpretations and missing instruction directly explain the unexpected fold.",
+    "evidenceExplanation": "The different interpretations and missing instruction directly explain the unexpected fold.",
+    "reasoningQuestion": "Why does the edge detail explain the problem better than the writers’ experience alone?",
+    "reasoningOptions": [
+      "Experience proves directions cannot have mistakes.",
+      "It names the exact missing information that led to a different result.",
+      "It proves sketches are unnecessary."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "A specific link between an instruction and its result explains the cause.",
+    "reasoningExplanation": "A specific link between an instruction and its result explains the cause.",
+    "prompt": "Explain why the instructions needed revision. Describe the cause in one paragraph and the revision and its test in another.",
+    "frame": "Paragraph 1: The original instructions leave out… This leads to…\n\nParagraph 2: The revised step… Testing with a new reader…",
+    "vocab": "specify",
+    "definition": "To state something clearly and exactly.",
+    "color": "blue",
+    "week": 2,
+    "genre": "informational scenario",
+    "talk": "Which everyday direction might be unclear to someone who has never done the task?"
+  },
+  {
+    "id": "g4-queue",
+    "title": "Why the Line Moved",
+    "subtitle": "A shorter wait can have more than one explanation.",
+    "label": "Why the Line Moved",
+    "focus": "Cause, evidence, and uncertainty",
+    "pattern": "Use a contrast clue",
+    "model": "Although can introduce a contrast: “Although the hallway was crowded, the desk was vacant.” Vacant contrasts with crowded.",
+    "words": [
+      "vacant",
+      "crowded",
+      "occupied"
+    ],
+    "wordQuestion": "What does vacant most likely mean here?",
+    "wordOptions": [
+      "Decorated with signs",
+      "Extremely noisy",
+      "Not occupied"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Use the contrast with crowded.",
+    "text": [
+      "The school art show used one desk to hand visitors both programs and room tickets. On the first evening, a line stretched into the entrance. Volunteers noticed that each visitor waited while someone found a program and then searched for the correct ticket. The organizers wondered whether separating those jobs would help people move through the entrance.",
+      "On the second evening, programs were placed on a table before the desk, and the desk handled only tickets. The longest wait recorded by a volunteer was shorter than on the first evening. A student reporter began a headline: “New Table Solves Every Waiting Problem.” Then she looked at the attendance notes beside the timing sheet.",
+      "The second evening had fewer visitors arriving during its busiest period. The new arrangement may have helped, but a smaller crowd may also have mattered. The notes could not show how much each change contributed. No one had repeated both arrangements with similar numbers of visitors arriving at similar times.",
+      "The reporter revised the headline to describe a shorter wait after the arrangement changed, without claiming the table was the only cause. She suggested collecting more observations at the next event. The available evidence supported a useful question and a possible improvement, but it did not support certainty about every cause of the result."
+    ],
+    "question": "Which conclusion is best supported?",
+    "options": [
+      "The shorter wait may relate to the new arrangement and the smaller crowd.",
+      "The program table caused every improvement.",
+      "Changing a desk can never affect a line."
+    ],
+    "answer": 0,
+    "hint": "Look for more than one difference between evenings.",
+    "explanation": "Both the arrangement and the number of arrivals changed, so the notes cannot separate their effects.",
+    "evidenceOptions": [
+      "The art show had room tickets.",
+      "The desk handled only tickets on the second evening, which also had fewer arrivals during its busiest period.",
+      "A reporter wrote a headline."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "This pair identifies the two changes relevant to the shorter wait.",
+    "evidenceExplanation": "This pair identifies the two changes relevant to the shorter wait.",
+    "reasoningQuestion": "Why does this pair of details support a cautious conclusion?",
+    "reasoningOptions": [
+      "It proves both changes mattered equally.",
+      "It shows that two relevant conditions changed, so one cause cannot be isolated.",
+      "It tells us nobody waited at all."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "The notes show possible explanations but do not measure the effect of each separately.",
+    "reasoningExplanation": "The notes show possible explanations but do not measure the effect of each separately.",
+    "prompt": "Explain the shorter wait without overstating what the notes prove. Use one paragraph for the observations and one for possible explanations and a next check.",
+    "frame": "Paragraph 1: The notes show… They also show…\n\nParagraph 2: One possible explanation is… However… A useful next check would…",
+    "vocab": "contribute",
+    "definition": "To play a part in making something happen.",
+    "color": "blue",
+    "week": 2,
+    "genre": "informational scenario",
+    "talk": "What extra observation would help distinguish the possible explanations?"
+  },
+  {
+    "id": "g4-guides",
+    "title": "Two Ways to Explain a Visit",
+    "subtitle": "Find the guide that answers your question.",
+    "label": "Two Ways to Explain a Visit",
+    "focus": "Compare text structures",
+    "pattern": "The root struct",
+    "model": "The Latin root struct relates to building. Structure can describe how parts are put together.",
+    "words": [
+      "structure",
+      "construct",
+      "reconstruct"
+    ],
+    "wordQuestion": "Which word means build again?",
+    "wordOptions": [
+      "reconstruct",
+      "construction paper",
+      "unstructured"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Combine re-, meaning again, with construct.",
+    "text": [
+      "Guide A — Before your first visit to the model-making studio, reserve a place and choose a project. When you arrive, leave your bag in the marked area and collect a tray of materials. Next, listen to a short introduction before starting work. At the end of the session, return unused materials and place your model in a box for the trip home.",
+      "Guide A continues — Each step prepares you for the next. Reserving a place helps the studio prepare enough trays. Keeping bags in one area leaves room around the worktables. Returning unused materials makes them available for later visitors. The guide follows a visit from planning through departure.",
+      "Guide B — The studio offers a quiet table and a group table. Both have the same basic materials and an instructor nearby. The quiet table suits visitors who prefer to think without conversation. At the group table, visitors can discuss designs as they build. Neither table requires visitors to finish a model at the same speed.",
+      "Guide B continues — The quiet table has fewer seats, while the group table has a larger shared work area. Visitors may ask to switch if a place opens. This guide helps readers compare the two choices before deciding where they might work comfortably. It does not give every step of a visit in time order."
+    ],
+    "question": "How do the guides organize their information differently?",
+    "options": [
+      "Both only explain a single accident.",
+      "Guide A follows a sequence; Guide B compares choices.",
+      "Guide A gives opinions only; Guide B lists dates."
+    ],
+    "answer": 1,
+    "hint": "Ask whether each guide answers “What next?” or “How are the choices alike and different?”",
+    "explanation": "Guide A follows the visit, while Guide B compares the table options.",
+    "evidenceOptions": [
+      "Both guides name the studio.",
+      "Both guides mention materials.",
+      "Guide A moves from reserving to leaving; Guide B compares the quiet and group tables."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The details show the different organizing patterns, not just their shared topic.",
+    "evidenceExplanation": "The details show the different organizing patterns, not just their shared topic.",
+    "reasoningQuestion": "Why is naming the guides’ shared materials less useful for this question?",
+    "reasoningOptions": [
+      "It shows a shared topic but does not explain the different structures.",
+      "Materials cannot appear in a guide.",
+      "It proves the guides have different authors."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "The question asks how information is arranged, not only what it is about.",
+    "reasoningExplanation": "The question asks how information is arranged, not only what it is about.",
+    "prompt": "Compare the guides in two paragraphs. Explain each structure, give an example, and name a reader question that each guide answers.",
+    "frame": "Paragraph 1: Guide A is organized by… For example… It helps a reader who asks…\n\nParagraph 2: In contrast, Guide B… It helps a reader who asks…",
+    "vocab": "sequence",
+    "definition": "An order in which events or steps occur.",
+    "color": "blue",
+    "week": 2,
+    "genre": "paired fictional guides",
+    "talk": "Which guide would help you decide where to sit? Which would help you prepare to leave?"
+  },
+  {
+    "id": "g4-mural",
+    "title": "One Mural, Two Accounts",
+    "subtitle": "A journal and a report reveal different parts.",
+    "label": "One Mural, Two Accounts",
+    "focus": "Firsthand and secondhand accounts",
+    "pattern": "The root aud",
+    "model": "The Latin root aud relates to hearing. Audible describes something that can be heard.",
+    "words": [
+      "audible",
+      "inaudible",
+      "audience"
+    ],
+    "wordQuestion": "What does inaudible mean?",
+    "wordOptions": [
+      "Heard twice",
+      "Not able to be heard",
+      "Written for a group"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "In- can mean not; audible means able to be heard.",
+    "text": [
+      "Account A — Volunteer’s journal: I helped paint the community mural on Saturday. My first brushstroke shook because I was worried about painting outside the outline. The artist showed me how to steady my hand against the wall. By afternoon, I was filling a blue section beside a neighbor I had never met. I left tired and pleased that I had tried something unfamiliar.",
+      "Account A continues: The moment I remember most was stepping back and spotting my section among everyone else’s colors. I cannot describe every part of the project because I spent most of the day at one end of the wall. I did not attend the early planning meetings or count all the volunteers.",
+      "Account B — Newsletter report: According to the project organizer, planning began six weeks before the painting day. Volunteers prepared the wall on Friday, and three groups painted on Saturday. The newsletter writer interviewed the organizer and two volunteers after the event. The report described how materials were gathered and how teams divided the wall into sections.",
+      "Account B continues: The writer did not paint at the event. Instead, the report brought together information from interviews and the schedule. It explained the project’s organization across several stages, while the journal focused on one participant’s feelings and experience. Readers could use both accounts to understand different aspects of the same mural."
+    ],
+    "question": "How do the accounts differ in focus?",
+    "options": [
+      "A gives one participant’s experience; B explains broader organization using gathered information.",
+      "A counts every volunteer; B describes only its writer’s brushstroke.",
+      "Both writers painted beside the same neighbor."
+    ],
+    "answer": 0,
+    "hint": "Compare what each writer experienced directly and what each reports.",
+    "explanation": "The journal provides a firsthand perspective; the newsletter gathers information about the whole project.",
+    "evidenceOptions": [
+      "The mural includes blue paint.",
+      "The journal describes a shaky first brushstroke; the report uses interviews and a schedule to explain planning.",
+      "The painting happened on Saturday."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The pair shows personal experience in A and information gathered from others in B.",
+    "evidenceExplanation": "The pair shows personal experience in A and information gathered from others in B.",
+    "reasoningQuestion": "Why does this pair explain the difference better than the shared date?",
+    "reasoningOptions": [
+      "It proves one account is automatically true and the other false.",
+      "A date can never be included in evidence.",
+      "It identifies each writer’s access to information and chosen focus."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "Firsthand and secondhand accounts can both be useful; examine how each obtains and presents information.",
+    "reasoningExplanation": "Firsthand and secondhand accounts can both be useful; examine how each obtains and presents information.",
+    "prompt": "Compare the accounts in two paragraphs. Identify the information each adds, with one example from each. Explain why a reader might use both.",
+    "frame": "Paragraph 1: Account A is firsthand because… It adds…\n\nParagraph 2: Account B uses… It adds… Together…",
+    "vocab": "firsthand",
+    "definition": "Based on directly taking part in or witnessing an experience.",
+    "color": "amber",
+    "week": 3,
+    "genre": "paired fictional accounts",
+    "talk": "Does firsthand always mean complete? What does the volunteer admit not knowing?"
+  },
+  {
+    "id": "g4-route",
+    "title": "Which Way to the Pavilion?",
+    "subtitle": "A useful route depends on the purpose.",
+    "label": "Which Way to the Pavilion?",
+    "focus": "Different priorities in two sources",
+    "pattern": "Use a definition clue",
+    "model": "A writer may explain a word after a dash: “a detour — a different route around a closed path.”",
+    "words": [
+      "detour",
+      "route",
+      "destination"
+    ],
+    "wordQuestion": "What is a detour?",
+    "wordOptions": [
+      "A place where a trip ends",
+      "A measurement of speed",
+      "A different route around an obstacle"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Use the explanation after the dash.",
+    "text": [
+      "Source A — Walk leader’s note: Our club usually reaches the park pavilion by the gravel trail. It is the shorter route, and its broad open section lets the group see the pavilion early. For a small group carrying light bags, this route saves time. However, after rain, water sometimes collects in a low section, making the surface uneven and muddy.",
+      "Source A continues: I recommend checking the low section before a walk. If it is dry, the gravel trail can be a convenient choice. My note comes from leading short walks with club members, not from testing every kind of equipment or every visitor’s needs. The shorter distance is useful, but it is not the only consideration.",
+      "Source B — Event helper’s note: We moved supply carts to the pavilion for a workshop. The paved route took longer, but its smooth surface made the carts easier to guide. We did not need to carry boxes over the low gravel section. The path had a wide turn near the pavilion where we could pause without blocking others.",
+      "Source B continues: For groups moving supplies, I recommend allowing extra time for the paved route. This recommendation is based on that delivery trip. A visitor choosing a route should consider the day’s conditions and the group’s needs. A route that is convenient for one purpose may be less useful for another."
+    ],
+    "question": "Why do the sources favor different routes?",
+    "options": [
+      "They disagree about where the pavilion is.",
+      "They consider different needs: a shorter walk and moving supplies smoothly.",
+      "Neither source knows anything about the paths."
+    ],
+    "answer": 1,
+    "hint": "Compare the purpose of each trip.",
+    "explanation": "The recommendations reflect different priorities rather than a simple contradiction.",
+    "evidenceOptions": [
+      "A values the shorter route for lightly loaded walkers; B values the smooth surface for carts.",
+      "Both sources mention the pavilion.",
+      "B describes a wide turn."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "The paired priorities explain why the routes are recommended for different situations.",
+    "evidenceExplanation": "The paired priorities explain why the routes are recommended for different situations.",
+    "reasoningQuestion": "Why is a detail from each source needed here?",
+    "reasoningOptions": [
+      "The longest source must decide every question.",
+      "Two sources always prove the same recommendation.",
+      "The comparison depends on understanding both purposes, not just one feature."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "A comparison explains how the choices relate to the needs described in each source.",
+    "reasoningExplanation": "A comparison explains how the choices relate to the needs described in each source.",
+    "prompt": "Explain how a group should compare the routes. Give the advantages and limits described in each source, then recommend a route for moving supply carts.",
+    "frame": "Paragraph 1: Source A emphasizes… Its limitation is…\n\nParagraph 2: Source B emphasizes… For a supply delivery, I recommend… because…",
+    "vocab": "priority",
+    "definition": "Something treated as especially important when making a choice.",
+    "color": "amber",
+    "week": 3,
+    "genre": "paired fictional notes",
+    "talk": "What new information would you need before advising a different group of visitors?"
+  },
+  {
+    "id": "g4-museum",
+    "title": "The Case for a Quiet Hour",
+    "subtitle": "Connect two writers’ concerns in one plan.",
+    "label": "The Case for a Quiet Hour",
+    "focus": "Claims and relevant reasons",
+    "pattern": "The suffix -ist",
+    "model": "The suffix -ist can name a person who practices or studies something: art → artist.",
+    "words": [
+      "artist",
+      "scientist",
+      "novelist"
+    ],
+    "wordQuestion": "Which word names a person who writes novels?",
+    "wordOptions": [
+      "novelist",
+      "novelty",
+      "novel chapter"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Find the word ending in -ist.",
+    "text": [
+      "Letter A — A visitor’s proposal: I suggest a weekly quiet hour at the local model museum. During that hour, the recorded demonstrations could be turned off and visitors could read the captions or ask staff for explanations. On my last visit, the overlapping recordings made it difficult for me to follow one display. A quieter option could help visitors who prefer less background sound.",
+      "Letter A continues: I do not suggest removing demonstrations from every visit. Some visitors enjoy them. A clearly advertised quiet hour would give families a choice, and the museum could ask for comments after trying it for a month. My experience describes one visit, so staff should gather other visitors’ views before making a permanent schedule.",
+      "Letter B — A volunteer’s response: I support trying the quiet hour if visitors can still understand the moving models. Several demonstrations currently explain a sequence that is not described fully on the labels. Before turning off the recordings, we should add clear written steps and make sure someone is available to answer questions.",
+      "Letter B continues: A trial should check both sound comfort and access to explanations. We could ask whether visitors found the models easier to explore and whether the captions answered their questions. The goal is to offer a useful choice, so reducing sound and preserving information should be planned together."
+    ],
+    "question": "What plan combines the main concerns of both letters?",
+    "options": [
+      "Remove all explanations permanently.",
+      "Keep every recording on during the quiet hour.",
+      "Try a quiet hour with clearer captions and staff help, then gather feedback."
+    ],
+    "answer": 2,
+    "hint": "A wants less background sound; B wants the explanations to remain available.",
+    "explanation": "The combined plan addresses sound preferences and access to information.",
+    "evidenceOptions": [
+      "A visited the museum once.",
+      "A proposes a quieter option; B asks for written steps and someone to answer questions.",
+      "The museum has moving models."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The pair states the two needs the combined plan must address.",
+    "evidenceExplanation": "The pair states the two needs the combined plan must address.",
+    "reasoningQuestion": "Why is this pair more useful than simply noting that the museum has models?",
+    "reasoningOptions": [
+      "It links the recommendation to the specific needs raised by both writers.",
+      "It proves every visitor dislikes recordings.",
+      "It tells the museum’s exact operating hours."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "Relevant reasons explain why the proposed action fits the problem.",
+    "reasoningExplanation": "Relevant reasons explain why the proposed action fits the problem.",
+    "prompt": "Explain a trial plan that responds to both letters. Use one paragraph for the needs and one for the proposed changes and how to check them.",
+    "frame": "Paragraph 1: Letter A raises… Letter B adds…\n\nParagraph 2: A combined trial could… Staff could check…",
+    "vocab": "claim",
+    "definition": "A point a writer asks readers to accept, usually supported with reasons or evidence.",
+    "color": "amber",
+    "week": 3,
+    "genre": "paired fictional letters",
+    "talk": "What information would help decide whether to keep the trial after a month?"
+  },
+  {
+    "id": "g4-archive",
+    "title": "What the Archive Can Tell Us",
+    "subtitle": "Separate planned events from remembered experiences.",
+    "label": "What the Archive Can Tell Us",
+    "focus": "Combine sources without overclaiming",
+    "pattern": "The prefix trans-",
+    "model": "The prefix trans- can mean across. Transatlantic describes something across the Atlantic Ocean.",
+    "words": [
+      "transfer",
+      "transport",
+      "transatlantic"
+    ],
+    "wordQuestion": "In transatlantic, what does trans- contribute?",
+    "wordOptions": [
+      "Below",
+      "Across",
+      "Again"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Use the explanation in the model.",
+    "text": [
+      "Source A — An old festival program: The program for the town’s first story festival lists four events: a morning reading, a puppet performance, a family story circle, and an evening concert. It names the community hall as the location and thanks a volunteer team. It does not record how many people attended or which event they liked best.",
+      "Source A continues: A printed program shows what organizers planned to offer. It may not show every change made during the day. A reader who wants to know what actually happened would need another source, such as a participant’s account or a report written after the event.",
+      "Source B — A participant’s letter: “I went to the morning reading with my brother. Later, we watched the puppet performance in the small room. It had moved there because the large room was being prepared for the story circle. We left before the concert. I especially enjoyed hearing our neighbor read a story she had written.”",
+      "Source B continues: The letter adds an experience from part of the day and describes a location change inside the hall. It cannot establish attendance totals or how everyone felt. Together, the program and letter show planned activities and one person’s experience, while leaving some questions unanswered. Neither source alone supplies a complete history of the festival."
+    ],
+    "question": "Which statement combines information from both sources accurately?",
+    "options": [
+      "All visitors preferred the concert.",
+      "The program planned several activities, and a participant describes attending two of them with one room change.",
+      "The festival had no morning reading."
+    ],
+    "answer": 1,
+    "hint": "Keep plans separate from one participant’s experience.",
+    "explanation": "The program documents planned activities; the letter describes the reading and changed puppet location.",
+    "evidenceOptions": [
+      "The program thanks volunteers.",
+      "The letter writer has a brother.",
+      "The program lists a reading and puppet performance; the letter describes the reading and finding the puppets in another room."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The overlapping activities allow the planned and experienced parts to be connected.",
+    "evidenceExplanation": "The overlapping activities allow the planned and experienced parts to be connected.",
+    "reasoningQuestion": "Why does this evidence not support a claim about everyone’s favorite event?",
+    "reasoningOptions": [
+      "A program and one letter do not report every attendee’s preference.",
+      "Printed programs are always incorrect.",
+      "A person cannot enjoy a morning event."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "Match the size of a claim to what the sources actually document.",
+    "reasoningExplanation": "Match the size of a claim to what the sources actually document.",
+    "prompt": "Write an explanation using both sources. Separate what was planned from what the participant reports, and end with one question the sources cannot answer.",
+    "frame": "Paragraph 1: The program shows… It does not tell…\n\nParagraph 2: The letter adds… Together… A remaining question is…",
+    "vocab": "archive",
+    "definition": "A collection of records kept to preserve information about the past.",
+    "color": "amber",
+    "week": 3,
+    "genre": "paired fictional archive sources",
+    "talk": "What kind of additional record could help answer your remaining question?"
+  },
+  {
+    "id": "g4-sort",
+    "title": "From Notes to an Explanation",
+    "subtitle": "Arrange information so readers can follow it.",
+    "label": "From Notes to an Explanation",
+    "focus": "Group related information",
+    "pattern": "Use precise word choice",
+    "model": "Specific verbs help readers understand an action. Compare “They did the books” with “They sorted the books by topic.”",
+    "words": [
+      "sort",
+      "label",
+      "compare"
+    ],
+    "wordQuestion": "Which sentence most clearly describes organizing books?",
+    "wordOptions": [
+      "They sorted the books into topic groups.",
+      "They did something with the books.",
+      "The books were really nice."
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Choose a verb and detail that name the action.",
+    "text": [
+      "The reading club wanted to explain how it organized a traveling book display. Its notes were written on small cards: choose books about local places; check each book for loose pages; write a short topic label; make sure the titles can be seen; group similar books together; place a return basket beside the display; invite visitors to suggest a topic for next month.",
+      "At first, the writer copied the cards in the order they had fallen onto the desk. One sentence described repairing pages, the next described visitor suggestions, and the third returned to choosing books. The paragraph contained useful facts, but readers had to work hard to understand how those facts connected.",
+      "The club sorted the notes into three groups: selecting and checking books, arranging and labeling the display, and helping visitors use it. Each group could become a paragraph with a clear opening sentence. Within each paragraph, the writer could put related actions together and explain why they mattered.",
+      "The revised explanation would not need to add new facts just to become longer. Its improvement would come from making relationships visible. A reader interested in returning a book could look in the visitor section, while a volunteer preparing the display could begin with the selection section. Organization would help different readers find the information they needed."
+    ],
+    "question": "Which grouping best helps readers follow the explanation?",
+    "options": [
+      "Put the shortest notes first, regardless of topic.",
+      "Mix a note from every group in each sentence.",
+      "Group selection, arrangement, and visitor-use notes into separate sections."
+    ],
+    "answer": 2,
+    "hint": "Choose groups based on related ideas and reader needs.",
+    "explanation": "Topic groups help each paragraph serve a clear purpose.",
+    "evidenceOptions": [
+      "The notes were written on cards.",
+      "The club formed groups for choosing and checking, arranging and labeling, and helping visitors.",
+      "The return basket was beside the display."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The three groups show how related information can be organized for readers.",
+    "evidenceExplanation": "The three groups show how related information can be organized for readers.",
+    "reasoningQuestion": "Why is grouping by topic more useful than grouping only by sentence length?",
+    "reasoningOptions": [
+      "Long sentences always contain the most important information.",
+      "Readers need related ideas together to understand a process or find information.",
+      "Every paragraph must have the same number of words."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "Organization follows meaning and purpose, not just the size of the sentences.",
+    "reasoningExplanation": "Organization follows meaning and purpose, not just the size of the sentences.",
+    "prompt": "Write two short information paragraphs about the display. Group selecting/checking details in the first and arrangement/visitor-use details in the second. Add a useful heading for each.",
+    "frame": "Heading: Preparing the Books\nThe club first… This helps…\n\nHeading: Using the Display\nThe display… Visitors can…",
+    "vocab": "category",
+    "definition": "A group of things that share a relevant feature.",
+    "color": "green",
+    "week": 4,
+    "genre": "informational scenario",
+    "talk": "Could a different set of headings also work? Explain how it would help a specific reader."
+  },
+  {
+    "id": "g4-paraphrase",
+    "title": "Borrow the Idea, Keep Your Voice",
+    "subtitle": "Keep the meaning while changing the wording.",
+    "label": "Borrow the Idea, Keep Your Voice",
+    "focus": "Accurate paraphrasing",
+    "pattern": "The root bio",
+    "model": "The Greek root bio means life. A biography is a written account of a person’s life.",
+    "words": [
+      "biography",
+      "biology",
+      "biographer"
+    ],
+    "wordQuestion": "What is a biography?",
+    "wordOptions": [
+      "A list of every book in a library",
+      "A diagram of a building",
+      "An account of a person’s life"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Combine the model’s life and written-account meanings.",
+    "text": [
+      "Source note — The art club keeps usable scraps in clear containers labeled by material. Small paper pieces go in one container, fabric pieces in another, and cardboard in a third. Before starting a project, students look through the containers to see whether a saved piece will meet their needs. New materials are available when the scraps are unsuitable.",
+      "A writer wanted to explain this routine in a school guide. Her first draft copied the source note almost word for word. Changing “students” to “children” did not make the wording her own. She needed to understand the idea, put the source aside, and explain the routine in a new sentence pattern while keeping its meaning.",
+      "She tried: “The art club sorts reusable pieces by material so students can check them before choosing new supplies.” This version combined related details without claiming that the club never uses new materials. She named the art club’s source note below her paragraph so readers could tell where the information came from.",
+      "Then she checked her wording against the original. She had not included every container example, but the main routine and its purpose remained clear. A paraphrase can be shorter than its source. It must still preserve the important meaning, avoid adding unsupported claims, and acknowledge the source of the borrowed information."
+    ],
+    "question": "Which paraphrase best preserves the source note’s meaning?",
+    "options": [
+      "The club sorts usable scraps for students to check before choosing new materials.",
+      "The club never allows students to use new supplies.",
+      "All art clubs use only cardboard."
+    ],
+    "answer": 0,
+    "hint": "Keep both reuse and the option of new materials.",
+    "explanation": "The paraphrase retains the routine without turning a preference into an absolute rule.",
+    "evidenceOptions": [
+      "The writer made a school guide.",
+      "The source says students check saved pieces first and can use new materials when scraps are unsuitable.",
+      "There are three containers in the example."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "Both parts of the original routine are needed to avoid an inaccurate absolute claim.",
+    "evidenceExplanation": "Both parts of the original routine are needed to avoid an inaccurate absolute claim.",
+    "reasoningQuestion": "Why would “The club never uses new supplies” be weaker than the selected paraphrase?",
+    "reasoningOptions": [
+      "It is shorter than the original note.",
+      "It leaves out the color of the containers.",
+      "It contradicts the source’s explicit allowance for new materials."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "An accurate paraphrase must keep qualifications that affect the meaning.",
+    "reasoningExplanation": "An accurate paraphrase must keep qualifications that affect the meaning.",
+    "prompt": "Explain the club’s routine in your own words, then explain one choice you made to keep your paraphrase accurate. Name the source note. Use two short paragraphs.",
+    "frame": "Paragraph 1: According to the art club’s source note…\n\nParagraph 2: I kept the idea that… I avoided saying… because…",
+    "vocab": "paraphrase",
+    "definition": "An explanation of someone else’s information in your own wording while keeping its meaning.",
+    "color": "green",
+    "week": 4,
+    "genre": "fictional source and writing workshop",
+    "talk": "How can you tell whether a changed word also changes the original meaning?"
+  },
+  {
+    "id": "g4-revision",
+    "title": "The Claim That Grew Too Big",
+    "subtitle": "Match a statement to what the notes really show.",
+    "label": "The Claim That Grew Too Big",
+    "focus": "Revise for precision",
+    "pattern": "Qualifiers change a claim",
+    "model": "Words such as some, often, and may limit a claim. All, always, and must make a much broader claim.",
+    "words": [
+      "some",
+      "often",
+      "may"
+    ],
+    "wordQuestion": "Which wording is limited to the people actually asked?",
+    "wordOptions": [
+      "Everyone in town agrees.",
+      "Six of the eight respondents agree.",
+      "Nobody could disagree."
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Keep the statement within the available group.",
+    "text": [
+      "A class tested a new label system for its puzzle shelf. Eight students tried finding a puzzle using labels that showed the number of pieces and a small picture. Six found their chosen puzzle without asking for help. Two asked a volunteer to explain the labels. The class recorded these results and saved the questions the two students asked.",
+      "For the newsletter, Cam wrote, “Our perfect labels help everyone find a puzzle immediately.” His partner compared that sentence with the notes. The class had not tested everyone, the notes did not measure how many seconds each search took, and two students had needed help. The claim was larger than the evidence.",
+      "Cam revised the sentence: “In our trial, six of eight students found their chosen puzzle without asking for help.” He added that two students needed an explanation. In the next paragraph, he proposed making one symbol clearer and trying the labels with another group. The revision gave readers both the useful result and a limitation.",
+      "The new report sounded less dramatic, but it was more informative. It distinguished what the class observed from what it hoped would happen later. Readers could judge the trial and understand the next step. Cam learned that precision sometimes requires replacing an impressive word with a specific number or a carefully limited statement."
+    ],
+    "question": "Which revision best matches the evidence?",
+    "options": [
+      "The labels are perfect for everyone.",
+      "No student understood the labels.",
+      "Six of eight students found a puzzle without help, while two needed an explanation."
+    ],
+    "answer": 2,
+    "hint": "Include both successful searches and the students who needed help.",
+    "explanation": "The revised claim accurately describes the observed group and its mixed results.",
+    "evidenceOptions": [
+      "Six students found their puzzle without help, and two asked for an explanation.",
+      "Cam wrote for a newsletter.",
+      "The shelf held puzzles."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "These counts directly support a limited description of the trial.",
+    "evidenceExplanation": "These counts directly support a limited description of the trial.",
+    "reasoningQuestion": "Why do the counts support this revision better than the word perfect?",
+    "reasoningOptions": [
+      "Numbers always prove that a design will work forever.",
+      "The counts describe the observed results, including a limitation the absolute claim hides.",
+      "The word perfect is too difficult to spell."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "A precise statement reports the evidence and does not erase exceptions.",
+    "reasoningExplanation": "A precise statement reports the evidence and does not erase exceptions.",
+    "prompt": "Write a two-paragraph report of the label trial. First explain the results accurately. Then propose a specific revision and a follow-up test, keeping observations separate from predictions.",
+    "frame": "Paragraph 1: In this trial… However…\n\nParagraph 2: I recommend… This may… To check it, the class could…",
+    "vocab": "qualification",
+    "definition": "A word or explanation that limits a statement so it is more accurate.",
+    "color": "green",
+    "week": 4,
+    "genre": "informational scenario",
+    "talk": "Find a word in your writing that might make a claim larger than your evidence."
+  },
+  {
+    "id": "g4-exhibit",
+    "title": "An Exhibit Everyone Can Explore",
+    "subtitle": "Bring two sources together in a clear report.",
+    "label": "An Exhibit Everyone Can Explore",
+    "focus": "Final information report",
+    "pattern": "Link a detail to an explanation",
+    "model": "Use for example to introduce a detail and as a result to connect a cause with its outcome. Choose the relationship you mean.",
+    "words": [
+      "for example",
+      "in contrast",
+      "as a result"
+    ],
+    "wordQuestion": "“The entrance table blocked the path. ___, visitors had to move around it.” Which link fits?",
+    "wordOptions": [
+      "In contrast",
+      "For example",
+      "As a result"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "The second statement describes an outcome of the first.",
+    "text": [
+      "Source A — Visitor observation notes: During a trial of the class invention exhibit, visitors gathered around the first table near the entrance. Some stopped there because it held the only printed guide. This made it difficult for people behind them to enter. Farther inside, the model tables had space around them, but two visitors asked where the next part of the exhibit began.",
+      "Source A continues: Observers suggested putting guides in two locations away from the doorway and adding numbered signs to the model tables. They did not test those changes during the trial. The notes describe where people paused and what they asked, so they are evidence about navigation rather than proof that visitors learned every invention’s purpose.",
+      "Source B — Student presenter notes: Presenters noticed that visitors often asked what problem each model solved. Some table cards named only the invention and its maker. Presenters suggested adding a one-sentence purpose statement and a labeled drawing to each card. They wanted visitors to understand the main idea even when a presenter was speaking to someone else.",
+      "Source B continues: The presenters still wanted time for questions and discussion. Written cards would provide a starting point, not replace every conversation. A useful revision plan could address both moving through the exhibit and understanding its content. After making changes, the class would need another trial to check whether visitors could find the next table and explain a model’s purpose."
+    ],
+    "question": "Which plan uses both sources most effectively?",
+    "options": [
+      "Move guide pickup away from the door, add numbered signs, and improve model explanations before another trial.",
+      "Add more decorations only to the first table.",
+      "Remove all presenters and declare the exhibit successful."
+    ],
+    "answer": 0,
+    "hint": "Connect Source A’s navigation needs with Source B’s explanation needs.",
+    "explanation": "The combined plan addresses movement and understanding, with a follow-up check rather than an unsupported success claim.",
+    "evidenceOptions": [
+      "The exhibit includes inventions made by students.",
+      "A reports entrance crowding and questions about the route; B reports questions about model purposes and incomplete cards.",
+      "The model tables have space around them."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The paired details identify the different needs the final plan should address.",
+    "evidenceExplanation": "The paired details identify the different needs the final plan should address.",
+    "reasoningQuestion": "Why is evidence from both notes necessary for this recommendation?",
+    "reasoningOptions": [
+      "Both sources must have identical wording to be useful.",
+      "The longer source should replace the shorter one.",
+      "The plan covers navigation and understanding, and each source supplies relevant information about one of those needs."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "A report combining sources should show what each contributes to the recommendation.",
+    "reasoningExplanation": "A report combining sources should show what each contributes to the recommendation.",
+    "prompt": "Write a two-paragraph information report with useful headings. Explain navigation needs and changes in the first paragraph, then information needs and changes in the second. Use details from Sources A and B, explain the connections, and close with a follow-up check.",
+    "frame": "Heading: Moving Through the Exhibit\nSource A reports… A useful change is… because…\n\nHeading: Understanding the Models\nSource B adds… The class could… In the next trial…",
+    "vocab": "synthesis",
+    "definition": "An explanation that brings relevant information from different sources together.",
+    "color": "green",
+    "week": 4,
+    "genre": "paired fictional reports",
+    "talk": "Ask a reader to identify which source supports each part of your plan. Revise any unclear connection."
+  }
+];
+export const gradeFourUnits = [
+  {
+    "week": 1,
+    "title": "Reading Between the Lines",
+    "goal": "Support inferences, character explanations, themes, and summaries with relevant details.",
+    "project": "Summarize The Last Lantern, then explain its solution with text evidence.",
+    "family": "Ask what a detail shows, not just where it appears. Compare a relevant action with a detail that only describes the setting."
+  },
+  {
+    "week": 2,
+    "title": "How Ideas Work",
+    "goal": "Explain structure, sequence, causes, and the limits of a conclusion.",
+    "project": "Compare two studio guides and explain which reader questions each answers.",
+    "family": "Ask how paragraphs connect: time order, cause and effect, comparison, or problem and solution."
+  },
+  {
+    "week": 3,
+    "title": "Two Sources, One Topic",
+    "goal": "Compare accounts and priorities, then combine information without overclaiming.",
+    "project": "Use a fictional festival program and letter to explain what is known and what remains uncertain.",
+    "family": "Ask what each source adds and what neither source can prove. A firsthand account can be useful without being complete."
+  },
+  {
+    "week": 4,
+    "title": "The Information Studio",
+    "goal": "Group notes, paraphrase accurately, qualify claims, and draft an information report.",
+    "project": "Write a two-paragraph exhibit report using two sources and a follow-up check.",
+    "family": "Review headings, relevant details, source labels, explanations, and a closing idea. Discuss one specific revision together."
+  }
+];
+export const lessons = [...coreLessons,...kindergartenLessons,...gradeThreeLessons,...gradeFourLessons];
 export const isKindergarten=(id:string)=>id.startsWith('k-');
-export const courseLessons=(grade:string)=>grade==='K'?kindergartenLessons:grade==='3'?gradeThreeLessons:coreLessons;
-export const courseUnits=(grade:string)=>grade==='K'?kindergartenUnits:grade==='3'?gradeThreeUnits:units;
+export const courseLessons=(grade:string)=>grade==='K'?kindergartenLessons:grade==='3'?gradeThreeLessons:grade==='4'?gradeFourLessons:coreLessons;
+export const courseUnits=(grade:string)=>grade==='K'?kindergartenUnits:grade==='3'?gradeThreeUnits:grade==='4'?gradeFourUnits:units;
 export const isGradeThree=(id:string)=>id.startsWith('g3-');
-export const evidenceFor=(id:string)=>gradeThreeLessons.find(l=>l.id===id);
-export const minimumWords=(id:string)=>isKindergarten(id)?1:isGradeThree(id)?20:6;
+export const isGradeFour=(id:string)=>id.startsWith('g4-');
+export const reasoningFor=(id:string)=>gradeFourLessons.find(l=>l.id===id);
+export const evidenceFor=(id:string)=>gradeThreeLessons.find(l=>l.id===id)??reasoningFor(id);
+export const minimumWords=(id:string)=>isKindergarten(id)?1:isGradeThree(id)?20:isGradeFour(id)?40:6;
 export const wordCount=(s:string)=>s.trim()?s.trim().split(/\s+/).length:0;
 export const emptyRecord=(id:string):RecordData=>({lessonId:id,step:0,answers:{},draft:'',completed:false});

@@ -35,8 +35,8 @@ assert.equal(content.courseLessons('K').filter(l=>kenv.store.loadProgress(kid)[l
 assert.equal(content.courseLessons('1').filter(l=>kenv.store.loadProgress(kid)[l.id]?.completed).length,1);
 assert.equal(kenv.store.loadProgress(kid)[klesson.id].draft,'hat');
 kenv.store.saveGrade('K',kid);const kb=kenv.store.createBackup();const kr=setup().store.restoreBackup(kb);assert.equal(kr.profiles[1].grade,'K');assert.equal(Object.keys(kr.profiles[1].records).length,2);
-assert.equal(lessons.length,48);assert.equal(new Set(lessons.map(l=>l.id)).size,48);
-for(const g of ['K','1','2','3']){assert.equal(content.courseLessons(g).length,16);for(let week=1;week<=4;week++)assert.equal(content.courseLessons(g).filter(l=>l.week===week).length,4)}
+assert.equal(lessons.length,64);assert.equal(new Set(lessons.map(l=>l.id)).size,64);
+for(const g of ['K','1','2','3','4']){assert.equal(content.courseLessons(g).length,16);for(let week=1;week<=4;week++)assert.equal(content.courseLessons(g).filter(l=>l.week===week).length,4)}
 for(const l of content.kindergartenLessons){assert.equal(l.wordOptions.length,3);assert.equal(l.options.length,3);assert(l.wordAnswer>=0&&l.wordAnswer<3);assert(l.answer>=0&&l.answer<3);assert.equal(l.text.length,3);assert(content.minimumWords(l.id)===1);}
 console.log('PASS: 16 K lessons, distinct course progress, K one-word completion, blank rejection, older six-word rule, mixed-course backup restore.');
 
@@ -52,3 +52,21 @@ const g3backup=g3env.store.createBackup();const g3restored=setup().store.restore
 for(const l of content.gradeThreeLessons){assert.equal(l.text.length,3);assert(content.wordCount(l.text.join(' '))>=100);assert.equal(l.wordOptions.length,3);assert.equal(l.options.length,3);assert.equal(l.evidenceOptions.length,3);for(const a of [l.wordAnswer,l.answer,l.evidenceAnswer])assert(Number.isInteger(a)&&a>=0&&a<=2);assert(content.minimumWords(l.id)===20);assert.equal(content.evidenceFor(l.id).id,l.id);assert(g3env.store.validateRecord({...g3record,lessonId:l.id,answers:{word:{choice:l.wordAnswer,attempts:1,hinted:false},meaning:{choice:l.answer,attempts:1,hinted:false},evidence:{choice:l.evidenceAnswer,attempts:1,hinted:false}}}))}
 assert.equal(content.minimumWords('beavers'),6);assert.equal(content.minimumWords('k-rhyme'),1);
 console.log('PASS: 16 Grade 3 lessons; evidence required and validated; 20-word participation threshold; K/1/2 rules preserved; mixed-course progress and evidence backup round trip.');
+
+const g4env=setup();const g4profile=g4env.store.addProfile('Evidence Explorer','4').activeId;
+const g4lesson=content.gradeFourLessons[0];const g4record={lessonId:g4lesson.id,step:4,completed:true,draft:'Lena values accurate information because she stops to check the mill location instead of guessing. She asks another volunteer to help and then shares the correct answer with the visitor.\n\nLater, she adds a label to her notes and checks another unfamiliar street. These actions suggest that she cares about learning and giving reliable directions.',answers:{word:{choice:g4lesson.wordAnswer,attempts:1,hinted:false},meaning:{choice:g4lesson.answer,attempts:1,hinted:false},evidence:{choice:g4lesson.evidenceAnswer,attempts:2,hinted:true},reasoning:{choice:g4lesson.reasoningAnswer,attempts:2,hinted:true}}};
+assert(g4env.store.validateRecord(g4record));
+const missingReason=structuredClone(g4record);delete missingReason.answers.reasoning;assert(!g4env.store.validateRecord(missingReason));assert(!g4env.store.validateRecord({...missingReason,completed:false}));
+const wrongReason=structuredClone(g4record);wrongReason.answers.reasoning.choice=(g4lesson.reasoningAnswer+1)%3;assert(!g4env.store.validateRecord(wrongReason));
+const missingEvidence=structuredClone(g4record);delete missingEvidence.answers.evidence;assert(!g4env.store.validateRecord(missingEvidence));
+assert(!g4env.store.validateRecord({...g4record,draft:Array(39).fill('word').join(' ')}));assert(g4env.store.validateRecord({...g4record,draft:Array(40).fill('word').join(' ')})); // Participation only; not an automated quality score.
+assert(g4env.store.validateRecord({...missingReason,step:2,completed:false,draft:''}));
+assert(!g4env.store.validateRecord({...g3record,answers:{...g3record.answers,reasoning:g4record.answers.reasoning}}));
+for(const record of [old,krecord,g3record,g4record])g4env.store.saveProgress(record,g4profile);
+for(const grade of ['K','1','2','3','4']){g4env.store.saveGrade(grade,g4profile);assert.equal(content.courseLessons(grade).filter(l=>g4env.store.loadProgress(g4profile)[l.id]?.completed).length,1)}
+const g4backup=g4env.store.createBackup();const g4target=setup();const g4restored=g4target.store.restoreBackup(g4backup).profiles.find(p=>p.grade==='4');assert(g4restored);assert.equal(Object.keys(g4restored.records).length,4);assert.equal(g4restored.records[g4lesson.id].answers.reasoning.attempts,2);assert.equal(g4restored.records[g4lesson.id].draft,g4record.draft);
+const mixedBackup=g4target.store.parseBackup(JSON.stringify(g4target.store.createBackup()));assert.equal(mixedBackup.profiles.length,2);
+const tampered=structuredClone(g4backup);delete tampered.profiles.find(p=>p.grade==='4').records[g4lesson.id].answers.reasoning;const safeBefore=JSON.stringify(g4target.store.loadWorkspace());assert.throws(()=>g4target.store.restoreBackup(tampered));assert.equal(JSON.stringify(g4target.store.loadWorkspace()),safeBefore);
+for(const l of content.gradeFourLessons){assert.equal(l.text.length,4);assert(content.wordCount(l.text.join(' '))>=180);for(const options of [l.wordOptions,l.options,l.evidenceOptions,l.reasoningOptions])assert.equal(options.length,3);for(const a of [l.wordAnswer,l.answer,l.evidenceAnswer,l.reasoningAnswer])assert(Number.isInteger(a)&&a>=0&&a<=2);assert.equal(content.minimumWords(l.id),40);assert.equal(content.reasoningFor(l.id).id,l.id);assert.equal(content.evidenceFor(l.id).id,l.id);assert(g4env.store.validateRecord({...g4record,lessonId:l.id,answers:{word:{choice:l.wordAnswer,attempts:1,hinted:false},meaning:{choice:l.answer,attempts:1,hinted:false},evidence:{choice:l.evidenceAnswer,attempts:1,hinted:false},reasoning:{choice:l.reasoningAnswer,attempts:1,hinted:false}}}))}
+assert.equal(content.minimumWords('g3-notebook'),20);assert.equal(content.reasoningFor('g3-notebook'),undefined);
+console.log('PASS: 16 Grade 4 lessons; evidence and reasoning required; 40-word participation rule; earlier rules unchanged; mixed-course backups preserve paragraphs, hints, attempts; invalid reasoning restore leaves work unchanged.');
