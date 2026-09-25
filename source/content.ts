@@ -1488,10 +1488,876 @@ export const kindergartenUnits = [
     "family": "Listen to your child retell a story. Ask one gentle question about a detail."
   }
 ];
-export const lessons = [...coreLessons,...kindergartenLessons];
+export const gradeThreeLessons = [
+  {
+    "id": "g3-notebook",
+    "title": "The Notebook Clue",
+    "subtitle": "Small details can change a big guess.",
+    "label": "Grade 3",
+    "focus": "Observation & inference",
+    "pattern": "A prefix changes meaning",
+    "model": "The prefix re- can mean again: read → reread. Look at the whole word to check its meaning.",
+    "words": [
+      "reread",
+      "recheck",
+      "rebuild"
+    ],
+    "wordQuestion": "Which word means to check again?",
+    "wordOptions": [
+      "checklist",
+      "recheck",
+      "checking"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Put re- before check.",
+    "text": [
+      "Maya found a line of tiny holes in a leaf beside the school path. “A caterpillar ate this,” she said. Her partner, Eli, opened their nature notebook. “Maybe,” he replied. “But did we see a caterpillar?” Maya shook her head. They had seen only the holes and a green leaf lying on the ground.",
+      "They drew the leaf and counted six holes. Under their drawing, Eli wrote, “Six holes with uneven edges.” On another line, Maya wrote, “An animal may have eaten part of the leaf.” They marked that second line with a question mark. It was an idea to investigate, not something they had watched happen.",
+      "The next morning, they returned to the same spot. They did not find an animal, so they kept the question mark. Maya wanted an answer, but she liked having an accurate notebook even more. “We can recheck tomorrow,” she said. Their careful notes would help them remember exactly what they had noticed."
+    ],
+    "question": "Why do Maya and Eli keep the question mark?",
+    "options": [
+      "They cannot count the holes.",
+      "They forgot where the leaf was.",
+      "They have not seen what made the holes."
+    ],
+    "answer": 2,
+    "hint": "Separate what they saw from what they guessed.",
+    "explanation": "They observed holes, but the cause was still uncertain.",
+    "evidenceOptions": [
+      "They drew the leaf and counted six holes.",
+      "They did not find an animal, so they kept the question mark.",
+      "Eli opened their nature notebook."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The second sentence links the missing animal evidence to the question mark.",
+    "evidenceExplanation": "The second sentence links the missing animal evidence to the question mark.",
+    "prompt": "Explain how the notebook separates an observation from a possible explanation. Use one detail from the reading.",
+    "frame": "The notebook is careful because… For example… This shows… A question they still have is…",
+    "vocab": "observation",
+    "definition": "Something you notice directly, rather than an explanation you guess.",
+    "color": "green",
+    "week": 1,
+    "genre": "fiction",
+    "talk": "Name one thing you can observe nearby. Then offer a possible explanation and say what would help you check it."
+  },
+  {
+    "id": "g3-shade",
+    "title": "A Fair Shade Test",
+    "subtitle": "Read a procedure and explain its purpose.",
+    "label": "Grade 3",
+    "focus": "Cause & effect",
+    "pattern": "The suffix -ful",
+    "model": "The suffix -ful often means full of or having: care + ful → careful.",
+    "words": [
+      "careful",
+      "helpful",
+      "hopeful"
+    ],
+    "wordQuestion": "What does careful mean in a set of directions?",
+    "wordOptions": [
+      "Taking care with each step",
+      "Finishing without looking",
+      "Repeating every word"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Think about doing something with care.",
+    "text": [
+      "The garden club wanted to compare two places for a reading bench. One place was under a tree. The other was beside a sunny wall. Instead of choosing from memory, the students planned a small shade test. Their question was simple: Which place would feel cooler at lunchtime on that day?",
+      "They placed matching thermometers at the two spots at the same time. They kept both thermometers off the ground and waited ten minutes before reading them. The thermometer near the wall showed a higher temperature. If they had checked one spot early in the morning and the other at noon, the comparison would have been less useful.",
+      "The students recorded the time, the sky conditions, and both readings. They suggested the tree spot for the bench, but their teacher asked them to repeat the test on other days. One test gave them a useful clue. More observations could help them decide whether that clue described a pattern."
+    ],
+    "question": "Why do the students measure both spots at the same time?",
+    "options": [
+      "To make the wall shady",
+      "To make the comparison more useful",
+      "To avoid writing any notes"
+    ],
+    "answer": 1,
+    "hint": "What could change between morning and noon?",
+    "explanation": "Using the same time helps them compare the two locations without also changing the time of day.",
+    "evidenceOptions": [
+      "Their question was simple.",
+      "The students recorded the time, the sky conditions, and both readings.",
+      "If they had checked one spot early in the morning and the other at noon, the comparison would have been less useful."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The sentence about morning and noon directly explains why the timing matters.",
+    "evidenceExplanation": "The sentence about morning and noon directly explains why the timing matters.",
+    "prompt": "Explain two choices that make the shade test useful. Link a testing step to its reason.",
+    "frame": "The shade test compares… One useful step is… This matters because… Another step is…",
+    "vocab": "comparison",
+    "definition": "A look at how two or more things are alike or different.",
+    "color": "green",
+    "week": 1,
+    "genre": "informational scenario",
+    "talk": "Which detail would you record if you repeated the test? Explain why."
+  },
+  {
+    "id": "g3-seed-travel",
+    "title": "Two Ways to Travel",
+    "subtitle": "Find one idea that fits both paragraphs.",
+    "label": "Grade 3",
+    "focus": "Main idea & details",
+    "pattern": "Use context clues",
+    "model": "Read the words around an unfamiliar word. In “The burr clings, or sticks, to fur,” sticks explains clings.",
+    "words": [
+      "clings",
+      "drifts",
+      "scatters"
+    ],
+    "wordQuestion": "In “A seed drifts slowly through the air,” what does drifts mean?",
+    "wordOptions": [
+      "Digs a deep hole",
+      "Grows a new root",
+      "Moves gently along"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "The sentence describes slow movement through air.",
+    "text": [
+      "A plant stays in one place, but its seeds can move away. Moving seeds may reach places with room to grow. Different kinds of seeds travel in different ways. Their shapes can help explain how they move. Two examples are light seeds carried by wind and hooked seeds carried on an animal’s fur.",
+      "A dandelion seed has a light, fluffy part. When the wind lifts it, the seed can drift through the air before landing. The fluffy part does not work like an engine. The seed depends on moving air. Without a breeze, a seed may stay nearby rather than travel far from the plant.",
+      "A burr has small hooks that can catch on fur or clothing. The burr may cling to a passing animal and fall off somewhere else. It does not need a fluffy parachute to move. Although these seeds use different helpers, both have features that can carry them away from the parent plant."
+    ],
+    "question": "Which main idea connects the whole reading?",
+    "options": [
+      "Different seed features help seeds move.",
+      "Every seed needs an animal to travel.",
+      "Wind always carries seeds a long distance."
+    ],
+    "answer": 0,
+    "hint": "Find an idea that fits both the dandelion and the burr.",
+    "explanation": "Both examples explain how a seed feature helps it travel.",
+    "evidenceOptions": [
+      "Without a breeze, a seed may stay nearby rather than travel far from the plant.",
+      "Although these seeds use different helpers, both have features that can carry them away from the parent plant.",
+      "The fluffy part does not work like an engine."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The final sentence connects both examples to seed features and movement.",
+    "evidenceExplanation": "The final sentence connects both examples to seed features and movement.",
+    "prompt": "Write a short explanation of two ways seeds travel. Include one detail about each kind and a closing idea.",
+    "frame": "Seeds can move in different ways. For example… Another example… Both…",
+    "vocab": "feature",
+    "definition": "A noticeable part or quality of something.",
+    "color": "green",
+    "week": 1,
+    "genre": "informational text",
+    "talk": "Which two details best support the main idea? Explain how each one fits."
+  },
+  {
+    "id": "g3-nature-report",
+    "title": "A Better Nature Report",
+    "subtitle": "Compare two notes before writing.",
+    "label": "Grade 3",
+    "focus": "Compare sources",
+    "pattern": "Compound words",
+    "model": "A compound word joins two words. Note + book makes notebook. Both parts help explain the meaning.",
+    "words": [
+      "notebook",
+      "sunlight",
+      "rainfall"
+    ],
+    "wordQuestion": "Which word joins rain and fall?",
+    "wordOptions": [
+      "rainy",
+      "rainfall",
+      "falling"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Look for both complete smaller words.",
+    "text": [
+      "Note A — Monday: Our class visited the school garden at noon. The soil beside the path looked dry on top. Three children saw a butterfly near the purple flowers. We also noticed a full watering can beside the gate. We did not watch anyone use it, so we could not say when the garden had last been watered.",
+      "Note B — Tuesday: We visited the same garden at noon, just after a light rain. The soil beside the path looked dark and wet on top. We saw two butterflies near the purple flowers. The watering can was still beside the gate. We wrote down what we saw rather than guessing how long the rain had lasted.",
+      "For their report, the class looked for similarities and differences between the notes. They could compare the soil and the butterfly sightings. They could not use these two short visits to count every butterfly living nearby. A useful report would describe the visits clearly and keep larger questions open."
+    ],
+    "question": "Which statement is supported by both notes?",
+    "options": [
+      "The garden was watered by a child.",
+      "Exactly five butterflies live in the garden.",
+      "Butterflies were seen near the purple flowers."
+    ],
+    "answer": 2,
+    "hint": "Look for something observed during both visits.",
+    "explanation": "Each note reports butterflies near the same flowers, with different numbers seen.",
+    "evidenceOptions": [
+      "A full watering can was beside the gate on Monday.",
+      "Monday: three children saw a butterfly near the purple flowers. Tuesday: two butterflies were seen near the purple flowers.",
+      "The soil looked dark and wet on Tuesday."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The paired detail names a butterfly observation from each note; neither observation counts the entire population.",
+    "evidenceExplanation": "The paired detail names a butterfly observation from each note; neither observation counts the entire population.",
+    "prompt": "Write a nature report comparing Monday and Tuesday. Use one observation from each note and explain one thing the notes cannot prove.",
+    "frame": "The two visits showed… On Monday… On Tuesday… These notes do not tell us…",
+    "vocab": "supported",
+    "definition": "Backed up by relevant information or details.",
+    "color": "green",
+    "week": 1,
+    "genre": "paired observation notes",
+    "talk": "Which is a safer report sentence: what was seen, or a guess about every butterfly? Explain."
+  },
+  {
+    "id": "g3-bridge",
+    "title": "The Wobbly Bridge",
+    "subtitle": "Notice what a character does after a setback.",
+    "label": "Grade 3",
+    "focus": "Character response",
+    "pattern": "The prefix un-",
+    "model": "The prefix un- can mean not: steady → unsteady. Use the sentence to check.",
+    "words": [
+      "unsteady",
+      "unfair",
+      "unkind"
+    ],
+    "wordQuestion": "What does unsteady mean?",
+    "wordOptions": [
+      "Not steady",
+      "Steady again",
+      "Very steady"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Think about a bridge that wobbles.",
+    "text": [
+      "Noor and Ben were building a bridge from paper for a classroom challenge. Their bridge had to cross a gap between two books and hold a small toy. Noor folded a wide strip and set it in place. When Ben put the toy in the middle, the paper sagged until the toy touched the table.",
+      "“It failed,” Ben said, reaching for a fresh sheet. Noor held up a hand. “Wait. Let’s see which part bent.” She pointed to the center and sketched it in their notebook. Then she folded the long edges upward to make two narrow sides. Ben helped her place the bridge across the same gap.",
+      "This time, the toy stayed above the table. Noor smiled, but she did not call the bridge perfect. “We changed one thing,” she said. “Now we know that fold helped.” Ben added a second sketch next to the first. Their notebook showed a problem and a change they could explain."
+    ],
+    "question": "How does Noor respond when the first bridge sags?",
+    "options": [
+      "She decides the task is impossible.",
+      "She studies the problem and tries a change.",
+      "She blames Ben for touching the toy."
+    ],
+    "answer": 1,
+    "hint": "Watch what Noor does before using more paper.",
+    "explanation": "Noor looks at the bent part, records it, and changes the folds.",
+    "evidenceOptions": [
+      "Noor and Ben were building a bridge from paper.",
+      "Ben put the toy in the middle.",
+      "She pointed to the center and sketched it in their notebook. Then she folded the long edges upward to make two narrow sides."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "These actions show Noor examining the problem and making a specific change.",
+    "evidenceExplanation": "These actions show Noor examining the problem and making a specific change.",
+    "prompt": "Explain what Noor’s response reveals about her. Use an action from the story as evidence.",
+    "frame": "Noor is… When the bridge… She… This action shows…",
+    "vocab": "setback",
+    "definition": "A problem that slows progress without necessarily ending it.",
+    "color": "blue",
+    "week": 2,
+    "genre": "fiction",
+    "talk": "What might Ben learn from Noor? Support your idea with an action from the story."
+  },
+  {
+    "id": "g3-audition",
+    "title": "A Quiet Kind of Brave",
+    "subtitle": "Use a character’s actions to make an inference.",
+    "label": "Grade 3",
+    "focus": "Inference & evidence",
+    "pattern": "The suffix -less",
+    "model": "The suffix -less means without: speech + less → speechless.",
+    "words": [
+      "speechless",
+      "hopeless",
+      "fearless"
+    ],
+    "wordQuestion": "What does fearless mean?",
+    "wordOptions": [
+      "Full of fear",
+      "Afraid again",
+      "Without fear"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Use the meaning of -less.",
+    "text": [
+      "The school play needed someone to introduce the first scene. Luis knew the lines, but his voice grew quiet whenever he stood in front of the class. At lunch, his friend Jo offered to practice with him in an empty corner of the library. Luis read the introduction twice, first to a chair and then to Jo.",
+      "At the audition, Luis held his paper with both hands. The edges shook a little. He looked toward the back of the room and imagined Jo listening there. His first word was soft, so he took a breath and began the sentence again. This time, the teacher could hear every word.",
+      "Luis did not know yet who would get the part. As he left the room, he told Jo, “I was nervous the whole time.” Jo grinned. “You still tried.” Luis carefully folded his paper and put it in his pocket. He wanted to remember the moment he spoke even while feeling afraid."
+    ],
+    "question": "What can you infer about Luis at the audition?",
+    "options": [
+      "He acts bravely even though he feels nervous.",
+      "He feels no fear at all.",
+      "He already knows he will get the part."
+    ],
+    "answer": 0,
+    "hint": "Bravery can include trying while afraid.",
+    "explanation": "His shaking paper and nervous feelings do not stop him from speaking.",
+    "evidenceOptions": [
+      "The school play needed someone to introduce the first scene.",
+      "The edges shook a little. His first word was soft, so he took a breath and began the sentence again.",
+      "Luis carefully folded his paper and put it in his pocket."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "Shaking shows nervousness; beginning again shows he continues despite it.",
+    "evidenceExplanation": "Shaking shows nervousness; beginning again shows he continues despite it.",
+    "prompt": "Explain why Luis can be called brave. Include one sign of nervousness and one action that supports your opinion.",
+    "frame": "Luis shows bravery when… Although… He still… This shows…",
+    "vocab": "audition",
+    "definition": "A short performance used to try out for a part.",
+    "color": "blue",
+    "week": 2,
+    "genre": "fiction",
+    "talk": "Does being brave always mean feeling fearless? Use Luis’s experience to explain."
+  },
+  {
+    "id": "g3-two-voices",
+    "title": "One Game, Two Views",
+    "subtitle": "Compare how two narrators describe an event.",
+    "label": "Grade 3",
+    "focus": "Point of view",
+    "pattern": "Words with more than one meaning",
+    "model": "A familiar word can have different meanings. In “a fair rule,” fair means reasonable and equal, not a festival.",
+    "words": [
+      "fair",
+      "light",
+      "match"
+    ],
+    "wordQuestion": "In “We need a fair rule,” what does fair mean?",
+    "wordOptions": [
+      "A place with rides",
+      "Reasonable and equal",
+      "Pale in color"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Use the word rule as a clue.",
+    "text": [
+      "Tessa’s account: I drew a chalk maze on the playground and invited everyone to try it. I knew where each turn went because I had planned it. When Amir took a wrong turn, I called out the answer. I thought I was helping. He stopped and said he wanted to finish by himself. I felt surprised because I had meant to be kind.",
+      "Amir’s account: The maze looked exciting. I wanted to see whether I could find the way through it. At the first difficult turn, Tessa shouted which path to take. I felt disappointed. Solving the puzzle was the part I liked best. I asked her to wait until I requested a hint. Then I went back to the start.",
+      "After the game, Tessa and Amir talked beside the chalk box. They agreed to ask, “Would you like a hint?” before giving one. The maze itself did not change, but their rule did. Both children wanted the game to be enjoyable; they had different ideas about what kind of help made it fun."
+    ],
+    "question": "How do Tessa and Amir first view the shouted answer differently?",
+    "options": [
+      "Both think it ruins every game.",
+      "Amir thinks it helps Tessa draw.",
+      "Tessa sees help; Amir loses a chance to solve it."
+    ],
+    "answer": 2,
+    "hint": "Compare the reason each child gives.",
+    "explanation": "Tessa intends to help, while Amir values figuring out the puzzle himself.",
+    "evidenceOptions": [
+      "Tessa thought she was helping. Amir liked solving the puzzle best.",
+      "Tessa had a chalk box. Amir went back to the start.",
+      "Both children were on the playground."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "These details explain the two different reactions to the same answer.",
+    "evidenceExplanation": "These details explain the two different reactions to the same answer.",
+    "prompt": "Compare Tessa’s and Amir’s views. Include a detail from each account and explain why their new rule helps.",
+    "frame": "Tessa thinks… In contrast, Amir… Their new rule… It helps because…",
+    "vocab": "account",
+    "definition": "A description of an event from someone’s point of view.",
+    "color": "blue",
+    "week": 2,
+    "genre": "paired fictional accounts",
+    "talk": "How could asking before giving help change a conversation at home?"
+  },
+  {
+    "id": "g3-ending",
+    "title": "The Missing Page",
+    "subtitle": "Use earlier events to explain an ending.",
+    "label": "Grade 3",
+    "focus": "Sequence & character change",
+    "pattern": "The suffix -ly",
+    "model": "Adding -ly often tells how an action happens: careful → carefully.",
+    "words": [
+      "carefully",
+      "quietly",
+      "slowly"
+    ],
+    "wordQuestion": "Which word tells how someone reads?",
+    "wordOptions": [
+      "reader",
+      "reread",
+      "carefully"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Try the sentence: She reads ___.",
+    "text": [
+      "Jin promised to bring the class storybook to the family reading night. On the bus, he opened his bag to check it. The cover was there, but the final page had slipped out of its loose rings. Jin remembered spreading the pages on his bedroom floor that morning. He stared at the blank space where the ending should have been.",
+      "At school, Jin first hoped no one would notice. Then he thought about the families waiting to hear the story. He told his teacher what had happened. Together, they asked the class to recall the missing events. Jin wrote their ideas on a fresh page, checking the order with two classmates who knew the story well.",
+      "Before the reading began, Jin explained that the last page was a class reconstruction. He thanked the children who had helped. Afterward, he clipped all the pages together. The book was ready to take home, and Jin had learned that admitting a mistake could be the first step toward repairing it."
+    ],
+    "question": "How does Jin change during the story?",
+    "options": [
+      "He goes from knowing the ending to forgetting every event.",
+      "He goes from hiding a problem to explaining and repairing it.",
+      "He decides books are not useful."
+    ],
+    "answer": 1,
+    "hint": "Compare his first hope with what he tells the teacher and families.",
+    "explanation": "Jin initially wants the missing page to go unnoticed, then takes responsibility.",
+    "evidenceOptions": [
+      "Jin rode a bus and later went home.",
+      "The book had loose rings and a cover.",
+      "Jin first hoped no one would notice. Before the reading began, Jin explained that the last page was a class reconstruction."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The beginning and ending details show the change from hiding to explaining.",
+    "evidenceExplanation": "The beginning and ending details show the change from hiding to explaining.",
+    "prompt": "Write a paragraph explaining Jin’s change. Organize the beginning, turning point, and ending in order.",
+    "frame": "At first, Jin… Then… By the end… His change shows…",
+    "vocab": "reconstruction",
+    "definition": "Something made again using available information about the original.",
+    "color": "blue",
+    "week": 2,
+    "genre": "fiction",
+    "talk": "Which choice is the turning point? Explain why the ending depends on it."
+  },
+  {
+    "id": "g3-signs",
+    "title": "Signs That Welcome",
+    "subtitle": "Identify a problem and a useful design.",
+    "label": "Grade 3",
+    "focus": "Problem & solution",
+    "pattern": "The prefix mis-",
+    "model": "The prefix mis- can mean wrongly: read → misread.",
+    "words": [
+      "misread",
+      "misplace",
+      "misspell"
+    ],
+    "wordQuestion": "What does misread mean?",
+    "wordOptions": [
+      "Read incorrectly",
+      "Read a second time",
+      "Read very quietly"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Think of reading a sign the wrong way.",
+    "text": [
+      "At the community center, visitors often stopped at the hallway corner. One small sign said “Rooms,” with an arrow pointing forward. The art room was actually to the left, and the music room was to the right. A volunteer named Eva noticed families walking past the corner, then returning to ask for directions.",
+      "Eva’s team made two new signs. Each sign named a room and used a large arrow. They placed the signs at the corner where visitors had to choose a direction. They also asked two people who had never visited the center to try finding the art room. Both reached it without asking for help.",
+      "The team kept a note of questions visitors still asked. Clearer signs did not solve every problem: one visitor needed to know whether the room had steps. Eva added that question to a list for the center manager. Testing the signs helped the team improve one part of the welcome while noticing another need."
+    ],
+    "question": "Which change most directly solves the original direction problem?",
+    "options": [
+      "Using smaller letters",
+      "Naming each room with an arrow at the corner",
+      "Removing all hallway signs"
+    ],
+    "answer": 1,
+    "hint": "What information was missing when people had to choose?",
+    "explanation": "Room names and arrows give visitors the needed information at the decision point.",
+    "evidenceOptions": [
+      "A volunteer named Eva noticed families.",
+      "One visitor needed to know whether the room had steps.",
+      "Each sign named a room and used a large arrow. They placed the signs at the corner where visitors had to choose a direction."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "These details show both the clearer information and its useful location.",
+    "evidenceExplanation": "These details show both the clearer information and its useful location.",
+    "prompt": "Explain the original problem and how the new signs address it. Include a detail about testing the solution.",
+    "frame": "Visitors had trouble because… The team changed… When they tested… This suggests…",
+    "vocab": "volunteer",
+    "definition": "Someone who chooses to help without being paid for that work.",
+    "color": "amber",
+    "week": 3,
+    "genre": "informational scenario",
+    "talk": "How did testing reveal what worked and what still needed attention?"
+  },
+  {
+    "id": "g3-book-box",
+    "title": "A Book Box Proposal",
+    "subtitle": "Separate an opinion from its reasons.",
+    "label": "Grade 3",
+    "focus": "Opinion & reasons",
+    "pattern": "The suffix -able",
+    "model": "The suffix -able can mean able to be: read → readable.",
+    "words": [
+      "readable",
+      "washable",
+      "reusable"
+    ],
+    "wordQuestion": "What does washable mean?",
+    "wordOptions": [
+      "Already washed twice",
+      "Full of water",
+      "Able to be washed"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Combine wash with the meaning of -able.",
+    "text": [
+      "Dear Community Center Team, I think we should place a book-sharing box inside the front entrance. Visitors could borrow a book or leave one for someone else. The box would give families something to read while they wait for classes. It could also help neighbors discover stories they might not find on their own.",
+      "I suggest using the shelf beside the welcome desk. A volunteer could check the books each Friday and remove damaged copies. The shelf is indoors, so books would stay out of the rain. We would need a clear sign explaining that returning or sharing books helps keep the box useful for everyone.",
+      "Some people may worry that the box will become untidy. That is a reasonable concern. We could try the idea for one month and ask the desk volunteers what they notice. If the shelf blocks the entrance or takes too much work, we could change the plan. A short trial would let us learn before making it permanent. Sincerely, Rowan"
+    ],
+    "question": "What is Rowan’s main opinion?",
+    "options": [
+      "The center should try an indoor book-sharing box.",
+      "Every visitor must bring a new book.",
+      "All damaged books are useful."
+    ],
+    "answer": 0,
+    "hint": "Find the proposal the other sentences support.",
+    "explanation": "Rowan proposes the box and gives reading opportunities as reasons to try it.",
+    "evidenceOptions": [
+      "A volunteer could check the books each Friday.",
+      "The box would give families something to read while they wait for classes.",
+      "Some people may worry that the box will become untidy."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The waiting-time reading opportunity is a reason supporting the proposal; the other details describe upkeep and a concern.",
+    "evidenceExplanation": "The waiting-time reading opportunity is a reason supporting the proposal; the other details describe upkeep and a concern.",
+    "prompt": "Write your opinion about trying Rowan’s proposal. Give two reasons, using at least one detail from the letter, and finish with a recommendation.",
+    "frame": "I think the center should… One reason is… Also… Therefore…",
+    "vocab": "proposal",
+    "definition": "A suggested plan offered for others to consider.",
+    "color": "amber",
+    "week": 3,
+    "genre": "opinion letter",
+    "talk": "Which reason is strongest? Can someone disagree with the opinion while understanding that reason?"
+  },
+  {
+    "id": "g3-survey",
+    "title": "What the Survey Says",
+    "subtitle": "Read numbers carefully without claiming too much.",
+    "label": "Grade 3",
+    "focus": "Evidence & limits",
+    "pattern": "Use a definition clue",
+    "model": "A writer may define a word nearby: “A survey, a set of questions, helped the club learn.”",
+    "words": [
+      "survey",
+      "response",
+      "sample"
+    ],
+    "wordQuestion": "What does survey mean in the model sentence?",
+    "wordOptions": [
+      "A shelf for books",
+      "A set of questions",
+      "A type of garden"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Read the words between the commas.",
+    "text": [
+      "The garden club asked ten children at its meeting which project they preferred. Six chose a reading corner, three chose a flower bed, and one chose a tool shelf. Everyone chose just one option. Mina wrote the results on a poster so the club could compare the choices without relying on memory.",
+      "“All children want a reading corner,” said Leo. Mina pointed to the numbers. “Six of these ten chose it,” she replied. “That is the most popular choice in our group, but we did not ask every child.” The poster also showed that four children in the meeting had selected something else.",
+      "The club decided to share the results with another class and invite more responses. Before collecting them, Mina checked that the question and the three choices would stay the same. The first survey helped the club notice a preference in one group. A larger set of responses could give them more information for planning."
+    ],
+    "question": "Which conclusion do the results support?",
+    "options": [
+      "Every child wants a reading corner.",
+      "No child wants a flower bed.",
+      "The reading corner is the most popular choice among these ten children."
+    ],
+    "answer": 2,
+    "hint": "Keep the conclusion limited to the people who answered.",
+    "explanation": "Six is the largest group, but only ten children were asked.",
+    "evidenceOptions": [
+      "Six chose a reading corner, three chose a flower bed, and one chose a tool shelf.",
+      "Mina wrote the results on a poster.",
+      "The club decided to share the results with another class."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "The numbers show which choice leads within the surveyed group.",
+    "evidenceExplanation": "The numbers show which choice leads within the surveyed group.",
+    "prompt": "Explain what the survey shows and what it cannot tell us. Include the numbers that support your explanation.",
+    "frame": "Among the ten children… The results show… However… To learn more, the club could…",
+    "vocab": "response",
+    "definition": "An answer to a question or a reaction to something.",
+    "color": "amber",
+    "week": 3,
+    "genre": "informational scenario",
+    "talk": "Why does “among these ten children” matter in the conclusion?"
+  },
+  {
+    "id": "g3-community-plan",
+    "title": "Choose a Community Plan",
+    "subtitle": "Compare two proposals using a shared goal.",
+    "label": "Grade 3",
+    "focus": "Compare & recommend",
+    "pattern": "Link ideas with because",
+    "model": "Because connects an idea to its reason. Check which reason actually supports the idea.",
+    "words": [
+      "because",
+      "also",
+      "therefore"
+    ],
+    "wordQuestion": "Which sentence gives a reason for a plan?",
+    "wordOptions": [
+      "We chose the shelf because it fits the small room.",
+      "We chose the shelf and painted it.",
+      "We chose the shelf yesterday."
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Look for a cause or explanation.",
+    "text": [
+      "Plan A — A reading rug: Put a washable rug in the center’s small waiting room. Children could sit together and look at picture books. The rug would be easy to roll up for cleaning. However, it would use most of the open floor, and there would be less room for people moving between the entrance and the desk.",
+      "Plan B — A wall book pocket: Hang fabric pockets for books on the waiting-room wall. Families could take a book to the chairs already there. The pockets would leave the floor open. They would hold fewer books than a large shelf, so a volunteer would need to choose a small collection and change it regularly.",
+      "The center’s team wanted more reading opportunities while keeping the walkway clear. They had money for only one plan this month. Neither plan met every possible need. The team would have to connect the details of each proposal to its main goal, then explain why the advantages of one plan mattered more for this room."
+    ],
+    "question": "Which plan best matches the team’s goal of reading access and a clear walkway?",
+    "options": [
+      "Plan A, because it uses most of the floor",
+      "Plan B, because families can get books while the floor stays open",
+      "Neither plan lets people read"
+    ],
+    "answer": 1,
+    "hint": "Use both parts of the goal to compare the plans.",
+    "explanation": "The wall pockets provide books without using the walkway.",
+    "evidenceOptions": [
+      "The rug would be easy to roll up for cleaning.",
+      "The team had money for only one plan.",
+      "Families could take a book to the chairs already there. The pockets would leave the floor open."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "These two details address reading access and open floor space together.",
+    "evidenceExplanation": "These two details address reading access and open floor space together.",
+    "prompt": "Recommend one plan for this waiting room. Use a detail from each plan, explain your choice, and mention a trade-off.",
+    "frame": "For this room, I recommend… Plan A… Plan B… Although…",
+    "vocab": "trade-off",
+    "definition": "Giving up one benefit to gain another when choosing.",
+    "color": "amber",
+    "week": 3,
+    "genre": "paired proposals",
+    "talk": "Could Plan A work better in a different room? Explain which condition would need to change."
+  },
+  {
+    "id": "g3-repair",
+    "title": "Repair Before Replacing",
+    "subtitle": "Follow a process and connect steps.",
+    "label": "Grade 3",
+    "focus": "Sequence & reasons",
+    "pattern": "Read longer words in parts",
+    "model": "Look for a familiar beginning or ending: replace + ment → replacement. Then blend and check the whole word.",
+    "words": [
+      "replacement",
+      "agreement",
+      "movement"
+    ],
+    "wordQuestion": "Which smaller word helps explain replacement?",
+    "wordOptions": [
+      "plant",
+      "cement",
+      "replace"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Remove the ending -ment.",
+    "text": [
+      "The class supply box had a torn corner. Each time someone lifted it, pencils slipped through the opening. Omar wanted to throw it away, but the teacher suggested checking whether a repair would work. They emptied the box onto a tray first so nothing would get lost while they handled the damaged corner.",
+      "Next, they inspected the cardboard. Most of it was firm, and only one corner had torn. With the teacher’s help, they reinforced that corner with another piece of cardboard and tape. After the repair, they put a few pencils back and lifted the box gently over the tray. Nothing fell out during the test.",
+      "The class returned the rest of the supplies and labeled the box “Check on Friday.” A repair that worked once might still need attention later. Omar made a note describing the tear, the repair, and the test. His note would help the class decide whether the box remained useful or needed a different solution."
+    ],
+    "question": "Why does the class test the box over a tray?",
+    "options": [
+      "To check the repair while keeping any falling pencils together",
+      "To hide the repaired corner",
+      "To make the pencils longer"
+    ],
+    "answer": 0,
+    "hint": "Connect the tray to the earlier problem of falling pencils.",
+    "explanation": "The tray catches anything that might fall while they check whether the repair holds.",
+    "evidenceOptions": [
+      "Most of the cardboard was firm.",
+      "They labeled the box “Check on Friday.”",
+      "They put a few pencils back and lifted the box gently over the tray. Nothing fell out during the test."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The test repeats the lifting that caused the problem, with a tray underneath.",
+    "evidenceExplanation": "The test repeats the lifting that caused the problem, with a tray underneath.",
+    "prompt": "Explain the repair process in order and give the reason for one step. End with a useful reminder.",
+    "frame": "First… Next… Then… This step matters because… Finally…",
+    "vocab": "reinforce",
+    "definition": "To make something stronger by adding support.",
+    "color": "green",
+    "week": 4,
+    "genre": "informational scenario",
+    "talk": "Why did the class plan another check instead of assuming the repair would last forever?"
+  },
+  {
+    "id": "g3-two-sources",
+    "title": "Two Notes About Lunch",
+    "subtitle": "Connect information from two sources.",
+    "label": "Grade 3",
+    "focus": "Combine relevant details",
+    "pattern": "Use contrast clues",
+    "model": "The word but can signal a contrast: “The empty bin was light, but the full bin was heavy.”",
+    "words": [
+      "light",
+      "heavy",
+      "empty"
+    ],
+    "wordQuestion": "In the model, what does light mean?",
+    "wordOptions": [
+      "Brightly colored",
+      "Not heavy",
+      "A lamp"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Use the contrasting word heavy.",
+    "text": [
+      "Source A — Lunch helper’s note: On Monday, our class opened a basket of napkins before lunch. Several children took a large stack without checking how many they needed. After lunch, the helper found many clean napkins on the tables and floor. Some could no longer be used because they had fallen where people walked.",
+      "Source B — Class discussion notes: Children said the napkin basket was placed where everyone hurried past on the way to a seat. One child suggested moving it beside the water station. Another suggested a small sign: “Take one first. Come back if you need another.” The class wanted an easy way to get more without taking a stack at the start.",
+      "The teacher asked the class to propose a change using both sources. Source A described what had happened. Source B offered possible reasons and suggestions. Neither source proved that a new sign would solve the problem. The class could try a change, observe the result, and compare its next notes with Monday’s."
+    ],
+    "question": "How do the two sources work together?",
+    "options": [
+      "Both prove a sign always solves waste.",
+      "Both tell only where to buy napkins.",
+      "One describes a problem; the other suggests changes to try."
+    ],
+    "answer": 2,
+    "hint": "Compare the job of each note.",
+    "explanation": "The first records wasted napkins, and the second supplies possible ways to change the routine.",
+    "evidenceOptions": [
+      "Source A reports clean napkins left behind. Source B suggests taking one first and returning if needed.",
+      "Source A mentions Monday. Source B mentions a water station.",
+      "Source A uses the word basket. Source B uses the word class."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "The paired details connect the observed problem with a proposed response.",
+    "evidenceExplanation": "The paired details connect the observed problem with a proposed response.",
+    "prompt": "Use both sources to recommend a small change. Explain the problem, your proposal, and how the class could check whether it helps.",
+    "frame": "Source A shows… Source B suggests… I recommend… To check the idea…",
+    "vocab": "source",
+    "definition": "A place where information comes from, such as a note, book, or interview.",
+    "color": "green",
+    "week": 4,
+    "genre": "paired fictional sources",
+    "talk": "Which part of your recommendation comes from each source? Point to the details."
+  },
+  {
+    "id": "g3-revise",
+    "title": "The Revision Choice",
+    "subtitle": "Choose details that support the main idea.",
+    "label": "Grade 3",
+    "focus": "Relevant evidence & revision",
+    "pattern": "The prefix pre-",
+    "model": "The prefix pre- can mean before: preview means to look at something before the main viewing.",
+    "words": [
+      "preview",
+      "preheat",
+      "prepay"
+    ],
+    "wordQuestion": "What does preview mean?",
+    "wordOptions": [
+      "Look at something beforehand",
+      "Look again after finishing",
+      "Avoid looking at something"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Use the meaning of pre-.",
+    "text": [
+      "Asha wrote a paragraph asking for a quiet reading time after lunch. Her first sentence stated her opinion clearly. Then she added three details: the classroom curtains were blue, several children wanted time to finish their library books, and a short quiet routine could help the class settle after the busy lunchroom.",
+      "When her partner read the draft, he pointed to the sentence about the curtains. “Does this explain why we should have reading time?” he asked. Asha liked the sentence, but she could not connect the color to her request. She crossed it out and added a clearer plan: ten minutes of reading, followed by the usual afternoon lesson.",
+      "Finally, Asha reread the paragraph aloud. She used “also” to link her two reasons and added a closing sentence asking the class to try the routine for a week. Her paragraph was not better because every sentence was longer. It was better because the details now worked together to explain her idea."
+    ],
+    "question": "Why does Asha remove the sentence about blue curtains?",
+    "options": [
+      "She dislikes blue.",
+      "It does not support her request for reading time.",
+      "Every paragraph must have exactly three sentences."
+    ],
+    "answer": 1,
+    "hint": "A true detail can still be unrelated to the main idea.",
+    "explanation": "The curtain color does not explain why the class should try reading time.",
+    "evidenceOptions": [
+      "Asha reread the paragraph aloud.",
+      "She could not connect the color to her request.",
+      "Her first sentence stated her opinion clearly."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "This detail directly explains why the curtain sentence does not belong.",
+    "evidenceExplanation": "This detail directly explains why the curtain sentence does not belong.",
+    "prompt": "Explain one revision that improves Asha’s paragraph. Use a detail from the story, then reread your own paragraph and remove anything unrelated.",
+    "frame": "One useful revision is… In the story… This improves the paragraph because… When I revise, I will…",
+    "vocab": "relevant",
+    "definition": "Closely connected to the idea or question being discussed.",
+    "color": "green",
+    "week": 4,
+    "genre": "fiction",
+    "talk": "Find one sentence in your writing that does the most work. What makes it relevant?"
+  },
+  {
+    "id": "g3-final-report",
+    "title": "The Reading Corner Report",
+    "subtitle": "Turn observations into a clear recommendation.",
+    "label": "Grade 3",
+    "focus": "Evidence-based paragraph",
+    "pattern": "Choose a linking word",
+    "model": "Use however for a contrast and therefore for a result. Pick the link that matches the ideas.",
+    "words": [
+      "however",
+      "therefore",
+      "also"
+    ],
+    "wordQuestion": "“The corner was popular. ___, some children could not find a seat.” Which word fits the contrast?",
+    "wordOptions": [
+      "Therefore",
+      "Because",
+      "However"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "The second idea introduces a problem despite the first idea.",
+    "text": [
+      "After a one-week reading-corner trial, the class collected its notes. On Monday, four children used the corner and all found seats. On Wednesday, seven wanted to use it, but there were only four chairs. Three children took books to other tables. On Friday, five children asked to use the corner, and one waited for a seat.",
+      "The teacher also collected comments. Several readers liked having books in one easy-to-find place. Two children said the walkway felt crowded when chairs were pulled back. The class measured no reading improvement during the trial; its notes described use of the space and comments about comfort. Those notes could support a room-planning decision, but not every possible claim.",
+      "The class considered keeping the book basket and letting readers use any available table. Another idea was to move the chairs farther from the walkway. Their final report needed a clear recommendation, details from the notes, an explanation of how those details supported the plan, and a closing thought about what to check next."
+    ],
+    "question": "Which recommendation is supported by the trial notes?",
+    "options": [
+      "Keep books easy to find and allow other tables to reduce crowding.",
+      "Claim the corner has already improved everyone’s reading.",
+      "Remove all books because nobody used them."
+    ],
+    "answer": 0,
+    "hint": "Use the evidence about seats, the walkway, and access to books.",
+    "explanation": "The notes support keeping easy book access while giving readers more places to sit.",
+    "evidenceOptions": [
+      "The class measured no reading improvement during the trial.",
+      "On Wednesday, three children took books to other tables. Several readers liked having books in one easy-to-find place.",
+      "The class collected its notes after one week."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "These details support both parts of the recommendation: accessible books and flexible seating.",
+    "evidenceExplanation": "These details support both parts of the recommendation: accessible books and flexible seating.",
+    "prompt": "Write your final recommendation for the reading corner. Include a clear topic sentence, two details from the notes, an explanation, and a closing next step. Aim for 3–5 connected sentences.",
+    "frame": "I recommend… The notes show… They also show… This plan would help because… Next, the class should check…",
+    "vocab": "recommendation",
+    "definition": "Advice about a useful choice, supported by reasons.",
+    "color": "green",
+    "week": 4,
+    "genre": "informational scenario",
+    "talk": "Read your paragraph to someone. Ask them to name your recommendation and the evidence that supports it."
+  }
+];
+export const gradeThreeUnits = [
+  {
+    "week": 1,
+    "title": "Nature Investigators",
+    "goal": "Separate observations from guesses, find main ideas, and compare notes.",
+    "project": "Write a nature report using evidence from two visits.",
+    "family": "Ask: What did the writer observe? What remains a question? Help your reader point to a supporting detail."
+  },
+  {
+    "week": 2,
+    "title": "Character Detectives",
+    "goal": "Explain character choices and compare viewpoints using story clues.",
+    "project": "Explain how Jin changes from the beginning to the end of The Missing Page.",
+    "family": "Ask which action supports a character description. Accept a different idea when the child can explain a relevant clue."
+  },
+  {
+    "week": 3,
+    "title": "Community Designers",
+    "goal": "Connect problems, reasons, and solutions; recommend a plan.",
+    "project": "Compare two waiting-room plans and explain a recommendation with a trade-off.",
+    "family": "Read an opinion together. Separate the writer’s claim from the reasons that support it."
+  },
+  {
+    "week": 4,
+    "title": "Ideas into Action",
+    "goal": "Combine relevant details, revise a paragraph, and explain a recommendation.",
+    "project": "Create a reading-corner report with evidence and a practical next step.",
+    "family": "Listen to the final paragraph. Ask for a clear idea, relevant details, connecting words, and a closing thought."
+  }
+];
+export const lessons = [...coreLessons,...kindergartenLessons,...gradeThreeLessons];
 export const isKindergarten=(id:string)=>id.startsWith('k-');
-export const courseLessons=(grade:string)=>grade==='K'?kindergartenLessons:coreLessons;
-export const courseUnits=(grade:string)=>grade==='K'?kindergartenUnits:units;
-export const minimumWords=(id:string)=>isKindergarten(id)?1:6;
+export const courseLessons=(grade:string)=>grade==='K'?kindergartenLessons:grade==='3'?gradeThreeLessons:coreLessons;
+export const courseUnits=(grade:string)=>grade==='K'?kindergartenUnits:grade==='3'?gradeThreeUnits:units;
+export const isGradeThree=(id:string)=>id.startsWith('g3-');
+export const evidenceFor=(id:string)=>gradeThreeLessons.find(l=>l.id===id);
+export const minimumWords=(id:string)=>isKindergarten(id)?1:isGradeThree(id)?20:6;
 export const wordCount=(s:string)=>s.trim()?s.trim().split(/\s+/).length:0;
 export const emptyRecord=(id:string):RecordData=>({lessonId:id,step:0,answers:{},draft:'',completed:false});

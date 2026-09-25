@@ -35,7 +35,20 @@ assert.equal(content.courseLessons('K').filter(l=>kenv.store.loadProgress(kid)[l
 assert.equal(content.courseLessons('1').filter(l=>kenv.store.loadProgress(kid)[l.id]?.completed).length,1);
 assert.equal(kenv.store.loadProgress(kid)[klesson.id].draft,'hat');
 kenv.store.saveGrade('K',kid);const kb=kenv.store.createBackup();const kr=setup().store.restoreBackup(kb);assert.equal(kr.profiles[1].grade,'K');assert.equal(Object.keys(kr.profiles[1].records).length,2);
-assert.equal(lessons.length,32);assert.equal(new Set(lessons.map(l=>l.id)).size,32);
-for(const g of ['K','1','2']){assert.equal(content.courseLessons(g).length,16);for(let week=1;week<=4;week++)assert.equal(content.courseLessons(g).filter(l=>l.week===week).length,4)}
+assert.equal(lessons.length,48);assert.equal(new Set(lessons.map(l=>l.id)).size,48);
+for(const g of ['K','1','2','3']){assert.equal(content.courseLessons(g).length,16);for(let week=1;week<=4;week++)assert.equal(content.courseLessons(g).filter(l=>l.week===week).length,4)}
 for(const l of content.kindergartenLessons){assert.equal(l.wordOptions.length,3);assert.equal(l.options.length,3);assert(l.wordAnswer>=0&&l.wordAnswer<3);assert(l.answer>=0&&l.answer<3);assert.equal(l.text.length,3);assert(content.minimumWords(l.id)===1);}
 console.log('PASS: 16 K lessons, distinct course progress, K one-word completion, blank rejection, older six-word rule, mixed-course backup restore.');
+
+const g3env=setup();let g3w=g3env.store.addProfile('Story Detective','3');const detective=g3w.activeId;
+const g3lesson=content.gradeThreeLessons[0];const g3record={lessonId:g3lesson.id,step:4,answers:{word:{choice:g3lesson.wordAnswer,attempts:1,hinted:false},meaning:{choice:g3lesson.answer,attempts:1,hinted:false},evidence:{choice:g3lesson.evidenceAnswer,attempts:2,hinted:true}},draft:'Maya and Eli keep careful notes about the holes they can see. They leave a question mark because they have not seen an animal making them.',completed:true};
+assert(g3env.store.validateRecord(g3record));assert(!g3env.store.validateRecord({...g3record,draft:'This response is still much too short.'}));
+const missing=structuredClone(g3record);delete missing.answers.evidence;assert(!g3env.store.validateRecord(missing));
+assert(!g3env.store.validateRecord({...g3record,answers:{...g3record.answers,evidence:{choice:(g3lesson.evidenceAnswer+1)%3,attempts:1,hinted:false}}}));
+assert(!g3env.store.validateRecord({...old,answers:{...old.answers,evidence:g3record.answers.evidence}}));
+g3env.store.saveProgress(g3record,detective);g3env.store.saveProgress(krecord,detective);g3env.store.saveProgress(old,detective);
+for(const grade of ['K','1','2','3']){g3env.store.saveGrade(grade,detective);assert.equal(g3env.store.loadGrade(detective),grade);assert.equal(content.courseLessons(grade).filter(l=>g3env.store.loadProgress(detective)[l.id]?.completed).length,1)}
+const g3backup=g3env.store.createBackup();const g3restored=setup().store.restoreBackup(g3backup);const restoredDetective=g3restored.profiles.find(p=>p.grade==='3');assert(restoredDetective);assert.equal(Object.keys(restoredDetective.records).length,3);assert.equal(restoredDetective.records[g3lesson.id].answers.evidence.attempts,2);assert.equal(restoredDetective.records[g3lesson.id].draft,g3record.draft);
+for(const l of content.gradeThreeLessons){assert.equal(l.text.length,3);assert(content.wordCount(l.text.join(' '))>=100);assert.equal(l.wordOptions.length,3);assert.equal(l.options.length,3);assert.equal(l.evidenceOptions.length,3);for(const a of [l.wordAnswer,l.answer,l.evidenceAnswer])assert(Number.isInteger(a)&&a>=0&&a<=2);assert(content.minimumWords(l.id)===20);assert.equal(content.evidenceFor(l.id).id,l.id);assert(g3env.store.validateRecord({...g3record,lessonId:l.id,answers:{word:{choice:l.wordAnswer,attempts:1,hinted:false},meaning:{choice:l.answer,attempts:1,hinted:false},evidence:{choice:l.evidenceAnswer,attempts:1,hinted:false}}}))}
+assert.equal(content.minimumWords('beavers'),6);assert.equal(content.minimumWords('k-rhyme'),1);
+console.log('PASS: 16 Grade 3 lessons; evidence required and validated; 20-word participation threshold; K/1/2 rules preserved; mixed-course progress and evidence backup round trip.');
