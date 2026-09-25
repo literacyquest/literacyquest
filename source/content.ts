@@ -30,7 +30,7 @@ export const units = [
     "family": "Look out a window and describe the sky together. Separate what you can observe now from what you predict might happen."
   }
 ];
-export const lessons = [
+const coreLessons = [
   {
     "id": "beavers",
     "title": "Busy Beavers",
@@ -736,4 +736,762 @@ export const lessons = [
     "talk": "Read your report aloud. Ask a listener to tell you the reason for your plan."
   }
 ];
+export const kindergartenLessons = [
+  {
+    "id": "k-rhyme",
+    "title": "Cat and Hat",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "Cat and Hat",
+    "focus": "Rhyming words",
+    "pattern": "Words that rhyme",
+    "model": "Say cat and hat. Their endings sound alike. That is a rhyme. Ask a grown-up to say the words with you.",
+    "words": [
+      "cat",
+      "hat",
+      "sun"
+    ],
+    "wordQuestion": "Which word rhymes with cat?",
+    "wordOptions": [
+      "sun",
+      "hat",
+      "dog"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Listen to the ending of cat and hat. Both end with the sound at.",
+    "text": [
+      "A cat sees a red hat.",
+      "The cat sits by the hat.",
+      "A dog runs past."
+    ],
+    "question": "What does the cat sit by?",
+    "options": [
+      "A tree",
+      "A cup",
+      "A hat"
+    ],
+    "answer": 2,
+    "hint": "Listen to the second sentence.",
+    "explanation": "The story says the cat sits by the hat.",
+    "prompt": "Draw the cat or hat on paper. Tell a grown-up about it, then save a word or your spoken idea.",
+    "frame": "I see a ___.",
+    "vocab": "rhyme",
+    "definition": "words with endings that sound alike",
+    "color": "green",
+    "week": 1,
+    "genre": "Read-aloud story",
+    "talk": "Say cat and hat together. Take turns thinking of another rhyme.",
+    "symbols": "🐱 🎩"
+  },
+  {
+    "id": "k-clap",
+    "title": "A Rabbit Hops",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "A Rabbit Hops",
+    "focus": "Syllable beats",
+    "pattern": "Clap the word parts",
+    "model": "Say rabbit: rab-bit. Clap twice. Say hop and clap once. We are counting word parts, not letters.",
+    "words": [
+      "rabbit",
+      "hop",
+      "sun"
+    ],
+    "wordQuestion": "Which word has two claps?",
+    "wordOptions": [
+      "rabbit",
+      "hop",
+      "sun"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Say rab-bit slowly and clap each part.",
+    "text": [
+      "A rabbit sits in the grass.",
+      "It hears a bird.",
+      "The rabbit hops away."
+    ],
+    "question": "What does the rabbit hear?",
+    "options": [
+      "A drum",
+      "A bird",
+      "A dog"
+    ],
+    "answer": 1,
+    "hint": "Listen for what makes a sound in the story.",
+    "explanation": "The rabbit hears a bird.",
+    "prompt": "Tell what the rabbit does. A grown-up can type your words.",
+    "frame": "The rabbit ___.",
+    "vocab": "hop",
+    "definition": "a small jump",
+    "color": "blue",
+    "week": 1,
+    "genre": "Read-aloud story",
+    "talk": "Clap the parts in your nickname together. Different names can have different numbers of claps.",
+    "symbols": "🐰 🌿"
+  },
+  {
+    "id": "k-first-sound",
+    "title": "Sun and Socks",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "Sun and Socks",
+    "focus": "Beginning sounds",
+    "pattern": "Listen to the start",
+    "model": "Say sun and sock. Listen to the hissing sound at the start. A grown-up can stretch that first sound without adding an extra vowel.",
+    "words": [
+      "sun",
+      "sock",
+      "map"
+    ],
+    "wordQuestion": "Which word starts like sun?",
+    "wordOptions": [
+      "map",
+      "cat",
+      "sock"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Say sun, sock. Listen to the very first sound.",
+    "text": [
+      "Sam puts on socks.",
+      "Sam steps outside.",
+      "The sun is bright."
+    ],
+    "question": "What does Sam put on?",
+    "options": [
+      "Socks",
+      "A hat",
+      "Mittens"
+    ],
+    "answer": 0,
+    "hint": "Listen to the first sentence.",
+    "explanation": "Sam puts on socks before going outside.",
+    "prompt": "Tell what Sam wears, or draw it on paper and save a label.",
+    "frame": "Sam has ___.",
+    "vocab": "bright",
+    "definition": "giving lots of light",
+    "color": "amber",
+    "week": 1,
+    "genre": "Read-aloud story",
+    "talk": "Take turns naming something you wear. Listen carefully to your partner.",
+    "symbols": "☀️ 🧦"
+  },
+  {
+    "id": "k-word-space",
+    "title": "We See a Bug",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "We See a Bug",
+    "focus": "Spaces between words",
+    "pattern": "Point to each word",
+    "model": "Look at: We see a bug. Touch each word as a grown-up reads from left to right. Spaces help us see four words.",
+    "words": [
+      "We",
+      "see",
+      "bug"
+    ],
+    "wordQuestion": "How many words are in: We see a bug?",
+    "wordOptions": [
+      "Three",
+      "Four",
+      "Five"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Point once for We, once for see, once for a, and once for bug.",
+    "text": [
+      "We see a bug.",
+      "The bug is on a leaf.",
+      "We watch it crawl."
+    ],
+    "question": "Where is the bug?",
+    "options": [
+      "In a cup",
+      "Under a hat",
+      "On a leaf"
+    ],
+    "answer": 2,
+    "hint": "Listen for the place the bug sits.",
+    "explanation": "The story says the bug is on a leaf.",
+    "prompt": "Draw a bug scene on paper. Say what is in it and save a word or a short idea.",
+    "frame": "My bug is ___.",
+    "vocab": "crawl",
+    "definition": "move slowly close to the ground",
+    "color": "pink",
+    "week": 1,
+    "genre": "Read-aloud story",
+    "talk": "Share your picture. Ask a grown-up to point to each word of your saved idea.",
+    "symbols": "🐞 🍃"
+  },
+  {
+    "id": "k-letter-m",
+    "title": "Mia and the Map",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "Mia and the Map",
+    "focus": "The letter M m",
+    "pattern": "Meet M and m",
+    "model": "M and m are the same letter in two forms. Look at both. A grown-up can model the first sound in map while pointing to m.",
+    "words": [
+      "map",
+      "mat",
+      "moon"
+    ],
+    "wordQuestion": "Which lowercase letter matches capital M?",
+    "wordOptions": [
+      "m",
+      "s",
+      "t"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Look at the pair M m in the heading.",
+    "text": [
+      "Mia has a map.",
+      "The map shows a pond.",
+      "Mia points to the pond."
+    ],
+    "question": "What does the map show?",
+    "options": [
+      "A shop",
+      "A pond",
+      "A bed"
+    ],
+    "answer": 1,
+    "hint": "Listen to the second sentence.",
+    "explanation": "The map shows a pond.",
+    "prompt": "Tell what Mia finds on the map. Save a label or your spoken idea.",
+    "frame": "The map shows ___.",
+    "vocab": "map",
+    "definition": "a drawing that shows where places are",
+    "color": "green",
+    "week": 2,
+    "genre": "Read-aloud story",
+    "talk": "Draw a map of one room on paper. Tell someone where to look first.",
+    "symbols": "🗺️ 💧"
+  },
+  {
+    "id": "k-letter-s",
+    "title": "A Seed for Sam",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "A Seed for Sam",
+    "focus": "The letter S s",
+    "pattern": "Meet S and s",
+    "model": "S and s are the same letter in two forms. Say seed and sun. A grown-up can model their first sound while pointing to s.",
+    "words": [
+      "seed",
+      "sun",
+      "sock"
+    ],
+    "wordQuestion": "Which word starts with the sound of s in sun?",
+    "wordOptions": [
+      "map",
+      "tap",
+      "seed"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Listen to seed and sun. Their first sounds match.",
+    "text": [
+      "Sam puts a seed in a pot.",
+      "Sam adds a little water.",
+      "Sam waits for a plant."
+    ],
+    "question": "What does Sam put in the pot?",
+    "options": [
+      "A seed",
+      "A sock",
+      "A toy"
+    ],
+    "answer": 0,
+    "hint": "Listen to the first sentence.",
+    "explanation": "Sam puts a seed in the pot.",
+    "prompt": "Tell what Sam plants. A grown-up can write down what you say.",
+    "frame": "Sam plants a ___.",
+    "vocab": "seed",
+    "definition": "a plant part that can grow into a new plant",
+    "color": "blue",
+    "week": 2,
+    "genre": "Read-aloud story",
+    "talk": "Pretend to plant a seed. Explain what you are doing while a partner listens.",
+    "symbols": "🌱 🪴"
+  },
+  {
+    "id": "k-letter-t",
+    "title": "Tap the Drum",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "Tap the Drum",
+    "focus": "The letter T t",
+    "pattern": "Meet T and t",
+    "model": "T and t are two forms of the same letter. A grown-up can make the short first sound in tap. Keep it quick; do not add uh.",
+    "words": [
+      "tap",
+      "top",
+      "tent"
+    ],
+    "wordQuestion": "Which lowercase letter matches capital T?",
+    "wordOptions": [
+      "s",
+      "t",
+      "m"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Look at the letter pair T t.",
+    "text": [
+      "Tess has a drum.",
+      "Tess taps it softly.",
+      "Her friend taps too."
+    ],
+    "question": "How does Tess tap?",
+    "options": [
+      "Angrily",
+      "Very loudly",
+      "Softly"
+    ],
+    "answer": 2,
+    "hint": "Listen for the word that tells how Tess taps.",
+    "explanation": "Tess taps the drum softly.",
+    "prompt": "Tell how Tess plays. Save one word or your spoken sentence.",
+    "frame": "Tess taps ___.",
+    "vocab": "softly",
+    "definition": "in a gentle, quiet way",
+    "color": "amber",
+    "week": 2,
+    "genre": "Read-aloud story",
+    "talk": "Tap a gentle pattern on your knees. Let a partner copy it, then switch.",
+    "symbols": "🥁 🎵"
+  },
+  {
+    "id": "k-letter-hunt",
+    "title": "My Letter Walk",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "My Letter Walk",
+    "focus": "Review M, S, T",
+    "pattern": "Find a letter friend",
+    "model": "Look at M m, S s, and T t. Match each capital to its lowercase partner. You can trace the shapes in the air.",
+    "words": [
+      "map",
+      "sun",
+      "tap"
+    ],
+    "wordQuestion": "Which pair shows the same letter?",
+    "wordOptions": [
+      "S s",
+      "M t",
+      "T m"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "A capital S and a lowercase s have matching curved shapes.",
+    "text": [
+      "Mia sees M on a sign.",
+      "Sam sees S on a book.",
+      "Tess sees T on a tag."
+    ],
+    "question": "Who sees S on a book?",
+    "options": [
+      "Tess",
+      "Sam",
+      "Mia"
+    ],
+    "answer": 1,
+    "hint": "Listen to the sentence about the book.",
+    "explanation": "Sam sees S on a book.",
+    "prompt": "Make an M, S, or T page on paper. Say its name and save the letter or a matching word.",
+    "frame": "My letter is ___.",
+    "vocab": "sign",
+    "definition": "a display that gives information",
+    "color": "pink",
+    "week": 2,
+    "genre": "Read-aloud story",
+    "talk": "Show your letter page. Ask your partner to find that letter somewhere else.",
+    "symbols": "🔤 📖"
+  },
+  {
+    "id": "k-short-a",
+    "title": "A Cat on a Mat",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "A Cat on a Mat",
+    "focus": "Short a words",
+    "pattern": "Listen in the middle",
+    "model": "Say cat and mat. They share the same middle vowel sound. A grown-up can stretch the words and help you hear short a.",
+    "words": [
+      "cat",
+      "mat",
+      "sat"
+    ],
+    "wordQuestion": "Which word has the same middle sound as cat?",
+    "wordOptions": [
+      "sit",
+      "sun",
+      "mat"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Say cat and mat slowly. The middle sounds match.",
+    "text": [
+      "A cat sits on a mat.",
+      "The mat is by a bag.",
+      "The cat takes a nap."
+    ],
+    "question": "Where does the cat sit?",
+    "options": [
+      "On a mat",
+      "In a box",
+      "On a log"
+    ],
+    "answer": 0,
+    "hint": "Listen to the first sentence.",
+    "explanation": "The cat sits on a mat.",
+    "prompt": "Tell where the cat sits. Draw it on paper if you like, then save a label.",
+    "frame": "The cat is on a ___.",
+    "vocab": "nap",
+    "definition": "a short sleep",
+    "color": "green",
+    "week": 3,
+    "genre": "Read-aloud story",
+    "talk": "Tell a partner where you would put a cozy mat for the cat.",
+    "symbols": "🐈 💤"
+  },
+  {
+    "id": "k-short-i",
+    "title": "A Pig Can Dig",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "A Pig Can Dig",
+    "focus": "Short i words",
+    "pattern": "Listen for short i",
+    "model": "Say pig and dig. Listen to the middle vowel. The same short i sound is in sit. A grown-up can help you stretch the sounds.",
+    "words": [
+      "pig",
+      "dig",
+      "sit"
+    ],
+    "wordQuestion": "Which word has the same middle sound as pig?",
+    "wordOptions": [
+      "sun",
+      "dig",
+      "map"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Listen to the middle of pig and dig.",
+    "text": [
+      "A pig can dig.",
+      "The pig digs in mud.",
+      "Mud sticks to its nose."
+    ],
+    "question": "Where does the pig dig?",
+    "options": [
+      "In snow",
+      "In sand",
+      "In mud"
+    ],
+    "answer": 2,
+    "hint": "Listen to the second sentence.",
+    "explanation": "The pig digs in mud.",
+    "prompt": "Tell what gets on the pig. Save a word or dictate a sentence.",
+    "frame": "The pig has ___.",
+    "vocab": "mud",
+    "definition": "wet, soft soil",
+    "color": "blue",
+    "week": 3,
+    "genre": "Read-aloud story",
+    "talk": "Pretend to be the pig. Tell your partner what happened to your nose.",
+    "symbols": "🐷 🟤"
+  },
+  {
+    "id": "k-short-o",
+    "title": "Hop to the Log",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "Hop to the Log",
+    "focus": "Short o words",
+    "pattern": "Listen for short o",
+    "model": "Say hop and log. In common American English, they share a short o sound. Listen with a grown-up; voices and accents can differ.",
+    "words": [
+      "hop",
+      "log",
+      "top"
+    ],
+    "wordQuestion": "Which word has the same middle sound as hop?",
+    "wordOptions": [
+      "log",
+      "map",
+      "sit"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Say hop and log. Listen to the vowel in the middle.",
+    "text": [
+      "A frog sees a log.",
+      "It hops to the log.",
+      "It rests in the sun."
+    ],
+    "question": "What does the frog hop to?",
+    "options": [
+      "A bed",
+      "A log",
+      "A pot"
+    ],
+    "answer": 1,
+    "hint": "Listen for the place the frog goes.",
+    "explanation": "The frog hops to a log.",
+    "prompt": "Tell where the frog goes. A grown-up can type your idea.",
+    "frame": "The frog goes to the ___.",
+    "vocab": "log",
+    "definition": "a piece of a tree trunk",
+    "color": "amber",
+    "week": 3,
+    "genre": "Read-aloud story",
+    "talk": "Tell the frog story using three small movements. Let someone guess each part.",
+    "symbols": "🐸 🪵"
+  },
+  {
+    "id": "k-blend",
+    "title": "A Map in a Bag",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "A Map in a Bag",
+    "focus": "Blending and review",
+    "pattern": "Put the sounds together",
+    "model": "Ask a grown-up to say the three sounds in map slowly, without extra vowels. Slide them together to say map. Then try mat.",
+    "words": [
+      "map",
+      "mat",
+      "sat"
+    ],
+    "wordQuestion": "Which word starts with m and ends with p?",
+    "wordOptions": [
+      "sat",
+      "map",
+      "mat"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Look at the first and last letters. Say the word with a grown-up.",
+    "text": [
+      "Sam has a map.",
+      "The map is in a bag.",
+      "Sam takes the bag to the park."
+    ],
+    "question": "What is in the bag?",
+    "options": [
+      "A toy",
+      "A hat",
+      "A map"
+    ],
+    "answer": 2,
+    "hint": "Listen to the second sentence.",
+    "explanation": "The map is in the bag.",
+    "prompt": "Make a small word page with map or mat. Add a paper drawing and save your chosen word.",
+    "frame": "My word is ___.",
+    "vocab": "park",
+    "definition": "an outdoor place where people can play or relax",
+    "color": "pink",
+    "week": 3,
+    "genre": "Read-aloud story",
+    "talk": "Show your word page. Ask a grown-up to read your word, then read it together.",
+    "symbols": "🗺️ 🎒"
+  },
+  {
+    "id": "k-first-next",
+    "title": "Seed, Then Sprout",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "Seed, Then Sprout",
+    "focus": "Story sequence",
+    "pattern": "Review a rhyme",
+    "model": "Say seed and need. The endings sound alike. Rhymes are about sounds, so listen before you choose.",
+    "words": [
+      "seed",
+      "need",
+      "pot"
+    ],
+    "wordQuestion": "Which word rhymes with seed?",
+    "wordOptions": [
+      "pot",
+      "sun",
+      "need"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Listen to the ending of seed and need.",
+    "text": [
+      "First, Jo plants a seed.",
+      "Next, Jo waters the soil.",
+      "Later, a green sprout appears."
+    ],
+    "question": "What does Jo do first?",
+    "options": [
+      "Plants a seed",
+      "Sees a sprout",
+      "Picks a flower"
+    ],
+    "answer": 0,
+    "hint": "The first sentence tells the first step.",
+    "explanation": "Jo plants the seed first.",
+    "prompt": "Tell the first thing Jo does. Draw the steps on paper and save your words.",
+    "frame": "First, Jo ___.",
+    "vocab": "sprout",
+    "definition": "a new part of a plant starting to grow",
+    "color": "green",
+    "week": 4,
+    "genre": "Read-aloud story",
+    "talk": "Use first and next to tell two parts of the story to a partner.",
+    "symbols": "🌱 💧"
+  },
+  {
+    "id": "k-detail",
+    "title": "The Red Kite",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "The Red Kite",
+    "focus": "Noticing details",
+    "pattern": "Review beginning sounds",
+    "model": "Say kite and cup. Their first sounds match even though the first letters differ. Listen to the sound, not just the letter.",
+    "words": [
+      "kite",
+      "cup",
+      "sun"
+    ],
+    "wordQuestion": "Which word begins with the same sound as kite?",
+    "wordOptions": [
+      "cup",
+      "sun",
+      "map"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "A grown-up can say kite and cup slowly. Listen to the start.",
+    "text": [
+      "Lee has a red kite.",
+      "The wind lifts it up.",
+      "Lee holds the string."
+    ],
+    "question": "What color is the kite?",
+    "options": [
+      "Blue",
+      "Red",
+      "Green"
+    ],
+    "answer": 1,
+    "hint": "Listen to the first sentence.",
+    "explanation": "Lee has a red kite.",
+    "prompt": "Tell one detail about the kite. Save a label or a sentence.",
+    "frame": "The kite is ___.",
+    "vocab": "string",
+    "definition": "a thin cord used to hold or tie something",
+    "color": "blue",
+    "week": 4,
+    "genre": "Read-aloud story",
+    "talk": "Describe a paper drawing of a kite. Ask a partner to repeat one detail.",
+    "symbols": "🪁 🍃"
+  },
+  {
+    "id": "k-opinion",
+    "title": "Two Places to Play",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "Two Places to Play",
+    "focus": "Sharing a preference",
+    "pattern": "Review word parts",
+    "model": "Clap playground: play-ground, two parts. Clap park: one part. A grown-up can say each word while you clap.",
+    "words": [
+      "playground",
+      "park",
+      "sand"
+    ],
+    "wordQuestion": "Which word has two claps?",
+    "wordOptions": [
+      "park",
+      "sand",
+      "playground"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Say play-ground. Clap once for each part.",
+    "text": [
+      "Nia plays in the sand.",
+      "Ben plays on the swings.",
+      "They wave to each other."
+    ],
+    "question": "Who plays on the swings?",
+    "options": [
+      "Nia",
+      "Ben",
+      "Both children"
+    ],
+    "answer": 1,
+    "hint": "Listen to the sentence about Ben.",
+    "explanation": "Ben plays on the swings.",
+    "prompt": "Which place would you choose: sand or swings? Tell why, then save a word or dictate your idea.",
+    "frame": "I choose ___ because ___.",
+    "vocab": "choose",
+    "definition": "pick one thing from two or more possibilities",
+    "color": "amber",
+    "week": 4,
+    "genre": "Read-aloud story",
+    "talk": "Take turns choosing a place to play. It is okay to have different choices.",
+    "symbols": "🏖️ 🛝"
+  },
+  {
+    "id": "k-retell",
+    "title": "The Lost Hat",
+    "subtitle": "Listen, play, and tell with a grown-up",
+    "label": "The Lost Hat",
+    "focus": "Retelling a story",
+    "pattern": "A last rhyme game",
+    "model": "Say hat and cat. They rhyme. Now listen to hat and sun; those endings do not match.",
+    "words": [
+      "hat",
+      "cat",
+      "sun"
+    ],
+    "wordQuestion": "Which word rhymes with hat?",
+    "wordOptions": [
+      "cat",
+      "sun",
+      "pig"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Listen to the matching endings in hat and cat.",
+    "text": [
+      "A gust blows Mo’s hat away.",
+      "The hat lands by a tree.",
+      "Mo picks it up and smiles."
+    ],
+    "question": "What happens at the end?",
+    "options": [
+      "Mo goes to bed",
+      "The hat is in a pond",
+      "Mo picks up the hat"
+    ],
+    "answer": 2,
+    "hint": "Listen to the last sentence.",
+    "explanation": "At the end, Mo picks up the hat and smiles.",
+    "prompt": "Draw one part of the story on paper. Retell it to a grown-up and save your words.",
+    "frame": "First, ___. Then, ___.",
+    "vocab": "gust",
+    "definition": "a sudden, strong movement of air",
+    "color": "pink",
+    "week": 4,
+    "genre": "Read-aloud story",
+    "talk": "Retell the beginning and ending. Ask your listener what happened to the hat.",
+    "symbols": "🎩 🌳"
+  }
+];
+export const kindergartenUnits = [
+  {
+    "week": 1,
+    "title": "Listening Detectives",
+    "goal": "Play with rhymes, word parts, first sounds, and printed words.",
+    "project": "Draw a bug scene on paper, tell about it, and save a label or idea.",
+    "family": "Say a familiar rhyme together. Pause so your child can join in."
+  },
+  {
+    "week": 2,
+    "title": "Letter Friends",
+    "goal": "Explore M, S, and T in words and everyday print.",
+    "project": "Make a letter page on paper and tell someone about it.",
+    "family": "Find M, S, or T in a book. Name the letter and model a sound it can represent."
+  },
+  {
+    "week": 3,
+    "title": "Little Word Builders",
+    "goal": "Notice short vowels and practice blending with a grown-up.",
+    "project": "Create a word-and-picture page on paper and save your chosen word.",
+    "family": "Model sounds slowly without adding extra vowels. Return to familiar words whenever needed."
+  },
+  {
+    "week": 4,
+    "title": "Storytellers",
+    "goal": "Notice details, tell events in order, and share a preference.",
+    "project": "Retell The Lost Hat with a paper drawing and a saved spoken idea.",
+    "family": "Listen to your child retell a story. Ask one gentle question about a detail."
+  }
+];
+export const lessons = [...coreLessons,...kindergartenLessons];
+export const isKindergarten=(id:string)=>id.startsWith('k-');
+export const courseLessons=(grade:string)=>grade==='K'?kindergartenLessons:coreLessons;
+export const courseUnits=(grade:string)=>grade==='K'?kindergartenUnits:units;
+export const minimumWords=(id:string)=>isKindergarten(id)?1:6;
+export const wordCount=(s:string)=>s.trim()?s.trim().split(/\s+/).length:0;
 export const emptyRecord=(id:string):RecordData=>({lessonId:id,step:0,answers:{},draft:'',completed:false});

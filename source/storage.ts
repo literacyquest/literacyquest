@@ -1,4 +1,4 @@
-import {lessons,type RecordData} from './content';
+import {lessons,minimumWords,wordCount,type RecordData} from './content';
 import type {LearningGrade} from './grades';
 export type Profile={id:string;name:string;grade:LearningGrade;records:Record<string,RecordData>};
 export type Workspace={version:2;activeId:string;profiles:Profile[]};
@@ -8,7 +8,7 @@ export const MAX_BACKUP_BYTES=8*1024*1024;
 export function storageKey(){return 'literacy-quest-html:v1:'+window.location.pathname.replace(/index\.html$/,'');}
 export function workspaceKey(){return storageKey()+':family-v2';}
 const isObject=(v:any)=>!!v&&typeof v==='object'&&!Array.isArray(v);
-const gradeValid=(g:any):g is LearningGrade=>g==='1'||g==='2';
+const gradeValid=(g:any):g is LearningGrade=>g==='K'||g==='1'||g==='2';
 const nameValid=(n:any)=>typeof n==='string'&&n.trim().length>0&&n.length<=32;
 export function validateRecord(value:unknown):value is RecordData{
  if(!isObject(value))return false;
@@ -16,7 +16,7 @@ export function validateRecord(value:unknown):value is RecordData{
  if(!lesson||!Number.isInteger(p.step)||p.step<0||p.step>4||typeof p.draft!=='string'||p.draft.length>4000||typeof p.completed!=='boolean'||!isObject(p.answers))return false;
  if(p.updatedAt!==undefined&&(typeof p.updatedAt!=='string'||p.updatedAt.length>40||!Number.isFinite(Date.parse(p.updatedAt))))return false;
  if(Object.entries(p.answers).some(([key,a])=>!['word','meaning'].includes(key)||!isObject(a)||!Number.isInteger(a.choice)||a.choice<0||a.choice>2||!Number.isSafeInteger(a.attempts)||a.attempts<1||typeof a.hinted!=='boolean'))return false;
- if((p.completed||p.step===4)&&(p.answers.word?.choice!==lesson.wordAnswer||p.answers.meaning?.choice!==lesson.answer||p.draft.trim().split(/\s+/).length<6))return false;
+ if((p.completed||p.step===4)&&(p.answers.word?.choice!==lesson.wordAnswer||p.answers.meaning?.choice!==lesson.answer||wordCount(p.draft)<minimumWords(p.lessonId)))return false;
  return true;
 }
 function validRecords(v:any){return isObject(v)&&Object.keys(v).length<=lessons.length&&Object.entries(v).every(([key,r])=>validateRecord(r)&&r.lessonId===key)}
@@ -37,11 +37,11 @@ export function loadWorkspace():Workspace{
 function writeWorkspace(w:Workspace){try{window.localStorage.setItem(workspaceKey(),JSON.stringify(w))}catch{throw Error('Your browser could not save this change. Existing saved records have not changed. Free some space or allow site storage, then try again.')}return w}
 function profileFor(w:Workspace,id?:string){const p=w.profiles.find(p=>p.id===(id??w.activeId));if(!p)throw Error('This learner is no longer available. Reload the page.');return p}
 export function loadProgress(id?:string){const w=loadWorkspace();return profileFor(w,id).records}
-export function saveProgress(record:RecordData,id?:string){if(!validateRecord(record))throw Error('Finish the questions and write at least six words before completing this lesson.');const w=loadWorkspace();const p=profileFor(w,id);p.records={...p.records,...cleanRecords({[record.lessonId]:record})};writeWorkspace(w);return p.records}
+export function saveProgress(record:RecordData,id?:string){if(!validateRecord(record))throw Error('Finish both questions and add your response before completing this lesson.');const w=loadWorkspace();const p=profileFor(w,id);p.records={...p.records,...cleanRecords({[record.lessonId]:record})};writeWorkspace(w);return p.records}
 export function loadGrade(id?:string){const w=loadWorkspace();return profileFor(w,id).grade}
 export function saveGrade(grade:LearningGrade,id?:string){if(!gradeValid(grade))throw Error('Choose an available grade guide.');const w=loadWorkspace();profileFor(w,id).grade=grade;return writeWorkspace(w)}
 function newId(){return 'learner-'+Array.from(crypto.getRandomValues(new Uint32Array(4)),n=>n.toString(16).padStart(8,'0')).join('')}
-export function addProfile(name:string,grade:LearningGrade){name=name.trim();if(!nameValid(name)||!gradeValid(grade))throw Error('Enter a nickname of 1–32 characters and choose Grade 1 or 2.');const w=loadWorkspace();if(w.profiles.length>=MAX_PROFILES)throw Error('This browser has room for 20 learner profiles.');const p={id:newId(),name,grade,records:{}};w.profiles.push(p);w.activeId=p.id;return writeWorkspace(w)}
+export function addProfile(name:string,grade:LearningGrade){name=name.trim();if(!nameValid(name)||!gradeValid(grade))throw Error('Enter a nickname of 1–32 characters and choose Kindergarten, Grade 1, or Grade 2.');const w=loadWorkspace();if(w.profiles.length>=MAX_PROFILES)throw Error('This browser has room for 20 learner profiles.');const p={id:newId(),name,grade,records:{}};w.profiles.push(p);w.activeId=p.id;return writeWorkspace(w)}
 export function renameProfile(id:string,name:string){name=name.trim();if(!nameValid(name))throw Error('Use a nickname of 1–32 characters.');const w=loadWorkspace();profileFor(w,id).name=name;return writeWorkspace(w)}
 export function selectProfile(id:string){const w=loadWorkspace();profileFor(w,id);w.activeId=id;return writeWorkspace(w)}
 export function createBackup():Backup{const w=loadWorkspace();return {format:'literacy-quest-backup',version:1,exportedAt:new Date().toISOString(),profiles:w.profiles.map(p=>({name:p.name,grade:p.grade,records:cleanRecords(p.records)}))}}

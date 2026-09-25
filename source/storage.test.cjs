@@ -3,8 +3,8 @@ const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),cry
 const ts=require('typescript');
 const root=__dirname;
 function moduleFrom(file,req,win){const exports={};vm.runInNewContext(ts.transpileModule(fs.readFileSync(root+'/'+file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText,{exports,require:req,window:win,crypto,TextEncoder});return exports}
-const {lessons}=moduleFrom('content.ts');
-function setup(){const map=new Map();let blocked=false;const win={location:{pathname:'/literacyquest/'},localStorage:{getItem:k=>map.get(k)??null,setItem:(k,v)=>{if(blocked)throw Error('quota');map.set(k,v)}}};const store=moduleFrom('storage.ts',()=>({lessons}),win);return{store,map,win,block:()=>blocked=true}}
+const content=moduleFrom('content.ts');const {lessons}=content;
+function setup(){const map=new Map();let blocked=false;const win={location:{pathname:'/literacyquest/'},localStorage:{getItem:k=>map.get(k)??null,setItem:(k,v)=>{if(blocked)throw Error('quota');map.set(k,v)}}};const store=moduleFrom('storage.ts',()=>content,win);return{store,map,win,block:()=>blocked=true}}
 const {store,map,win,block}=setup();const l=lessons[0];const old={lessonId:l.id,step:4,answers:{word:{choice:l.wordAnswer,attempts:1,hinted:false},meaning:{choice:l.answer,attempts:1,hinted:false}},draft:'A beaver builds a lodge with sticks and mud.',completed:true};
 map.set(store.storageKey(),JSON.stringify({version:1,records:{[l.id]:old}}));map.set(store.storageKey()+':grade-guide','2');const legacy=map.get(store.storageKey());
 let w=store.loadWorkspace();assert.equal(w.profiles[0].grade,'2');assert.equal(w.profiles[0].records[l.id].draft,old.draft);assert.equal(map.has(store.workspaceKey()),false);
@@ -26,3 +26,16 @@ const capped=setup();for(let i=1;i<20;i++)capped.store.addProfile('Learner '+i,'
 console.log('PASS: legacy import, separate learners/grades, explicit learner save, backup round trip on another device, additive restore, invalid/oversized input rejection, quota/corruption safety, limits, stable URL key.');
 
 const fullBackup=capped.store.createBackup();const cleanDevice=setup();assert.equal(cleanDevice.store.restoreBackup(fullBackup).profiles.length,20);console.log('PASS: full 20-learner backup restores on a fresh device.');
+
+const kenv=setup();let kw=kenv.store.addProfile('Little Fox','K');const kid=kw.activeId;
+const klesson=content.kindergartenLessons[0];const krecord={lessonId:klesson.id,step:4,answers:{word:{choice:klesson.wordAnswer,attempts:1,hinted:false},meaning:{choice:klesson.answer,attempts:1,hinted:false}},draft:'hat',completed:true};
+assert(kenv.store.validateRecord(krecord));assert(!kenv.store.validateRecord({...krecord,draft:'  '}));assert(!kenv.store.validateRecord({...old,draft:'hat'}));
+kenv.store.saveProgress(krecord,kid);kenv.store.saveProgress(old,kid);kenv.store.saveGrade('1',kid);
+assert.equal(content.courseLessons('K').filter(l=>kenv.store.loadProgress(kid)[l.id]?.completed).length,1);
+assert.equal(content.courseLessons('1').filter(l=>kenv.store.loadProgress(kid)[l.id]?.completed).length,1);
+assert.equal(kenv.store.loadProgress(kid)[klesson.id].draft,'hat');
+kenv.store.saveGrade('K',kid);const kb=kenv.store.createBackup();const kr=setup().store.restoreBackup(kb);assert.equal(kr.profiles[1].grade,'K');assert.equal(Object.keys(kr.profiles[1].records).length,2);
+assert.equal(lessons.length,32);assert.equal(new Set(lessons.map(l=>l.id)).size,32);
+for(const g of ['K','1','2']){assert.equal(content.courseLessons(g).length,16);for(let week=1;week<=4;week++)assert.equal(content.courseLessons(g).filter(l=>l.week===week).length,4)}
+for(const l of content.kindergartenLessons){assert.equal(l.wordOptions.length,3);assert.equal(l.options.length,3);assert(l.wordAnswer>=0&&l.wordAnswer<3);assert(l.answer>=0&&l.answer<3);assert.equal(l.text.length,3);assert(content.minimumWords(l.id)===1);}
+console.log('PASS: 16 K lessons, distinct course progress, K one-word completion, blank rejection, older six-word rule, mixed-course backup restore.');
