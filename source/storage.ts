@@ -1,4 +1,4 @@
-import {lessons,evidenceFor,reasoningFor,minimumWords,wordCount,type RecordData} from './content';
+import {lessons,evidenceFor,reasoningFor,sourcesFor,minimumWords,wordCount,type RecordData} from './content';
 import type {LearningGrade} from './grades';
 export type Profile={id:string;name:string;grade:LearningGrade;records:Record<string,RecordData>};
 export type Workspace={version:2;activeId:string;profiles:Profile[]};
@@ -8,19 +8,21 @@ export const MAX_BACKUP_BYTES=16*1024*1024;
 export function storageKey(){return 'literacy-quest-html:v1:'+window.location.pathname.replace(/index\.html$/,'');}
 export function workspaceKey(){return storageKey()+':family-v2';}
 const isObject=(v:any)=>!!v&&typeof v==='object'&&!Array.isArray(v);
-const gradeValid=(g:any):g is LearningGrade=>g==='K'||g==='1'||g==='2'||g==='3'||g==='4';
+const gradeValid=(g:any):g is LearningGrade=>g==='K'||g==='1'||g==='2'||g==='3'||g==='4'||g==='5';
 const nameValid=(n:any)=>typeof n==='string'&&n.trim().length>0&&n.length<=32;
 export function validateRecord(value:unknown):value is RecordData{
  if(!isObject(value))return false;
  const p=value as RecordData;const lesson=lessons.find(l=>l.id===p.lessonId);
  if(!lesson||!Number.isInteger(p.step)||p.step<0||p.step>4||typeof p.draft!=='string'||p.draft.length>4000||typeof p.completed!=='boolean'||!isObject(p.answers))return false;
+ const sources=sourcesFor(p.lessonId);
+ if(p.sourceNotes!==undefined&&(!sources||!isObject(p.sourceNotes)||Object.entries(p.sourceNotes).some(([id,note])=>!sources.some(s=>s.id===id)||typeof note!=='string'||note.length>500)))return false;
  if(p.updatedAt!==undefined&&(typeof p.updatedAt!=='string'||p.updatedAt.length>40||!Number.isFinite(Date.parse(p.updatedAt))))return false;
  if(Object.entries(p.answers).some(([key,a])=>!(reasoningFor(p.lessonId)?['word','meaning','evidence','reasoning']:evidenceFor(p.lessonId)?['word','meaning','evidence']:['word','meaning']).includes(key)||!isObject(a)||!Number.isInteger(a.choice)||a.choice<0||a.choice>2||!Number.isSafeInteger(a.attempts)||a.attempts<1||typeof a.hinted!=='boolean'))return false;
  if((p.completed||p.step===4)&&(p.answers.word?.choice!==lesson.wordAnswer||p.answers.meaning?.choice!==lesson.answer||(evidenceFor(p.lessonId)&&p.answers.evidence?.choice!==evidenceFor(p.lessonId)!.evidenceAnswer)||(reasoningFor(p.lessonId)&&p.answers.reasoning?.choice!==reasoningFor(p.lessonId)!.reasoningAnswer)||wordCount(p.draft)<minimumWords(p.lessonId)))return false;
  return true;
 }
 function validRecords(v:any){return isObject(v)&&Object.keys(v).length<=lessons.length&&Object.entries(v).every(([key,r])=>validateRecord(r)&&r.lessonId===key)}
-function cleanRecords(v:Record<string,RecordData>){return Object.fromEntries(Object.entries(v).map(([key,r])=>[key,{lessonId:r.lessonId,step:r.step,draft:r.draft,completed:r.completed,...(r.updatedAt?{updatedAt:r.updatedAt}:{}),answers:Object.fromEntries(Object.entries(r.answers).map(([k,a])=>[k,{choice:a.choice,attempts:a.attempts,hinted:a.hinted}]))}])) as Record<string,RecordData>}
+function cleanRecords(v:Record<string,RecordData>){return Object.fromEntries(Object.entries(v).map(([key,r])=>[key,{lessonId:r.lessonId,step:r.step,draft:r.draft,completed:r.completed,...(r.sourceNotes?{sourceNotes:Object.fromEntries(Object.entries(r.sourceNotes))}:{}),...(r.updatedAt?{updatedAt:r.updatedAt}:{}),answers:Object.fromEntries(Object.entries(r.answers).map(([k,a])=>[k,{choice:a.choice,attempts:a.attempts,hinted:a.hinted}]))}])) as Record<string,RecordData>}
 function readKey(key:string){try{return window.localStorage.getItem(key)}catch{throw Error('This browser is blocking saved work. Allow site storage, then try again.')}}
 function parse(raw:string){try{return JSON.parse(raw)}catch{throw Error('This learning file cannot be read. Existing records have not changed.')}}
 function validProfile(p:any,withId=true){return isObject(p)&&(!withId||(typeof p.id==='string'&&/^[a-zA-Z0-9_-]{1,80}$/.test(p.id)))&&nameValid(p.name)&&gradeValid(p.grade)&&validRecords(p.records)}
@@ -41,7 +43,7 @@ export function saveProgress(record:RecordData,id?:string){if(!validateRecord(re
 export function loadGrade(id?:string){const w=loadWorkspace();return profileFor(w,id).grade}
 export function saveGrade(grade:LearningGrade,id?:string){if(!gradeValid(grade))throw Error('Choose an available grade guide.');const w=loadWorkspace();profileFor(w,id).grade=grade;return writeWorkspace(w)}
 function newId(){return 'learner-'+Array.from(crypto.getRandomValues(new Uint32Array(4)),n=>n.toString(16).padStart(8,'0')).join('')}
-export function addProfile(name:string,grade:LearningGrade){name=name.trim();if(!nameValid(name)||!gradeValid(grade))throw Error('Enter a nickname of 1–32 characters and choose Kindergarten, Grade 1, Grade 2, Grade 3, or Grade 4.');const w=loadWorkspace();if(w.profiles.length>=MAX_PROFILES)throw Error('This browser has room for 20 learner profiles.');const p={id:newId(),name,grade,records:{}};w.profiles.push(p);w.activeId=p.id;return writeWorkspace(w)}
+export function addProfile(name:string,grade:LearningGrade){name=name.trim();if(!nameValid(name)||!gradeValid(grade))throw Error('Enter a nickname of 1–32 characters and choose Kindergarten, Grade 1, Grade 2, Grade 3, Grade 4, or Grade 5.');const w=loadWorkspace();if(w.profiles.length>=MAX_PROFILES)throw Error('This browser has room for 20 learner profiles.');const p={id:newId(),name,grade,records:{}};w.profiles.push(p);w.activeId=p.id;return writeWorkspace(w)}
 export function renameProfile(id:string,name:string){name=name.trim();if(!nameValid(name))throw Error('Use a nickname of 1–32 characters.');const w=loadWorkspace();profileFor(w,id).name=name;return writeWorkspace(w)}
 export function selectProfile(id:string){const w=loadWorkspace();profileFor(w,id);w.activeId=id;return writeWorkspace(w)}
 export function createBackup():Backup{const w=loadWorkspace();return {format:'literacy-quest-backup',version:1,exportedAt:new Date().toISOString(),profiles:w.profiles.map(p=>({name:p.name,grade:p.grade,records:cleanRecords(p.records)}))}}

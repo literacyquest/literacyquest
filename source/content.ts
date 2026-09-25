@@ -1,5 +1,5 @@
 export type Answer = {choice:number; attempts:number; hinted:boolean};
-export type RecordData = {lessonId:string; step:number; answers:Record<string,Answer>; draft:string; completed:boolean; updatedAt?:string};
+export type RecordData = {lessonId:string; step:number; answers:Record<string,Answer>; draft:string; sourceNotes?:Record<string,string>; completed:boolean; updatedAt?:string};
 export const units = [
   {
     "week": 1,
@@ -3376,14 +3376,1294 @@ export const gradeFourUnits = [
     "family": "Review headings, relevant details, source labels, explanations, and a closing idea. Discuss one specific revision together."
   }
 ];
-export const lessons = [...coreLessons,...kindergartenLessons,...gradeThreeLessons,...gradeFourLessons];
+export const gradeFiveLessons = [
+  {
+    "id": "g5-observatory",
+    "title": "The Observatory Question",
+    "subtitle": "Use two records to test an inference.",
+    "label": "The Observatory Question",
+    "focus": "Inference across sources",
+    "pattern": "The root scope",
+    "model": "The Greek root scope relates to looking or examining. A telescope is an instrument used to view distant objects.",
+    "words": [
+      "telescope",
+      "microscope",
+      "periscope"
+    ],
+    "wordQuestion": "Which word names an instrument for viewing distant objects?",
+    "wordOptions": [
+      "microscope",
+      "telescope",
+      "telephone"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Use the definition in the model.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "A volunteer’s journal",
+        "kind": "Personal account"
+      },
+      {
+        "id": "B",
+        "title": "An equipment log",
+        "kind": "Recorded checks"
+      }
+    ],
+    "text": [
+      "Source A — Volunteer’s journal: Our school observatory reopened for a family evening after several months of repairs. I helped visitors look through the telescope. At first, everyone waited quietly, but soon families asked why the view kept changing. Some children had touched the focusing knob without realizing what it did. I explained the knob again and again while the line grew longer behind the telescope.",
+      "Source A continues: The instrument did not stop working during my shift. When I adjusted the focus, the image became clear again. I wished there were a short explanation beside the telescope, because visitors could not always hear me over conversations in the room. Before leaving, I wrote that suggestion in the volunteer notebook. My account describes only the time when I was helping at that station.",
+      "Source B — Equipment log: Before the evening began, the technician checked the telescope and recorded that it focused correctly. After the event, the technician repeated the check and found no repair was needed. The log also noted that the instruction card had not been replaced after the room was repainted. A new card was requested for the next session, but it had not yet been tested with visitors.",
+      "Reader’s task: These records describe the same evening from different positions. The volunteer reports visitor actions and explanations during the event. The log records checks before and afterward. Combining them can support an inference about a useful next step, while neither record tells us how every visitor experienced the evening or proves that a new card will solve every difficulty."
+    ],
+    "question": "Which inference is best supported by both records?",
+    "options": [
+      "The telescope needs to be replaced immediately.",
+      "Visitors should never ask volunteers questions.",
+      "Clearer instructions may help more than a repair that the checks do not indicate is needed."
+    ],
+    "answer": 2,
+    "hint": "Connect the repeated explanations with the equipment checks and missing card.",
+    "explanation": "The records point to an instruction problem rather than documented equipment damage.",
+    "evidenceOptions": [
+      "A describes repeated focus explanations; B records correct focus and a missing instruction card.",
+      "A mentions families; B mentions repainting.",
+      "B says a new card has been requested."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "A identifies what visitors needed, while B gives equipment results and a missing source of instructions.",
+    "evidenceExplanation": "A identifies what visitors needed, while B gives equipment results and a missing source of instructions.",
+    "reasoningQuestion": "Why is the combined evidence stronger than the request for a new card alone?",
+    "reasoningOptions": [
+      "A request proves the new card has already worked.",
+      "It links an observed difficulty with checks that help distinguish possible causes.",
+      "It proves every visitor touched the knob."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "Use both the visitor observations and the equipment checks; a proposed change is not a tested result.",
+    "reasoningExplanation": "Use both the visitor observations and the equipment checks; a proposed change is not a tested result.",
+    "prompt": "Write three short paragraphs: explain the difficulty, connect evidence from Sources A and B, and recommend a next step with a way to check it. Include one short, exact quotation and identify its source.",
+    "frame": "Paragraph 1: The records raise a question about…\n\nParagraph 2: Source A states, “…” Source B adds… Together…\n\nParagraph 3: I recommend… To check this idea…",
+    "vocab": "corroborate",
+    "definition": "To add support to information using another relevant source.",
+    "color": "green",
+    "week": 1,
+    "genre": "original fictional source set",
+    "talk": "Which detail makes a broken telescope a less convincing explanation? What uncertainty still remains?"
+  },
+  {
+    "id": "g5-relay",
+    "title": "The Relay Decision",
+    "subtitle": "Compare what two characters know.",
+    "label": "The Relay Decision",
+    "focus": "Perspective and accurate quotation",
+    "pattern": "The prefix sub-",
+    "model": "The prefix sub- can mean under or below. A subtitle appears under a main title or adds information to it.",
+    "words": [
+      "subtitle",
+      "subheading",
+      "submarine"
+    ],
+    "wordQuestion": "Which word names a heading for part of a larger text?",
+    "wordOptions": [
+      "subheading",
+      "heading back",
+      "overhead"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "A smaller section can have a subheading.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Jules’s diary",
+        "kind": "First-person fiction"
+      },
+      {
+        "id": "B",
+        "title": "Ren’s diary",
+        "kind": "First-person fiction"
+      }
+    ],
+    "text": [
+      "Source A — Jules’s diary: I thought Ren had given up when she asked to change our relay order. We had practiced the same order all week, and I liked knowing exactly when my turn would come. During the last practice, I saw her look toward the finish line instead of joining our discussion. I assumed she was thinking about something else. When she suggested that I run last, I said we should keep our plan.",
+      "Source A continues: Later, Ren showed me the timing notes. My final stretch had been steadier when I ran after a longer rest. She had noticed a pattern I had missed. I still wanted to discuss the change with the whole team, but I realized that her suggestion was not a way to escape work. I had treated an unfamiliar idea as proof that she was not trying.",
+      "Source B — Ren’s diary: I kept watching the finish line because I was recording how our practice order affected the last stretch. I was not certain the pattern would continue during the event. I wanted the team to try a different order once and compare. When Jules rejected the idea quickly, I felt frustrated because I had not explained my notes yet.",
+      "Source B continues: After practice, I brought the notes to Jules instead of arguing about who cared more. I told him, “A trial can answer a question that an argument cannot.” We agreed to ask the team to test the change. Neither of us could promise that a different order would make us win. We could promise to look at the results together before deciding."
+    ],
+    "question": "How does reading both diaries change our understanding of Ren’s request?",
+    "options": [
+      "It proves Jules does not care about the team.",
+      "It shows that Ren was using observations to propose a trial, although Jules first interpreted her actions differently.",
+      "It proves the new order will win the event."
+    ],
+    "answer": 1,
+    "hint": "Compare Jules’s first assumption with Ren’s reason for watching the finish.",
+    "explanation": "Ren’s account explains the purpose behind actions that Jules initially misunderstood.",
+    "evidenceOptions": [
+      "Jules likes knowing when his turn comes.",
+      "Ren feels frustrated after the discussion.",
+      "Jules assumes Ren is distracted; Ren says she is recording how the order affects the final stretch."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The contrasting accounts reveal the gap between an interpretation and the character’s stated purpose.",
+    "evidenceExplanation": "The contrasting accounts reveal the gap between an interpretation and the character’s stated purpose.",
+    "reasoningQuestion": "Which quotation from Ren most directly supports testing rather than arguing?",
+    "reasoningOptions": [
+      "“A trial can answer a question that an argument cannot.”",
+      "“We agreed to ask the team to test the change.”",
+      "“When Jules rejected the idea quickly, I felt frustrated because I had not explained my notes yet.”"
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "The first quotation explicitly contrasts what a trial and an argument can accomplish.",
+    "reasoningExplanation": "The first quotation explicitly contrasts what a trial and an argument can accomplish.",
+    "prompt": "Compare the perspectives in three short paragraphs. Explain the initial misunderstanding, use a detail from each diary, and conclude with what the accounts suggest about listening. Quote Ren accurately once.",
+    "frame": "Paragraph 1: Jules first interprets…\n\nParagraph 2: Ren’s account reveals… Her words, “…” suggest…\n\nParagraph 3: Together, the diaries show…",
+    "vocab": "perspective",
+    "definition": "A way of understanding an event shaped by what someone knows, experiences, or values.",
+    "color": "green",
+    "week": 1,
+    "genre": "original fictional source set",
+    "talk": "Which assumption changes when a second narrator explains the same moment?"
+  },
+  {
+    "id": "g5-field-station",
+    "title": "Two Main Ideas, One Field Station",
+    "subtitle": "Keep both important ideas in a summary.",
+    "label": "Two Main Ideas, One Field Station",
+    "focus": "Multiple main ideas",
+    "pattern": "The root chron",
+    "model": "The Greek root chron relates to time. Chronological order arranges events by when they happen.",
+    "words": [
+      "chronological",
+      "chronicle",
+      "synchronize"
+    ],
+    "wordQuestion": "What is chronological order?",
+    "wordOptions": [
+      "Order from shortest to longest",
+      "Order by when events happen",
+      "Order by the writer’s favorites"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Use the meaning time.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Visitor orientation",
+        "kind": "Information guide"
+      },
+      {
+        "id": "B",
+        "title": "Volunteer handbook",
+        "kind": "Procedure guide"
+      }
+    ],
+    "text": [
+      "Source A — Visitor orientation: The fictional Pine Creek field station offers short outdoor observation walks. Before a walk, leaders introduce a question and show visitors how to record observations without filling gaps with guesses. A sketch, a counted group of objects, or a description of what was heard can all be useful. Visitors are asked to distinguish what they noticed directly from what they think might explain it.",
+      "Source A continues: At the end of a walk, the group compares notes. Different observations can lead to new questions rather than a single quick answer. The station’s purpose is to help people practice careful inquiry, not to reward whoever makes the largest claim. A useful record says where and when an observation was made so later readers can understand its limits.",
+      "Source B — Volunteer handbook: The station also depends on routines that let many groups share the same materials. Volunteers count clipboards before departure, mark damaged pencils for replacement, and return guide sheets to labeled folders. These tasks are not the observation lesson itself, but they make it possible for the next group to begin with the equipment it needs.",
+      "Source B continues: After each visit, volunteers note missing materials and unclear directions. The coordinator uses those notes to prepare the next session. Taken together, the guides explain two connected ideas: careful observation helps visitors learn, and organized routines keep that learning opportunity available. A summary that mentions only the scenery or only the supply boxes would miss part of what the station is trying to accomplish."
+    ],
+    "question": "Which summary includes both main ideas?",
+    "options": [
+      "The station teaches careful observation and uses shared-material routines to keep visits running.",
+      "The station is only a place to store pencils.",
+      "Visitors must agree on one answer before leaving."
+    ],
+    "answer": 0,
+    "hint": "Look for the purpose of each source and how the purposes connect.",
+    "explanation": "The two guides describe learning practices and the routines that support them.",
+    "evidenceOptions": [
+      "A mentions sketches; B mentions folders.",
+      "A separates observations from guesses; B explains preparing equipment for the next group.",
+      "The station offers outdoor walks."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "These details show each source’s main purpose and why both matter.",
+    "evidenceExplanation": "These details show each source’s main purpose and why both matter.",
+    "reasoningQuestion": "Why is a summary about attractive scenery incomplete?",
+    "reasoningOptions": [
+      "Scenery is never worth describing.",
+      "Summaries must copy the final sentence exactly.",
+      "The sources focus on inquiry and organization, not on whether the scenery is attractive."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "A summary should preserve the central ideas actually developed in the sources.",
+    "reasoningExplanation": "A summary should preserve the central ideas actually developed in the sources.",
+    "prompt": "Write three short paragraphs explaining the station. Introduce its two main ideas, develop each with relevant details from the guides, and show how the ideas connect.",
+    "frame": "Paragraph 1: The station supports… in two connected ways.\n\nParagraph 2: The orientation explains… For example…\n\nParagraph 3: The handbook adds… These routines support learning because…",
+    "vocab": "inquiry",
+    "definition": "A process of asking questions and using evidence to investigate them.",
+    "color": "green",
+    "week": 1,
+    "genre": "original fictional source set",
+    "talk": "What would be lost if a report included only Source A? What would be lost with only Source B?"
+  },
+  {
+    "id": "g5-record",
+    "title": "The Record That Needed a Date",
+    "subtitle": "Ask whether evidence fits the question.",
+    "label": "The Record That Needed a Date",
+    "focus": "Source context and limits",
+    "pattern": "The prefix pre- and the suffix -view family",
+    "model": "Preview means to view before a main event. Review means to look again. Word parts help, but the sentence decides the intended meaning.",
+    "words": [
+      "preview",
+      "review",
+      "viewpoint"
+    ],
+    "wordQuestion": "Which action happens before a public opening?",
+    "wordOptions": [
+      "A preview for a small group",
+      "A review written after the visit",
+      "A memory of last year’s opening"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Use pre-, meaning before.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "An undated note",
+        "kind": "Personal record"
+      },
+      {
+        "id": "B",
+        "title": "A dated schedule",
+        "kind": "Planning record"
+      },
+      {
+        "id": "C",
+        "title": "A later interview",
+        "kind": "Recollection"
+      }
+    ],
+    "text": [
+      "Source A — Undated note: A student finds a handwritten note in a box of theater records. It says, “We moved the afternoon performance into the library, and the audience sat between the shelves.” The note names the play but gives no date. The student wants to use it in a report about the theater club’s opening week in its new room. First, she needs to know which performance the note describes.",
+      "Source B — Dated schedule: A printed schedule from the opening week lists performances in the new theater room on Thursday and Friday. It also lists a library preview on the previous Tuesday. The schedule was printed before the events, so it documents plans rather than proving that every performance happened exactly as listed. Still, its dates provide useful context that the handwritten note lacks.",
+      "Source C — Later interview: A former club member remembers performing in the library but says he cannot recall whether it was a preview or a changed performance. He recognizes the handwriting as a classmate’s and suggests checking that classmate’s dated notebook. His memory supports the possibility of a library event, but it does not resolve when the note was written.",
+      "Reader’s task: The records do not yet justify saying that the opening-night show was moved. A careful report can describe a documented plan for a library preview and an undated account of a library performance. It can then identify the missing connection. Finding another relevant dated record would be more useful than repeating an uncertain conclusion with greater confidence."
+    ],
+    "question": "What is the most useful next step before claiming the opening-night show moved?",
+    "options": [
+      "Treat the handwriting as proof of a date.",
+      "Find a dated record linking the note to a particular performance.",
+      "Ignore every source except the schedule."
+    ],
+    "answer": 1,
+    "hint": "The unresolved issue is which event the undated note describes.",
+    "explanation": "A dated connection is needed; neither the note nor the interview supplies it.",
+    "evidenceOptions": [
+      "The note mentions shelves.",
+      "The theater club had a new room.",
+      "A has no date, B lists a separate library preview, and C cannot identify which event is remembered."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The sources leave the event’s identity unresolved, so another dated record is needed.",
+    "evidenceExplanation": "The sources leave the event’s identity unresolved, so another dated record is needed.",
+    "reasoningQuestion": "Why do three mentions of the library not prove the opening-night claim?",
+    "reasoningOptions": [
+      "They may concern different events, and none connects the undated note to opening night.",
+      "A library cannot host a performance.",
+      "Three sources must always disagree."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "Repeated words are not enough; the sources must refer to the same event for that conclusion.",
+    "reasoningExplanation": "Repeated words are not enough; the sources must refer to the same event for that conclusion.",
+    "prompt": "Write a three-paragraph source report: what the records establish, what remains uncertain, and what you would seek next. Identify A, B, and C and avoid turning plans into confirmed events.",
+    "frame": "Paragraph 1: Source A records… Source B establishes a plan for…\n\nParagraph 2: Source C adds… However…\n\nParagraph 3: Before concluding… I would look for…",
+    "vocab": "context",
+    "definition": "The circumstances that help explain the meaning and limits of information.",
+    "color": "green",
+    "week": 1,
+    "genre": "original fictional source set",
+    "talk": "What exact question would you ask when looking for another record?"
+  },
+  {
+    "id": "g5-workshop",
+    "title": "Three Notes About a Workshop",
+    "subtitle": "Organize several needs into one explanation.",
+    "label": "Three Notes About a Workshop",
+    "focus": "Synthesis by topic",
+    "pattern": "The root tele",
+    "model": "The Greek root tele means far. Telecommunications send information over a distance.",
+    "words": [
+      "telephone",
+      "television",
+      "teleconference"
+    ],
+    "wordQuestion": "What does tele- suggest in teleconference?",
+    "wordOptions": [
+      "A meeting held only outdoors",
+      "A meeting without a topic",
+      "People communicating over a distance"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Use the root meaning far.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Participant comments",
+        "kind": "Feedback"
+      },
+      {
+        "id": "B",
+        "title": "Instructor notes",
+        "kind": "Teaching observations"
+      },
+      {
+        "id": "C",
+        "title": "Supply record",
+        "kind": "Material count"
+      }
+    ],
+    "text": [
+      "Source A — Participant comments: After a model-bridge workshop, visitors praised the chance to try their own designs. Several said the opening explanation contained too many steps to remember at once. Two wished they could see the instructions again after starting. The comments came from visitors who chose to return a feedback card, so they did not represent every person who attended.",
+      "Source B — Instructor notes: The instructor demonstrated the entire build before handing out materials. During work time, many visitors asked the same questions about the first fold and the order of later steps. When the instructor showed a step again at one table, visitors there often continued independently. The notes suggest that access to instructions during work may matter, although they do not measure long-term learning.",
+      "Source C — Supply record: Each table received twelve sheets of paper. Two tables requested more while testing repeated designs; another table returned several sheets unused. The supply helper recorded different amounts of experimentation, not simply waste. A future plan could keep extra paper in a shared location while asking groups to take a few sheets at a time.",
+      "Reader’s task: A report could organize these notes around two topics: access to instructions and access to materials. Sources A and B overlap on the first topic, while Source C adds a different practical need. Copying three summaries in a row would preserve facts, but grouping related evidence can explain how the observations contribute to one improved workshop plan."
+    ],
+    "question": "Which plan integrates the notes most directly?",
+    "options": [
+      "Offer step cards during work and a shared supply area for additional testing.",
+      "Remove independent design time entirely.",
+      "Give every group unlimited paper and no instructions."
+    ],
+    "answer": 0,
+    "hint": "Connect repeated instruction needs with uneven material use.",
+    "explanation": "Step cards address A and B; a shared supply area responds to C.",
+    "evidenceOptions": [
+      "Visitors liked their own designs.",
+      "A requests instructions to revisit, B records repeated step questions, and C shows different extra-paper needs.",
+      "The instructor used tables."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The three details explain why the plan needs both instructional and material changes.",
+    "evidenceExplanation": "The three details explain why the plan needs both instructional and material changes.",
+    "reasoningQuestion": "Why group A and B together rather than give each source an unrelated paragraph?",
+    "reasoningOptions": [
+      "They were written by the same person.",
+      "They prove all visitors had identical experiences.",
+      "They address the same need, while C contributes a second part of the plan."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "Synthesis organizes evidence by the ideas it helps explain, while keeping source labels clear.",
+    "reasoningExplanation": "Synthesis organizes evidence by the ideas it helps explain, while keeping source labels clear.",
+    "prompt": "Use three paragraphs to explain a revised workshop plan. Group related evidence, name all three sources, and end with a check that could show whether the plan helps.",
+    "frame": "Paragraph 1: The workshop needs…\n\nParagraph 2: Sources A and B suggest… Source C adds…\n\nParagraph 3: I recommend… A follow-up check would…",
+    "vocab": "synthesis",
+    "definition": "An explanation that connects relevant information from several sources.",
+    "color": "blue",
+    "week": 2,
+    "genre": "original fictional source set",
+    "talk": "Which two sources overlap? Which one adds a different need?"
+  },
+  {
+    "id": "g5-garden-trial",
+    "title": "When Results Seem to Disagree",
+    "subtitle": "Compare conditions before choosing a conclusion.",
+    "label": "When Results Seem to Disagree",
+    "focus": "Conflicting findings",
+    "pattern": "The suffix -ize",
+    "model": "The suffix -ize can form a verb meaning to make or put into a condition. Standardize means to make consistent with a standard.",
+    "words": [
+      "standardize",
+      "organize",
+      "summarize"
+    ],
+    "wordQuestion": "What does standardize the procedure mean?",
+    "wordOptions": [
+      "Use a different procedure each time",
+      "Make the procedure consistent",
+      "Stop recording the procedure"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Think about making the steps comparable.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Trial A",
+        "kind": "Observation log"
+      },
+      {
+        "id": "B",
+        "title": "Trial B",
+        "kind": "Observation log"
+      },
+      {
+        "id": "C",
+        "title": "Review note",
+        "kind": "Method comparison"
+      }
+    ],
+    "text": [
+      "Source A — Trial A: A class tested two labels for returning garden tools. During a small-group session, all six participants returned tools to the marked hooks without help. The labels included a tool picture and its name. The observer concluded that the labels were easy for that group to use under those conditions. The observer did not claim to have tested every visitor or every time of day.",
+      "Source B — Trial B: Another group used the same labels during a crowded open-house visit. Four of ten participants asked where to return a tool. Some hooks were hidden behind a temporary display board, and visitors approached from several directions. The observer wrote that the return area needed improvement. This report seemed to contradict the first trial if readers looked only at the overall judgments.",
+      "Source C — Review note: The class compared what had changed between trials. The label design was the same, but visibility, crowding, and participant groups differed. The reports could both accurately describe their own sessions. To learn more about label usefulness, the class proposed another observation with clear sightlines and a consistent method for recording requests for help.",
+      "Reader’s task: A useful conclusion should explain the conditions attached to each result rather than declaring one observer wrong. The first trial shows that a small group used the visible labels without help. The second reveals problems in a different arrangement. Together, the reports identify conditions worth checking before making a broad claim about whether the labels work."
+    ],
+    "question": "What best explains the different conclusions?",
+    "options": [
+      "One observer must have invented the results.",
+      "The labels changed into a different language.",
+      "The trials had different conditions that could affect how easily people found the hooks."
+    ],
+    "answer": 2,
+    "hint": "Compare visibility, crowds, and groups rather than only the labels.",
+    "explanation": "The conditions differed, so both results can be accurate descriptions of their own trials.",
+    "evidenceOptions": [
+      "A used visible hooks in a small session; B included crowding and hooks hidden by a board; C identifies these differences.",
+      "Both trials included tools.",
+      "Trial A had six people and therefore must be more accurate."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "The details identify plausible differences relevant to the task.",
+    "evidenceExplanation": "The details identify plausible differences relevant to the task.",
+    "reasoningQuestion": "Why is “the two reports disagree, so one is false” too strong?",
+    "reasoningOptions": [
+      "All observations have the same conditions.",
+      "Different contexts can produce different results without either record being false.",
+      "A larger group always gives a perfect answer."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "Explain the differences that matter before judging whether the records actually conflict.",
+    "reasoningExplanation": "Explain the differences that matter before judging whether the records actually conflict.",
+    "prompt": "Explain the apparent disagreement in three paragraphs. Describe each trial, connect the relevant differences, and propose a fair next observation without claiming a cause has been proven.",
+    "frame": "Paragraph 1: Trial A reports… Trial B reports…\n\nParagraph 2: The review points out… This may explain…\n\nParagraph 3: A useful next observation would…",
+    "vocab": "variable",
+    "definition": "A condition or feature that can change and may affect a result.",
+    "color": "blue",
+    "week": 2,
+    "genre": "original fictional source set",
+    "talk": "Which condition would you keep consistent, and what question would that help answer?"
+  },
+  {
+    "id": "g5-voices",
+    "title": "The Same Story, Different Light",
+    "subtitle": "Compare a narrator’s focus with a scene.",
+    "label": "The Same Story, Different Light",
+    "focus": "Narration and interpretation",
+    "pattern": "Figurative meaning in context",
+    "model": "A phrase can mean more than its literal words. In “The idea opened a door,” it suggests a new opportunity, not necessarily a real door.",
+    "words": [
+      "opportunity",
+      "possibility",
+      "opening"
+    ],
+    "wordQuestion": "What does “The idea opened a door” most likely mean?",
+    "wordOptions": [
+      "The idea created a new possibility",
+      "The idea repaired a wooden frame",
+      "The idea closed the discussion"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Use the figurative meaning from the model.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Mina’s narration",
+        "kind": "First-person fiction"
+      },
+      {
+        "id": "B",
+        "title": "A rehearsal scene",
+        "kind": "Third-person fiction"
+      }
+    ],
+    "text": [
+      "Source A — Mina’s narration: I thought the rehearsal belonged to the loudest voices. Whenever I began a suggestion, someone spoke over the end of it. I kept my drawing of the stage in my notebook. When Devon asked why I had stopped talking, I said the design probably would not work anyway. The truth was that I had not had a chance to explain it.",
+      "Source A continues: Devon asked everyone to look at the drawing before responding. For the first time that afternoon, I could finish a sentence without rushing. My design did not solve every problem; one entrance still needed to move. But the group used part of it, and I felt that the rehearsal had become a place where my ideas could be examined rather than guessed at.",
+      "Source B — Rehearsal scene: Devon noticed Mina close her notebook while two actors debated the position of a bench. He asked to see her sketch and placed it in the center of the table. “Let’s hear the whole explanation first,” he told the group. The actors paused while Mina described a route behind the bench that could clear the middle of the stage.",
+      "Source B continues: One actor questioned where the route ended. Mina drew a second entrance, and the group tested the path on the floor. The scene describes visible actions and dialogue without directly reporting Mina’s private feelings. Alongside her narration, it helps readers connect a change in how the group listens with a change in participation, while showing that listening still leaves room for questions and revision."
+    ],
+    "question": "What understanding comes from reading the accounts together?",
+    "options": [
+      "Listening requires accepting an idea without questions.",
+      "A chance to explain fully helps Mina contribute, and discussion can still improve the idea.",
+      "Mina’s first drawing solves every problem immediately."
+    ],
+    "answer": 1,
+    "hint": "Connect Mina’s feelings with the actions shown in the scene.",
+    "explanation": "The sources show how respectful listening supports participation and useful revision.",
+    "evidenceOptions": [
+      "There is a bench on the stage.",
+      "Devon places a notebook on a table.",
+      "A describes Mina finishing her explanation; B shows the group listening and then testing a revised route."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The pair connects participation with thoughtful discussion rather than automatic agreement.",
+    "evidenceExplanation": "The pair connects participation with thoughtful discussion rather than automatic agreement.",
+    "reasoningQuestion": "What does Source A add that Source B does not directly provide?",
+    "reasoningOptions": [
+      "Mina’s own account of how interrupted speech and later attention felt.",
+      "The exact words Devon says to the group.",
+      "A description of the revised entrance on the floor."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "A first-person narrator can reveal thoughts and feelings that an external scene does not state.",
+    "reasoningExplanation": "A first-person narrator can reveal thoughts and feelings that an external scene does not state.",
+    "prompt": "Compare the two presentations in three paragraphs. Explain what each reveals, quote a short line accurately, and connect the accounts to an idea about listening and revision.",
+    "frame": "Paragraph 1: Source A emphasizes…\n\nParagraph 2: Source B shows… The line “…” supports…\n\nParagraph 3: Read together, the accounts suggest…",
+    "vocab": "narration",
+    "definition": "The telling of events from a particular point of view.",
+    "color": "blue",
+    "week": 2,
+    "genre": "original fictional source set",
+    "talk": "How would your interpretation change if you read only the scene and not Mina’s narration?"
+  },
+  {
+    "id": "g5-timeline",
+    "title": "A Timeline Is Not an Explanation",
+    "subtitle": "Distinguish sequence from cause.",
+    "label": "A Timeline Is Not an Explanation",
+    "focus": "Relationships among events",
+    "pattern": "The prefix post-",
+    "model": "The prefix post- can mean after. A post-event review takes place after an event.",
+    "words": [
+      "postwar",
+      "postgame",
+      "post-event"
+    ],
+    "wordQuestion": "When does a post-event review happen?",
+    "wordOptions": [
+      "During the first announcement",
+      "Before planning begins",
+      "After the event"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Use post-, meaning after.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Project timeline",
+        "kind": "Dated sequence"
+      },
+      {
+        "id": "B",
+        "title": "Team interview",
+        "kind": "Explanation of choices"
+      },
+      {
+        "id": "C",
+        "title": "Budget note",
+        "kind": "Resource information"
+      }
+    ],
+    "text": [
+      "Source A — Project timeline: Monday: the model club ordered new wheels. Tuesday: the team changed the shape of its cart. Wednesday: the team shortened the track. Thursday: the cart reached the end without stopping. A reporter reading the timeline assumed that the new wheels caused the successful run because the order appeared before the success. The timeline itself did not explain the reason for any change.",
+      "Source B — Team interview: The builders said the wheels had not arrived by Thursday. They used the old set during the successful run. They changed the cart’s shape because a wide corner caught against a guide rail. They shortened the track to fit a smaller demonstration space, not to test how far the cart could travel. Each decision answered a different need.",
+      "Source C — Budget note: The wheel order was canceled after the team found an unused matching set in storage. The note records spending decisions; it does not measure cart speed or explain every design choice. It confirms that placing an order is different from receiving and using a part, a distinction missing from the reporter’s first interpretation.",
+      "Reader’s task: Events appearing in a time sequence may be related, but earlier timing alone does not prove a cause. The interview gives reasons and clarifies which materials were used. The budget note adds another check on the wheel story. A careful explanation should connect the successful run to relevant design information while acknowledging that several conditions changed and no controlled comparison is described."
+    ],
+    "question": "Why is the claim that new wheels caused Thursday’s success unsupported?",
+    "options": [
+      "The interview says the new wheels had not arrived and the old wheels were used.",
+      "Timelines can never contain useful facts.",
+      "Thursday occurred before Monday."
+    ],
+    "answer": 0,
+    "hint": "Separate ordering a part from actually using it.",
+    "explanation": "A supposed cause cannot explain this run if that part was not used.",
+    "evidenceOptions": [
+      "The club had a budget.",
+      "B states that the new wheels had not arrived; C distinguishes an order from receiving and using parts.",
+      "A lists events on four days."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "These details directly challenge the assumption that ordered wheels were used.",
+    "evidenceExplanation": "These details directly challenge the assumption that ordered wheels were used.",
+    "reasoningQuestion": "Why does the timeline alone not establish the cause of success?",
+    "reasoningOptions": [
+      "Every earlier event causes every later event.",
+      "A timeline is always a personal opinion.",
+      "It records order but not the relevant mechanisms or whether the ordered parts were used."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "Use sequence to locate events and other evidence to explain relationships.",
+    "reasoningExplanation": "Use sequence to locate events and other evidence to explain relationships.",
+    "prompt": "Write an explanatory report in three paragraphs. Correct the wheel claim, explain what each source contributes, and identify what would still be needed to test a cause of success.",
+    "frame": "Paragraph 1: The timeline shows… but it does not show…\n\nParagraph 2: The interview explains… The budget note adds…\n\nParagraph 3: A careful conclusion is… To test…",
+    "vocab": "causation",
+    "definition": "A relationship in which one event or condition helps bring about another.",
+    "color": "blue",
+    "week": 2,
+    "genre": "original fictional source set",
+    "talk": "What would make a stronger test of whether one design change improved the cart?"
+  },
+  {
+    "id": "g5-water-station",
+    "title": "A Recommendation with Conditions",
+    "subtitle": "Use evidence and acknowledge a limit.",
+    "label": "A Recommendation with Conditions",
+    "focus": "Reasoned recommendation",
+    "pattern": "The suffix -ity",
+    "model": "The suffix -ity can turn a quality into a noun: flexible → flexibility. Spelling may change when a suffix is added.",
+    "words": [
+      "flexibility",
+      "visibility",
+      "accessibility"
+    ],
+    "wordQuestion": "Which word names the quality of being easy to see?",
+    "wordOptions": [
+      "flexibility",
+      "visibility",
+      "activity"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Start with visible.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Visitor survey",
+        "kind": "Preferences"
+      },
+      {
+        "id": "B",
+        "title": "Caretaker report",
+        "kind": "Maintenance observations"
+      },
+      {
+        "id": "C",
+        "title": "Room plan",
+        "kind": "Space constraints"
+      }
+    ],
+    "text": [
+      "Source A — Visitor survey: At a fictional community art room, fifteen of twenty respondents wanted drinking water closer to the workshop tables. Several said they missed part of an explanation when walking to the hallway fountain. Five were satisfied with the current arrangement. The survey asked about convenience, not about the cost or upkeep of a new station, and only people who returned a form were counted.",
+      "Source B — Caretaker report: A refill station would need space for cleaning and a clear routine for checking spills. During a temporary trial, the caretaker found water near the busiest table twice. The report did not recommend abandoning the idea. It suggested placing the station away from worktables and assigning a regular check during each session.",
+      "Source C — Room plan: The corner beside the storage wall has open space and is visible from the instructor’s desk. The entrance corner has more passing traffic, and a station there would narrow the walking route. The plan identifies possible locations but does not show whether every visitor can use a proposed setup comfortably. That would need checking during a trial.",
+      "Reader’s task: A strong recommendation can recognize a preference without pretending it settles every practical question. The three sources support considering a visible location away from crowded work areas, with upkeep and visitor access checked. They do not establish that the station should be installed immediately with no review. The recommendation should state conditions under which the idea would be worth trying."
+    ],
+    "question": "Which recommendation best uses all three sources?",
+    "options": [
+      "Install a station at the entrance and stop checking it.",
+      "Reject the idea because five people liked the old arrangement.",
+      "Trial a station near the storage wall with spill checks and a review of visitor access."
+    ],
+    "answer": 2,
+    "hint": "Use convenience, upkeep, and room layout together.",
+    "explanation": "The trial responds to the preference while addressing maintenance and space concerns.",
+    "evidenceOptions": [
+      "A favors closer water, B calls for spill checks away from tables, and C identifies visible space by the storage wall.",
+      "A has twenty respondents.",
+      "The room has an entrance."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "Each source contributes a different condition needed for the recommendation.",
+    "evidenceExplanation": "Each source contributes a different condition needed for the recommendation.",
+    "reasoningQuestion": "Why include a trial and an access review instead of claiming the plan is proven?",
+    "reasoningOptions": [
+      "Preferences automatically establish all practical details.",
+      "The sources describe needs and possible locations but leave some outcomes untested.",
+      "Every trial must end in failure."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "Acknowledge the gap between a supported proposal and a demonstrated result.",
+    "reasoningExplanation": "Acknowledge the gap between a supported proposal and a demonstrated result.",
+    "prompt": "Write three paragraphs recommending a conditional trial. State your position, support it with A/B/C, address one concern, and explain how the trial should be reviewed.",
+    "frame": "Paragraph 1: I recommend… under these conditions…\n\nParagraph 2: Source A… Source B… Source C…\n\nParagraph 3: A concern is… The trial should check…",
+    "vocab": "conditional",
+    "definition": "Depending on certain requirements or circumstances.",
+    "color": "amber",
+    "week": 3,
+    "genre": "original fictional source set",
+    "talk": "Which condition is most important to your recommendation, and which source supports it?"
+  },
+  {
+    "id": "g5-time-tradeoff",
+    "title": "More Time for What?",
+    "subtitle": "Respond to a reasonable opposing concern.",
+    "label": "More Time for What?",
+    "focus": "Reasons and counterpoints",
+    "pattern": "The root bene",
+    "model": "The Latin root bene means well or good. A benefit is an advantage or helpful result.",
+    "words": [
+      "benefit",
+      "beneficial",
+      "benefactor"
+    ],
+    "wordQuestion": "What does beneficial suggest?",
+    "wordOptions": [
+      "Helpful or producing a good result",
+      "Written long ago",
+      "Impossible to compare"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Use the root’s connection to good.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Student proposal",
+        "kind": "Opinion"
+      },
+      {
+        "id": "B",
+        "title": "Facilitator response",
+        "kind": "Practical concern"
+      },
+      {
+        "id": "C",
+        "title": "Session schedule",
+        "kind": "Time record"
+      }
+    ],
+    "text": [
+      "Source A — Student proposal: Our design club should extend discussion time after each building challenge. We learn from hearing why a model failed and what another team would change. Last week, three groups had ideas to share when the session ended. Ten more minutes of discussion could help us compare strategies instead of leaving each group’s learning at its own table.",
+      "Source B — Facilitator response: I agree that reflection matters, but the session cannot end later because another group uses the room. Ten extra minutes must come from somewhere else. Cleanup cannot be skipped, and reducing building time too much may leave teams without a model to discuss. I suggest choosing a clear discussion question and testing a smaller change first.",
+      "Source C — Session schedule: The current sixty-minute meeting includes a ten-minute introduction, thirty-five minutes of building, five minutes of discussion, and ten minutes of cleanup. The last two introductions repeated several directions already printed on the project cards. A shorter introduction might recover some time, but newcomers would still need access to the essential instructions.",
+      "Reader’s task: These sources support treating time as a trade-off rather than adding minutes that do not exist. A possible trial is to shorten repeated introductory material while preserving essential directions and cleanup, then use the recovered time for focused discussion. A reasoned response should address the facilitator’s concern directly, because the room schedule remains a real limit even when the proposed learning benefit is attractive."
+    ],
+    "question": "Which response best addresses the facilitator’s concern?",
+    "options": [
+      "Keep the same schedule but promise ten extra minutes.",
+      "Trial a shorter, clear introduction and use recovered time for focused discussion without cutting cleanup.",
+      "Cancel cleanup so discussion can continue indefinitely."
+    ],
+    "answer": 1,
+    "hint": "Locate time that can change without ignoring the fixed ending.",
+    "explanation": "The schedule identifies repeated introductory content as a possible source of time, with essential directions preserved.",
+    "evidenceOptions": [
+      "Students like discussion.",
+      "The room is used by another group.",
+      "A requests reflection, B requires a fixed end and cleanup, and C identifies repeated introductory directions."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The combined evidence connects the desired benefit to a practical way of respecting the limits.",
+    "evidenceExplanation": "The combined evidence connects the desired benefit to a practical way of respecting the limits.",
+    "reasoningQuestion": "Why should the response include Source B rather than dismiss it?",
+    "reasoningOptions": [
+      "Its time constraint affects whether the proposal can actually be carried out.",
+      "Every concern disproves the original idea.",
+      "The facilitator’s title makes all other evidence irrelevant."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "Addressing a relevant concern strengthens a proposal by showing how it could work.",
+    "reasoningExplanation": "Addressing a relevant concern strengthens a proposal by showing how it could work.",
+    "prompt": "Write a three-paragraph recommendation. Explain the benefit, address the time concern using the schedule, and describe a trial with a clear review question.",
+    "frame": "Paragraph 1: More reflection could…\n\nParagraph 2: However, Source B… Source C suggests…\n\nParagraph 3: I propose a trial… We should check…",
+    "vocab": "counterpoint",
+    "definition": "A relevant concern or different view that responds to a claim.",
+    "color": "amber",
+    "week": 3,
+    "genre": "original fictional source set",
+    "talk": "What would you look for to decide whether shorter introductions still support newcomers?"
+  },
+  {
+    "id": "g5-survey-change",
+    "title": "A Survey Is Not a Vote for Everything",
+    "subtitle": "Match each finding to the question asked.",
+    "label": "A Survey Is Not a Vote for Everything",
+    "focus": "Scope of a claim",
+    "pattern": "The prefix over-",
+    "model": "The prefix over- can mean too much. Overstate means to express something more strongly than the facts support.",
+    "words": [
+      "overstate",
+      "overestimate",
+      "overload"
+    ],
+    "wordQuestion": "What does overstate a result mean?",
+    "wordOptions": [
+      "Describe it with a source label",
+      "Express it more strongly than the evidence supports",
+      "Ask a follow-up question"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Think about a statement going too far.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Interest survey",
+        "kind": "Responses"
+      },
+      {
+        "id": "B",
+        "title": "Follow-up comments",
+        "kind": "Open-ended feedback"
+      },
+      {
+        "id": "C",
+        "title": "Draft announcement",
+        "kind": "Proposed public wording"
+      }
+    ],
+    "text": [
+      "Source A — Interest survey: Thirty students answered whether they would be interested in an after-school storytelling club. Twenty-two chose yes, five chose maybe, and three chose no. The form did not ask which day students could attend or whether they had transportation. It measured stated interest among respondents, not actual attendance at a future meeting.",
+      "Source B — Follow-up comments: Several interested students said they already had activities on Tuesdays. Others wanted to know whether the club would include drawing and oral storytelling as well as writing. One student asked if an adult could collect them later than usual. These comments added planning questions that the yes/maybe/no choices did not capture.",
+      "Source C — Draft announcement: “Nearly everyone will attend our Tuesday writing club!” The student editor underlined three problems. The survey did not include every student, interest did not guarantee attendance, and Tuesday writing meetings had not been described in the original question. A more accurate announcement could report interest and invite students to discuss possible formats and schedules.",
+      "Reader’s task: Each finding should be connected to the question and group that produced it. The survey offers a reason to explore a club. The comments show what planners still need to learn. The draft announcement shows how a claim can grow beyond its sources when interest becomes a promise of attendance and an unasked question becomes an assumed agreement."
+    ],
+    "question": "Which announcement best fits the sources?",
+    "options": [
+      "Every student has agreed to attend on Tuesday.",
+      "Nobody is interested because scheduling questions remain.",
+      "Twenty-two of thirty respondents expressed interest; planners still need to discuss meeting times and activities."
+    ],
+    "answer": 2,
+    "hint": "Keep interest, attendance, timing, and activity choices separate.",
+    "explanation": "The revised wording reports the result while preserving the unanswered planning questions.",
+    "evidenceOptions": [
+      "A asked about interest only; B raises scheduling and activity questions; C assumes attendance at a Tuesday writing club.",
+      "The form had three answer choices.",
+      "One student mentioned an adult."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "The sources show exactly where the draft adds conclusions the survey did not establish.",
+    "evidenceExplanation": "The sources show exactly where the draft adds conclusions the survey did not establish.",
+    "reasoningQuestion": "Why is the new announcement more accurate?",
+    "reasoningOptions": [
+      "It makes the club sound more exciting.",
+      "It identifies the measured group and leaves unasked questions open.",
+      "It changes every maybe response to yes."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "Report what was asked and learned without turning it into a wider agreement.",
+    "reasoningExplanation": "Report what was asked and learned without turning it into a wider agreement.",
+    "prompt": "Write a three-paragraph explanation for the student editor. Report the findings, explain two overclaims in the draft using source labels, and propose a useful follow-up question.",
+    "frame": "Paragraph 1: Source A establishes…\n\nParagraph 2: The announcement overstates… Source B shows…\n\nParagraph 3: A more accurate message would… Next, ask…",
+    "vocab": "scope",
+    "definition": "The range of people, situations, or questions a statement covers.",
+    "color": "amber",
+    "week": 3,
+    "genre": "original fictional source set",
+    "talk": "What question would you add to learn about actual attendance rather than interest?"
+  },
+  {
+    "id": "g5-sound-map",
+    "title": "A Sound Map for the School",
+    "subtitle": "Use complementary sources for a decision.",
+    "label": "A Sound Map for the School",
+    "focus": "Integrating three perspectives",
+    "pattern": "The suffix -ive",
+    "model": "The suffix -ive can form an adjective describing a quality or tendency: support → supportive.",
+    "words": [
+      "supportive",
+      "effective",
+      "reflective"
+    ],
+    "wordQuestion": "Which word describes something that provides support?",
+    "wordOptions": [
+      "supportive",
+      "supporter",
+      "supporting yesterday"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Look for the adjective ending in -ive.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Student sound map",
+        "kind": "Location observations"
+      },
+      {
+        "id": "B",
+        "title": "Teacher comments",
+        "kind": "Learning needs"
+      },
+      {
+        "id": "C",
+        "title": "Caretaker route",
+        "kind": "Movement needs"
+      }
+    ],
+    "text": [
+      "Source A — Student sound map: A class marked sounds heard in different school spaces during a single afternoon. The hall beside the music room had repeated singing during practice. The reading alcove was quieter, except when classes passed through on their way outside. The map recorded locations and times; it did not measure exact sound levels or describe every day of the week.",
+      "Source B — Teacher comments: Teachers wanted a place for small groups to rehearse spoken presentations without interrupting quiet reading. They did not want a completely silent school, because discussion and performance were part of learning. One teacher suggested reserving a nearby meeting room for short rehearsal periods if a simple booking system could prevent overlap.",
+      "Source C — Caretaker route: The meeting room could be used after materials were moved away from its doorway. The alcove, however, could not be blocked off because it lay beside a regular route between classrooms and the outside doors. Any plan needed to keep movement clear rather than treating an apparently empty space as permanently available.",
+      "Reader’s task: A useful recommendation should combine where sounds occur, what learning activities need, and how people move through the building. The sources support exploring scheduled use of the meeting room after its entrance is cleared. They do not support forbidding all sound or closing a passage. Additional observations at other times would help the class see whether the first afternoon’s map describes a recurring pattern."
+    ],
+    "question": "Which recommendation best combines the sources?",
+    "options": [
+      "Close the alcove route whenever anyone reads.",
+      "Explore scheduled rehearsals in the meeting room after clearing its doorway, and collect more observations.",
+      "Ban all spoken activities across the school."
+    ],
+    "answer": 1,
+    "hint": "Account for sound, learning, and clear movement together.",
+    "explanation": "The plan addresses rehearsal needs without blocking a regular route or claiming one map describes every day.",
+    "evidenceOptions": [
+      "The class made a map in one afternoon.",
+      "The music room contains singing.",
+      "A identifies a passing route through the alcove, B suggests rehearsal space, and C describes conditions for using the meeting room."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "Each source adds a different requirement that shapes the recommendation.",
+    "evidenceExplanation": "Each source adds a different requirement that shapes the recommendation.",
+    "reasoningQuestion": "Why are the caretaker’s notes relevant even though they do not describe teaching?",
+    "reasoningOptions": [
+      "They identify space and movement constraints that affect whether a learning plan is workable.",
+      "Only maintenance staff can decide what students learn.",
+      "They prove the sound map is false."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "Sources can contribute different kinds of information to the same decision.",
+    "reasoningExplanation": "Sources can contribute different kinds of information to the same decision.",
+    "prompt": "Write a three-paragraph recommendation using A, B, and C. Organize by needs rather than listing each source separately, and include a limitation and follow-up observation.",
+    "frame": "Paragraph 1: The school needs…\n\nParagraph 2: The sound map… Teachers… The caretaker…\n\nParagraph 3: I recommend… Because the map covers only…",
+    "vocab": "complementary",
+    "definition": "Adding a useful part that another source or idea does not provide.",
+    "color": "amber",
+    "week": 3,
+    "genre": "original fictional source set",
+    "talk": "Which source would be easiest to overlook? What problem might that create?"
+  },
+  {
+    "id": "g5-outline",
+    "title": "An Outline with a Job",
+    "subtitle": "Group evidence by the explanation it supports.",
+    "label": "An Outline with a Job",
+    "focus": "Planning across sources",
+    "pattern": "The root form",
+    "model": "The root form relates to shape. Transform means to change form, while reform can mean to improve by changing.",
+    "words": [
+      "transform",
+      "formation",
+      "reform"
+    ],
+    "wordQuestion": "What does transform mean?",
+    "wordOptions": [
+      "Keep exactly the same shape",
+      "Count without changing",
+      "Change in form or character"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "Connect trans- and form with a change of form.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Book exchange log",
+        "kind": "Participation record"
+      },
+      {
+        "id": "B",
+        "title": "Reader interviews",
+        "kind": "User experience"
+      },
+      {
+        "id": "C",
+        "title": "Volunteer notes",
+        "kind": "Practical routine"
+      }
+    ],
+    "text": [
+      "Source A — Book exchange log: Over four meetings, a class recorded which book-exchange tables visitors used. The table with books grouped by topic received many visits, while several visitors missed the small return basket near the doorway. The log described use of the display; it did not show whether every borrowed book was read or enjoyed.",
+      "Source B — Reader interviews: Readers said topic labels helped them begin browsing, but some wanted short descriptions that explained more than the title. One reader discovered a book by hearing another visitor describe it. These interviews suggest that both organization and personal recommendations can help readers choose, although the small group interviewed cannot speak for everyone.",
+      "Source C — Volunteer notes: Volunteers found it easier to restock books when each table had a labeled storage box. They also reported that returned books sometimes appeared on the wrong table. A large, clearly marked return point would simplify sorting. The notes focus on keeping the exchange usable over time, rather than on deciding which books individual readers should like.",
+      "Writing task: The class wants an explanatory article about making a book exchange easy to use. An outline could group evidence under finding books, choosing books, and returning/restocking books. Each section would have a job and could draw from more than one source. Organizing only by the order in which the notes were collected would hide useful connections between visitor experience and volunteer routines."
+    ],
+    "question": "Which outline best matches the article’s purpose?",
+    "options": [
+      "Finding books; choosing books; returning and restocking books",
+      "Source A copied in full; Source B copied in full; Source C omitted",
+      "The longest quotation; the shortest quotation; the writer’s favorite word"
+    ],
+    "answer": 0,
+    "hint": "Organize around the tasks readers need explained.",
+    "explanation": "Task-based sections connect evidence to the article’s purpose.",
+    "evidenceOptions": [
+      "A has four meetings in its log.",
+      "A records missed returns, while C explains sorting problems and a clearer return point.",
+      "B includes an interview."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "These details belong together in a section explaining the return process.",
+    "evidenceExplanation": "These details belong together in a section explaining the return process.",
+    "reasoningQuestion": "Why place the missed-return and sorting details in the same section?",
+    "reasoningOptions": [
+      "They have the same number of words.",
+      "They were necessarily written by one person.",
+      "They explain connected parts of returning books, even though they come from different sources."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "A section’s purpose determines which relevant evidence belongs together.",
+    "reasoningExplanation": "A section’s purpose determines which relevant evidence belongs together.",
+    "prompt": "Use source notes to plan a three-paragraph explanation organized by finding, choosing, and returning books. Give each paragraph a clear focus and connect details from at least two sources overall.",
+    "frame": "Paragraph 1 — Finding: …\n\nParagraph 2 — Choosing: …\n\nParagraph 3 — Returning and keeping the exchange useful: …",
+    "vocab": "coherence",
+    "definition": "The quality of ideas fitting together in a clear, understandable way.",
+    "color": "green",
+    "week": 4,
+    "genre": "original fictional source set",
+    "talk": "Can you state the job of each paragraph in a few words?"
+  },
+  {
+    "id": "g5-quote",
+    "title": "A Quotation Needs a Frame",
+    "subtitle": "Keep a speaker’s meaning intact.",
+    "label": "A Quotation Needs a Frame",
+    "focus": "Quotation and paraphrase",
+    "pattern": "The prefix mis-",
+    "model": "The prefix mis- can mean wrongly. Misrepresent means to describe someone or something inaccurately.",
+    "words": [
+      "misrepresent",
+      "misinterpret",
+      "misquote"
+    ],
+    "wordQuestion": "What does misquote mean?",
+    "wordOptions": [
+      "Repeat a quotation exactly",
+      "Quote someone inaccurately",
+      "List the source of a quotation"
+    ],
+    "wordAnswer": 1,
+    "wordHint": "Use mis-, meaning wrongly.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Designer interview",
+        "kind": "Direct quotation"
+      },
+      {
+        "id": "B",
+        "title": "Trial record",
+        "kind": "Observed conditions"
+      },
+      {
+        "id": "C",
+        "title": "Draft review",
+        "kind": "Proposed wording"
+      }
+    ],
+    "text": [
+      "Source A — Designer interview: Asked about a new puzzle display, the designer said, “The larger labels helped some visitors, but we still need to check the layout with people who approach from the side.” She explained that larger print was one change, not a guarantee that every visitor could find every puzzle. Her response included both a positive observation and a remaining question.",
+      "Source B — Trial record: The first trial included twelve visitors entering from the main doorway. Most found a puzzle label without help. Two asked where the next display began. No visitors were observed entering from the side passage during that session. The record therefore offered information about one approach, leaving another approach untested.",
+      "Source C — Draft review: A student wrote, “The designer said the labels helped visitors, so the display now works for everyone.” The sentence kept part of the positive statement but removed its limitation. The review could quote a short exact phrase such as “helped some visitors,” then explain the untested side approach using the rest of the interview and the trial record.",
+      "Writing task: Quotation marks tell readers that words are exact, but even exact words can mislead if the surrounding explanation changes their scope. A paraphrase must also retain important limits. The writer should introduce who spoke, preserve the meaning of the passage, connect it to other evidence, and make clear which conclusion comes from the sources and which is a proposal for the next test."
+    ],
+    "question": "Which statement best preserves the designer’s meaning?",
+    "options": [
+      "The display works for every visitor without further testing.",
+      "The designer thinks no label helped anyone.",
+      "The labels helped some visitors, while the side approach still needs checking."
+    ],
+    "answer": 2,
+    "hint": "Keep both the useful result and the remaining question.",
+    "explanation": "The interview’s positive finding is limited, and the trial confirms the gap in observation.",
+    "evidenceOptions": [
+      "A says “helped some visitors” and calls for a side check; B records no side-passage visitors in the trial.",
+      "The designer was interviewed.",
+      "Twelve people attended the trial."
+    ],
+    "evidenceAnswer": 0,
+    "evidenceHint": "The interview and trial together support a qualified conclusion.",
+    "evidenceExplanation": "The interview and trial together support a qualified conclusion.",
+    "reasoningQuestion": "Why can a short exact quotation still be misleading?",
+    "reasoningOptions": [
+      "Exact words are never useful evidence.",
+      "Removing context or attaching a broader conclusion can change what readers think the speaker meant.",
+      "Every quotation must include an entire interview."
+    ],
+    "reasoningAnswer": 1,
+    "reasoningHint": "Keep the speaker’s important limits even when quoting only a small part.",
+    "reasoningExplanation": "Keep the speaker’s important limits even when quoting only a small part.",
+    "prompt": "Write a three-paragraph review of the draft. Introduce the topic, use one exact short quotation with its source and context, then revise the conclusion and propose the missing check.",
+    "frame": "Paragraph 1: The draft claims…\n\nParagraph 2: In Source A, the designer says, “…” Source B shows…\n\nParagraph 3: A more accurate conclusion is… The next check should…",
+    "vocab": "attribution",
+    "definition": "Identifying who said something or where information came from.",
+    "color": "green",
+    "week": 4,
+    "genre": "original fictional source set",
+    "talk": "Which words in the quotation prevent the claim from becoming too broad?"
+  },
+  {
+    "id": "g5-revision",
+    "title": "The Paragraphs That Talk to Each Other",
+    "subtitle": "Make the reasoning visible across paragraphs.",
+    "label": "The Paragraphs That Talk to Each Other",
+    "focus": "Logical connections and revision",
+    "pattern": "Choose a precise transition",
+    "model": "In contrast signals a difference. Consequently signals a result. In addition introduces another related point.",
+    "words": [
+      "in contrast",
+      "consequently",
+      "in addition"
+    ],
+    "wordQuestion": "Which transition best introduces a result?",
+    "wordOptions": [
+      "Consequently",
+      "In contrast",
+      "For instance"
+    ],
+    "wordAnswer": 0,
+    "wordHint": "Look for the relationship between cause and outcome.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Observation note",
+        "kind": "Reader behavior"
+      },
+      {
+        "id": "B",
+        "title": "Layout proposal",
+        "kind": "Suggested change"
+      },
+      {
+        "id": "C",
+        "title": "Student draft",
+        "kind": "Writing to revise"
+      }
+    ],
+    "text": [
+      "Source A — Observation note: At the class history display, readers often began with the largest photograph and then asked how it related to the dated documents beside it. The caption named the people in the photograph but did not explain when the picture was taken. Several visitors assumed it showed the same year as the nearest document, although the two items came from different years.",
+      "Source B — Layout proposal: The display team suggested adding dates to every caption and grouping items by event rather than by size. A short introductory panel would explain the sequence. These changes had not yet been tried with visitors. The proposal aimed to reduce mistaken connections while preserving the chance to compare photographs and written records.",
+      "Source C — Student draft: “Visitors asked questions. The display has photographs. In contrast, we should add dates. The project is finished.” The draft includes a possible action but does not explain why it addresses the observed problem. Its transition suggests a contrast where the writer needs a reason, and its final sentence announces success without a follow-up observation.",
+      "Writing task: A revision could explain that missing dates encouraged an unsupported connection between items. It could then connect dated captions and event groups to that problem, using because or therefore where appropriate. A final paragraph could propose testing whether new visitors correctly place the items in time. Clear connections help readers follow the argument, while cautious wording keeps a planned improvement separate from an observed result."
+    ],
+    "question": "Which revision most improves the logic?",
+    "options": [
+      "Keep “in contrast” because long transitions always sound better.",
+      "Explain how missing dates caused confusion, connect dated captions to that problem, and propose a follow-up check.",
+      "Add more unrelated descriptions of the photographs."
+    ],
+    "answer": 1,
+    "hint": "Ask how the proposed action responds to the evidence.",
+    "explanation": "The revised chain connects observation, proposed response, and a way to evaluate the response.",
+    "evidenceOptions": [
+      "The display contains photographs.",
+      "The student wrote four short sentences.",
+      "A reports mistaken time connections; B proposes dates and event groups; C leaves the connection unexplained and claims completion."
+    ],
+    "evidenceAnswer": 2,
+    "evidenceHint": "The combined details identify what the revision must connect and qualify.",
+    "evidenceExplanation": "The combined details identify what the revision must connect and qualify.",
+    "reasoningQuestion": "Why is “The project is finished” an unsuitable evidence-based conclusion here?",
+    "reasoningOptions": [
+      "The sources describe a proposed change that has not yet been checked with visitors.",
+      "Every conclusion must be a question.",
+      "A report may never describe a finished project."
+    ],
+    "reasoningAnswer": 0,
+    "reasoningHint": "A conclusion should match the stage of work documented by the sources.",
+    "reasoningExplanation": "A conclusion should match the stage of work documented by the sources.",
+    "prompt": "Rewrite the explanation in three connected paragraphs. Explain the problem, link the proposed changes to evidence, and close with a review plan. Use transitions that match the actual relationships.",
+    "frame": "Paragraph 1: Source A shows…\n\nParagraph 2: Because… the team proposes… This connects to the problem by…\n\nParagraph 3: Before claiming success…",
+    "vocab": "transition",
+    "definition": "A word, phrase, or sentence that shows how ideas connect.",
+    "color": "green",
+    "week": 4,
+    "genre": "original fictional source set",
+    "talk": "Read the first sentence of each paragraph aloud. Does the sequence of ideas make sense?"
+  },
+  {
+    "id": "g5-final",
+    "title": "The Community Learning Report",
+    "subtitle": "Build and revise a report from three sources.",
+    "label": "The Community Learning Report",
+    "focus": "Final source-based report",
+    "pattern": "The root cred",
+    "model": "The Latin root cred relates to belief. Credible information has reasons or support that make it worthy of belief.",
+    "words": [
+      "credible",
+      "credibility",
+      "incredible"
+    ],
+    "wordQuestion": "What most helps make a report credible?",
+    "wordOptions": [
+      "A title written in large letters",
+      "A claim repeated many times without checking",
+      "Relevant evidence with clear sources and honest limits"
+    ],
+    "wordAnswer": 2,
+    "wordHint": "A believable report lets readers examine its support.",
+    "sources": [
+      {
+        "id": "A",
+        "title": "Visitor feedback",
+        "kind": "Learning experience"
+      },
+      {
+        "id": "B",
+        "title": "Volunteer record",
+        "kind": "Staffing and flow"
+      },
+      {
+        "id": "C",
+        "title": "Planning brief",
+        "kind": "Goals and limits"
+      }
+    ],
+    "text": [
+      "Source A — Visitor feedback: At a trial community learning afternoon, families tried storytelling, model building, and local-history activities. Many feedback cards praised having choices. Some visitors said they missed the beginning of an explanation when they moved between stations. Others wanted a short description of each activity before choosing. The cards represented those who returned them, not every person who attended.",
+      "Source B — Volunteer record: Volunteers repeated introductions whenever a new group arrived. At the busiest time, one station had a line while another had empty seats. A few visitors did not realize they could return to a station later. Volunteers suggested visible activity descriptions, repeated start times, and a simple sign showing when places were available. They also wanted enough time to reset materials between groups.",
+      "Source C — Planning brief: The next event must use the same rooms and number of volunteers. Its goals are to preserve meaningful choice, make explanations easier to join, and keep movement manageable. Planners can change signs and timing but cannot add a new room or promise constant one-to-one instruction. They want a plan that can be reviewed using observations and a short visitor response form.",
+      "Final writing task: Develop a report that combines the three sources around the event’s needs. Introduce a clear recommendation, explain at least two connected changes with evidence, and address one limitation. End with a practical way to check the plan. Quote or paraphrase accurately, identify the source of each borrowed idea, and distinguish what the trial showed from what you predict a future event might achieve. The report should help a reader understand both the proposal and its reasoning."
+    ],
+    "question": "Which plan best meets the goals and limits in all three sources?",
+    "options": [
+      "Use clear activity descriptions, repeated start times, and availability signs while preserving choices and reset time.",
+      "Add three rooms and a personal instructor for each family.",
+      "Require every visitor to remain at one station all afternoon."
+    ],
+    "answer": 0,
+    "hint": "Fit the visitors’ needs, volunteer observations, and fixed resources together.",
+    "explanation": "The plan improves entry and flow within the stated limits while preserving choice.",
+    "evidenceOptions": [
+      "The event has three kinds of activities.",
+      "A requests advance descriptions, B identifies timing and line problems, and C allows sign and schedule changes within fixed resources.",
+      "Some stations have empty seats."
+    ],
+    "evidenceAnswer": 1,
+    "evidenceHint": "The source combination connects needs and feasible responses.",
+    "evidenceExplanation": "The source combination connects needs and feasible responses.",
+    "reasoningQuestion": "What should the final report distinguish most clearly?",
+    "reasoningOptions": [
+      "Which source has the longest title.",
+      "Which visitor arrived first, even if it does not affect the plan.",
+      "Observed trial results, source-supported recommendations, and predictions that still need testing."
+    ],
+    "reasoningAnswer": 2,
+    "reasoningHint": "A strong report tells readers what is known, what is proposed, and what remains uncertain.",
+    "reasoningExplanation": "A strong report tells readers what is known, what is proposed, and what remains uncertain.",
+    "prompt": "Create your final three-paragraph report. State a recommendation, combine details from all three sources, address a limit, and close with a specific check. Add a final “Sources used” line naming A, B, and C by title. Revise once for accuracy and logical connections.",
+    "frame": "Paragraph 1: I recommend… because the trial shows…\n\nParagraph 2: Sources A and B… Source C sets a limit… Therefore…\n\nParagraph 3: A concern is… We can check the plan by…\n\nSources used: …",
+    "vocab": "credible",
+    "definition": "Worthy of belief because of relevant support and careful treatment of evidence.",
+    "color": "green",
+    "week": 4,
+    "genre": "original fictional source set",
+    "talk": "Ask a reader to identify your recommendation, two supporting details, one limitation, and the proposed check."
+  }
+];
+export const gradeFiveUnits = [
+  {
+    "week": 1,
+    "title": "Source Sleuths",
+    "goal": "Infer across records, quote accurately, preserve main ideas, and check source context.",
+    "project": "Explain what three theater records establish and what remains uncertain.",
+    "family": "Ask which exact source supports a claim. Look for dates, purposes, and limits before combining details."
+  },
+  {
+    "week": 2,
+    "title": "Ideas in Conversation",
+    "goal": "Connect overlapping sources, explain differing results, and distinguish sequence from cause.",
+    "project": "Correct a timeline-based claim by connecting an interview and a budget note.",
+    "family": "Ask whether sources disagree about the same conditions or describe different situations."
+  },
+  {
+    "week": 3,
+    "title": "Reasoned Recommendations",
+    "goal": "Organize reasons, address a concern, and fit a recommendation to the evidence.",
+    "project": "Recommend rehearsal space using a sound map, teacher comments, and movement notes.",
+    "family": "Invite a reasonable counterpoint. Ask how the writer’s recommendation addresses it."
+  },
+  {
+    "week": 4,
+    "title": "Author’s Workshop",
+    "goal": "Plan by topic, quote and paraphrase accurately, revise connections, and create a report.",
+    "project": "Write a three-paragraph community learning report using three sources and a review plan.",
+    "family": "Review the source labels, explanation of evidence, logical transitions, and honest limits. Ask for one useful revision."
+  }
+];
+export const lessons = [...coreLessons,...kindergartenLessons,...gradeThreeLessons,...gradeFourLessons,...gradeFiveLessons];
 export const isKindergarten=(id:string)=>id.startsWith('k-');
-export const courseLessons=(grade:string)=>grade==='K'?kindergartenLessons:grade==='3'?gradeThreeLessons:grade==='4'?gradeFourLessons:coreLessons;
-export const courseUnits=(grade:string)=>grade==='K'?kindergartenUnits:grade==='3'?gradeThreeUnits:grade==='4'?gradeFourUnits:units;
+export const courseLessons=(grade:string)=>grade==='K'?kindergartenLessons:grade==='3'?gradeThreeLessons:grade==='4'?gradeFourLessons:grade==='5'?gradeFiveLessons:coreLessons;
+export const courseUnits=(grade:string)=>grade==='K'?kindergartenUnits:grade==='3'?gradeThreeUnits:grade==='4'?gradeFourUnits:grade==='5'?gradeFiveUnits:units;
 export const isGradeThree=(id:string)=>id.startsWith('g3-');
 export const isGradeFour=(id:string)=>id.startsWith('g4-');
-export const reasoningFor=(id:string)=>gradeFourLessons.find(l=>l.id===id);
+export const isGradeFive=(id:string)=>id.startsWith('g5-');
+export const sourcesFor=(id:string)=>gradeFiveLessons.find(l=>l.id===id)?.sources;
+export const reasoningFor=(id:string)=>gradeFourLessons.find(l=>l.id===id)??gradeFiveLessons.find(l=>l.id===id);
 export const evidenceFor=(id:string)=>gradeThreeLessons.find(l=>l.id===id)??reasoningFor(id);
-export const minimumWords=(id:string)=>isKindergarten(id)?1:isGradeThree(id)?20:isGradeFour(id)?40:6;
+export const minimumWords=(id:string)=>isKindergarten(id)?1:isGradeThree(id)?20:isGradeFour(id)?40:isGradeFive(id)?60:6;
 export const wordCount=(s:string)=>s.trim()?s.trim().split(/\s+/).length:0;
 export const emptyRecord=(id:string):RecordData=>({lessonId:id,step:0,answers:{},draft:'',completed:false});
+
+export const hasWritingChanges=(current:RecordData,saved?:RecordData)=>current.draft!==(saved?.draft??'')||['A','B','C'].some(k=>(current.sourceNotes?.[k]??'')!==(saved?.sourceNotes?.[k]??''));
