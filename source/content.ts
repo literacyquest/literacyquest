@@ -54,7 +54,7 @@ const coreLessons = [
     "wordHint": "Say map slowly. Now say dam. Listen to the middle sound.",
     "text": [
       "Beavers are builders. They use sticks, mud, and rocks to build dams across streams. A dam holds back water and can make a pond.",
-      "Many beavers build a home called a lodge in the pond. A lodge is different from a dam. It has a dry room inside. Its entrance is under the water.",
+      "Many beavers build a home called a lodge in the pond. They pile sticks and mud to build it. A lodge is different from a dam. It has a dry room inside and an entrance under the water.",
       "A beaver can swim through the entrance and climb into its dry room. The lodge gives the beaver a place to rest."
     ],
     "question": "What is the difference between a dam and a lodge?",
@@ -757,7 +757,7 @@ export const kindergartenLessons = [
       "dog"
     ],
     "wordAnswer": 1,
-    "wordHint": "Listen to the ending of cat and hat. Both end with the sound at.",
+    "wordHint": "Listen to the endings of cat and hat. Their ending sounds match.",
     "text": [
       "A cat sees a red hat.",
       "The cat sits by the hat.",
@@ -1194,20 +1194,20 @@ export const kindergartenLessons = [
     "label": "Hop to the Log",
     "focus": "Short o words",
     "pattern": "Listen for short o",
-    "model": "Say hop and log. In common American English, they share a short o sound. Listen with a grown-up; voices and accents can differ.",
+    "model": "Say hop and top. They share the same middle vowel sound, called short o. Say pot, too. A grown-up can help you listen.",
     "words": [
       "hop",
-      "log",
-      "top"
+      "top",
+      "pot"
     ],
     "wordQuestion": "Which word has the same middle sound as hop?",
     "wordOptions": [
-      "log",
+      "top",
       "map",
       "sit"
     ],
     "wordAnswer": 0,
-    "wordHint": "Say hop and log. Listen to the vowel in the middle.",
+    "wordHint": "Say hop and top. Listen to the vowel in the middle.",
     "text": [
       "A frog sees a log.",
       "It hops to the log.",
@@ -1530,8 +1530,8 @@ export const gradeThreeLessons = [
       "Eli opened their nature notebook."
     ],
     "evidenceAnswer": 1,
-    "evidenceHint": "The second sentence links the missing animal evidence to the question mark.",
-    "evidenceExplanation": "The second sentence links the missing animal evidence to the question mark.",
+    "evidenceHint": "Look in the last paragraph for the sentence that connects not finding an animal with keeping the question mark.",
+    "evidenceExplanation": "They keep the question mark after finding no animal because they still do not know what made the holes.",
     "prompt": "Explain how the notebook separates an observation from a possible explanation. Use one detail from the reading.",
     "frame": "The notebook is careful because… For example… This shows… A question they still have is…",
     "vocab": "observation",
@@ -1563,9 +1563,9 @@ export const gradeThreeLessons = [
     "wordAnswer": 0,
     "wordHint": "Think about doing something with care.",
     "text": [
-      "The garden club wanted to compare two places for a reading bench. One place was under a tree. The other was beside a sunny wall. Instead of choosing from memory, the students planned a small shade test. Their question was simple: Which place would feel cooler at lunchtime on that day?",
-      "They placed matching thermometers at the two spots at the same time. They kept both thermometers off the ground and waited ten minutes before reading them. The thermometer near the wall showed a higher temperature. If they had checked one spot early in the morning and the other at noon, the comparison would have been less useful.",
-      "The students recorded the time, the sky conditions, and both readings. They suggested the tree spot for the bench, but their teacher asked them to repeat the test on other days. One test gave them a useful clue. More observations could help them decide whether that clue described a pattern."
+      "The garden club wanted to compare two places for a reading bench. One place was under a tree. The other was beside a sunny wall. Instead of choosing from memory, the students planned a small test. Their question was simple: Which place would have a lower air-temperature reading at lunchtime on that day?",
+      "They placed matching thermometers at the two spots at the same time and height above the ground. Both thermometers had matching shields that blocked direct sunlight while letting air flow around them. They waited for the readings to settle. The thermometer near the wall showed a higher temperature. If they had checked one spot early in the morning and the other at noon, the comparison would have been less useful.",
+      "The students recorded the time, the sky conditions, and both readings. They suggested investigating the tree spot for the bench, but their teacher asked them to repeat the test on other days. The readings compared the air near two places; they did not tell everything about how comfortable a person would feel there. More observations could help the class decide whether its first result was part of a pattern."
     ],
     "question": "Why do the students measure both spots at the same time?",
     "options": [
@@ -1808,7 +1808,7 @@ export const gradeThreeLessons = [
     "label": "Grade 3",
     "focus": "Point of view",
     "pattern": "Words with more than one meaning",
-    "model": "A familiar word can have different meanings. In “a fair rule,” fair means reasonable and equal, not a festival.",
+    "model": "A familiar word can have different meanings. In “a fair rule,” fair means reasonable and just, not a festival.",
     "words": [
       "fair",
       "light",
@@ -1817,7 +1817,7 @@ export const gradeThreeLessons = [
     "wordQuestion": "In “We need a fair rule,” what does fair mean?",
     "wordOptions": [
       "A place with rides",
-      "Reasonable and equal",
+      "Reasonable and just",
       "Pale in color"
     ],
     "wordAnswer": 1,
@@ -2292,7 +2292,7 @@ export const gradeThreeLessons = [
     "wordHint": "The second idea introduces a problem despite the first idea.",
     "text": [
       "After a one-week reading-corner trial, the class collected its notes. On Monday, four children used the corner and all found seats. On Wednesday, seven wanted to use it, but there were only four chairs. Three children took books to other tables. On Friday, five children asked to use the corner, and one waited for a seat.",
-      "The teacher also collected comments. Several readers liked having books in one easy-to-find place. Two children said the walkway felt crowded when chairs were pulled back. The class measured no reading improvement during the trial; its notes described use of the space and comments about comfort. Those notes could support a room-planning decision, but not every possible claim.",
+      "The teacher also collected comments. Several readers liked having books in one easy-to-find place. Two children said the walkway felt crowded when chairs were pulled back. The class did not measure reading improvement during the trial; its notes described use of the space and comments about comfort. Those notes could support a room-planning decision, but not every possible claim.",
       "The class considered keeping the book basket and letting readers use any available table. Another idea was to move the chairs farther from the walkway. Their final report needed a clear recommendation, details from the notes, an explanation of how those details supported the plan, and a closing thought about what to check next."
     ],
     "question": "Which recommendation is supported by the trial notes?",
@@ -2305,7 +2305,7 @@ export const gradeThreeLessons = [
     "hint": "Use the evidence about seats, the walkway, and access to books.",
     "explanation": "The notes support keeping easy book access while giving readers more places to sit.",
     "evidenceOptions": [
-      "The class measured no reading improvement during the trial.",
+      "The class did not measure reading improvement during the trial.",
       "On Wednesday, three children took books to other tables. Several readers liked having books in one easy-to-find place.",
       "The class collected its notes after one week."
     ],
@@ -2487,7 +2487,7 @@ export const gradeFourLessons = [
     "model": "The ending -tion often forms a noun naming an action or process: collect → collection. Spelling may change when endings are added.",
     "words": [
       "collection",
-      "discussion",
+      "selection",
       "invention"
     ],
     "wordQuestion": "Which word names the result of collecting objects?",
@@ -3228,7 +3228,7 @@ export const gradeFourLessons = [
     "label": "The Claim That Grew Too Big",
     "focus": "Revise for precision",
     "pattern": "Qualifiers change a claim",
-    "model": "Words such as some, often, and may limit a claim. All, always, and must make a much broader claim.",
+    "model": "Words such as some, often, and may limit a claim. All and always make a claim broader. Must can express necessity or a strong conclusion, so check its meaning in the sentence.",
     "words": [
       "some",
       "often",
@@ -3605,8 +3605,8 @@ export const gradeFiveLessons = [
     "subtitle": "Ask whether evidence fits the question.",
     "label": "The Record That Needed a Date",
     "focus": "Source context and limits",
-    "pattern": "The prefix pre- and the suffix -view family",
-    "model": "Preview means to view before a main event. Review means to look again. Word parts help, but the sentence decides the intended meaning.",
+    "pattern": "The prefix pre- and the base word view",
+    "model": "The prefix pre- can mean before. In preview, pre- joins the base word view: to look at something before its main showing. In review, re- can suggest looking again. View is a base word, not a suffix; check each whole word in its sentence.",
     "words": [
       "preview",
       "review",
@@ -3719,7 +3719,7 @@ export const gradeFiveLessons = [
     "text": [
       "Source A — Participant comments: After a model-bridge workshop, visitors praised the chance to try their own designs. Several said the opening explanation contained too many steps to remember at once. Two wished they could see the instructions again after starting. The comments came from visitors who chose to return a feedback card, so they did not represent every person who attended.",
       "Source B — Instructor notes: The instructor demonstrated the entire build before handing out materials. During work time, many visitors asked the same questions about the first fold and the order of later steps. When the instructor showed a step again at one table, visitors there often continued independently. The notes suggest that access to instructions during work may matter, although they do not measure long-term learning.",
-      "Source C — Supply record: Each table received twelve sheets of paper. Two tables requested more while testing repeated designs; another table returned several sheets unused. The supply helper recorded different amounts of experimentation, not simply waste. A future plan could keep extra paper in a shared location while asking groups to take a few sheets at a time.",
+      "Source C — Supply record: Each table received twelve sheets of paper. Two tables requested more while testing repeated designs; another table returned several sheets unused. The supply helper recorded different paper needs, not what happened to every sheet. The counts alone could not show how much paper was wasted. A future plan could keep extra paper in a shared location while asking groups to take a few sheets at a time.",
       "Reader’s task: A report could organize these notes around two topics: access to instructions and access to materials. Sources A and B overlap on the first topic, while Source C adds a different practical need. Copying three summaries in a row would preserve facts, but grouping related evidence can explain how the observations contribute to one improved workshop plan."
     ],
     "question": "Which plan integrates the notes most directly?",
